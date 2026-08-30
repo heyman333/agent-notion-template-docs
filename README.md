@@ -62,8 +62,19 @@ cp -r skills/notion-doc ~/.claude/skills/
 /notion-doc:notion-doc
 ```
 
-결과물 예시는 [`examples/sample.html`](examples/sample.html) 을 브라우저로 열어 보세요 —
-위 스크린샷이 이 파일입니다.
+## 결과물 예시
+
+브라우저로 열어 보세요. 위 스크린샷은 `sample.html` 입니다.
+
+| 파일 | 문서 유형 | 보여주는 것 |
+|---|---|---|
+| [`sample.html`](examples/sample.html) | 제안서 (캠페인 제안) | 기본 4단 구조, 콜아웃·표·토글·체크리스트 |
+| [`sample-tech.html`](examples/sample-tech.html) | 장애 분석 보고서 | 섹션 이름 변형(현상→원인→수정안→조치), 코드 블록 |
+| [`sample-en.html`](examples/sample-en.html) | Proposal (English) | 같은 템플릿의 영어 문서 |
+
+코드가 들어가는 기술 문서는 이렇게 나옵니다:
+
+![tech](docs/screenshot-tech.png)
 
 ## 구조
 
@@ -75,7 +86,9 @@ skills/notion-doc/
   SKILL.md             # 문서 규격: 구조·머리 부분·문체 규칙
   template.html        # 스타일 정본: Notion 라이트/다크 팔레트 CSS 토큰
 examples/
-  sample.html          # 생성 결과물 예시 (새해 캠페인 제안)
+  sample.html          # 결과물 예시: 제안서 (캠페인 제안)
+  sample-tech.html     # 결과물 예시: 장애 분석 보고서 (코드 블록)
+  sample-en.html       # 결과물 예시: 영어 제안서
 ```
 
 ## 원본 템플릿
