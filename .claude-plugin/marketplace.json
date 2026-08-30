@@ -1,0 +1,16 @@
+{
+  "name": "agent-notion-template-docs",
+  "description": "Notion 템플릿 기반 문서 생성 skill 마켓플레이스",
+  "owner": {
+    "name": "heyman333",
+    "url": "https://github.com/heyman333"
+  },
+  "plugins": [
+    {
+      "name": "notion-doc",
+      "source": "./",
+      "description": "Claude가 생성하는 HTML·Markdown 문서를 Notion 제안서 템플릿(배경→분석→권장 사항→실행)과 Notion 비주얼로 고정하는 skill",
+      "version": "1.0.0"
+    }
+  ]
+}

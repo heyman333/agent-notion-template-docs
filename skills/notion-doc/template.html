@@ -1,0 +1,227 @@
+<!--
+  notion-doc 스켈레톤 — HTML 문서는 이 파일을 복사해서 내용만 채운다.
+  CSS 를 새로 만들지 말 것. 클래스: callout(-blue/-yellow/-red), tag, meta, todo
+-->
+<title>문서 제목</title>
+<style>
+  :root {
+    --text: #37352F;
+    --text-soft: rgba(55, 53, 47, 0.65);
+    --divider: rgba(55, 53, 47, 0.09);
+    --bg: #FFFFFF;
+    --callout-gray: #F1F1EF;
+    --callout-blue: #E7F3F8;
+    --callout-yellow: #FBF3DB;
+    --callout-red: #FDEBEC;
+    --code-bg: #F7F6F3;
+    --inline-code: #EB5757;
+    --inline-code-bg: rgba(135, 131, 120, 0.15);
+    --table-header: #F7F7F5;
+    --table-border: #E9E9E7;
+    --check: #2383E2;
+  }
+  /* Notion 다크 팔레트 — 시스템 다크 + 뷰어의 명시적 다크 선택 양쪽에 대응 */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --text: #D4D4D4;
+      --text-soft: rgba(255, 255, 255, 0.46);
+      --divider: rgba(255, 255, 255, 0.13);
+      --bg: #191919;
+      --callout-gray: #252525;
+      --callout-blue: #1D3A4A;
+      --callout-yellow: #3A3120;
+      --callout-red: #4A2C28;
+      --code-bg: #202020;
+      --inline-code: #FF7369;
+      --inline-code-bg: rgba(135, 131, 120, 0.25);
+      --table-header: #252525;
+      --table-border: #313131;
+    }
+  }
+  :root[data-theme="dark"] {
+    --text: #D4D4D4;
+    --text-soft: rgba(255, 255, 255, 0.46);
+    --divider: rgba(255, 255, 255, 0.13);
+    --bg: #191919;
+    --callout-gray: #252525;
+    --callout-blue: #1D3A4A;
+    --callout-yellow: #3A3120;
+    --callout-red: #4A2C28;
+    --code-bg: #202020;
+    --inline-code: #FF7369;
+    --inline-code-bg: rgba(135, 131, 120, 0.25);
+    --table-header: #252525;
+    --table-border: #313131;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
+      "Noto Sans KR", Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 708px;
+    margin: 0 auto;
+    padding: 72px 24px 30vh;
+  }
+  .page-icon { font-size: 68px; line-height: 1.1; }
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 8px 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .meta {
+    color: var(--text-soft);
+    font-size: 14px;
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    background: var(--callout-blue);
+    color: var(--text);
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 4px 0 24px;
+  }
+  h2 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin: 2em 0 4px;
+    letter-spacing: -0.01em;
+  }
+  h3 { font-size: 1.25em; font-weight: 600; margin: 1.4em 0 2px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 6px 0; padding-left: 26px; }
+  li { margin: 3px 0; }
+  li::marker { color: var(--text-soft); }
+  strong { font-weight: 600; }
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--text-soft); }
+
+  .callout {
+    display: flex;
+    gap: 10px;
+    background: var(--callout-gray);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 15px;
+  }
+  .callout-blue { background: var(--callout-blue); }
+  .callout-yellow { background: var(--callout-yellow); }
+  .callout-red { background: var(--callout-red); }
+  .callout > .icon { flex: none; font-size: 18px; line-height: 1.4; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th, td {
+    border: 1px solid var(--table-border);
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--table-header); font-weight: 600; }
+
+  blockquote {
+    margin: 12px 0;
+    padding: 2px 0 2px 14px;
+    border-left: 3px solid var(--text);
+    font-size: 1.05em;
+  }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 85%;
+    background: var(--inline-code-bg);
+    color: var(--inline-code);
+    border-radius: 3px;
+    padding: 2px 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 12px 0;
+  }
+  pre code { background: none; color: var(--text); padding: 0; font-size: 13.5px; }
+
+  details {
+    margin: 8px 0;
+    padding: 4px 0;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+  summary:hover { background: var(--callout-gray); }
+  details > *:not(summary) { margin-left: 22px; }
+
+  .todo { list-style: none; padding-left: 4px; }
+  .todo li { display: flex; gap: 8px; align-items: baseline; }
+  .todo input[type="checkbox"] { accent-color: var(--check); margin-top: 4px; }
+  .todo li.done { color: var(--text-soft); text-decoration: line-through; }
+</style>
+
+<div class="page">
+  <div class="page-icon">📅</div>
+  <h1>새해 캠페인 제안</h1>
+  <p class="meta">
+    <span class="tag">제안</span>
+    <span>2026-08-31</span>
+    <span>·</span>
+    <span>작성: 홍길동</span>
+  </p>
+  <hr>
+
+  <h2>배경</h2>
+  <p>문서의 맥락, 목표, 범위. 왜 이 문서를 쓰는지 2~4문장으로.</p>
+  <div class="callout callout-blue">
+    <span class="icon">💡</span>
+    <div><strong>핵심 한 줄</strong> — 이 문서가 답하는 질문이나 결론 요약을 여기에.</div>
+  </div>
+
+  <h2>분석</h2>
+  <p>연구 결과, 데이터 인사이트, 주요 고려 사항. 근거는 표·목록으로.</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>항목</th><th>현황</th><th>비고</th></tr>
+      <tr><td>예시</td><td>측정값·사실</td><td>출처·경로</td></tr>
+    </table>
+  </div>
+  <div class="callout callout-yellow">
+    <span class="icon">⚠️</span>
+    <div>주의할 점이나 제약 조건은 노란 콜아웃으로.</div>
+  </div>
+  <details>
+    <summary>상세 근거 (펼치기)</summary>
+    <p>본문 흐름을 끊는 긴 로그·수치·부가 설명은 토글 안에.</p>
+    <pre><code>const name = '홍길동'
+console.log(`안녕하세요 ${name} 입니다`)</code></pre>
+  </details>
+
+  <h2>권장 사항</h2>
+  <p>제안된 솔루션, 전략 및 다음 단계. 선택지가 여럿이면 비교표 뒤에 추천을 명시.</p>
+  <blockquote>가장 중요한 제안 한 문장은 인용구로 띄운다.</blockquote>
+
+  <h2>실행</h2>
+  <p>액션 아이템, 타임라인, 리소스 요구 사항.</p>
+  <ul class="todo">
+    <li><input type="checkbox"> 액션 아이템 — 담당 / 기한</li>
+    <li class="done"><input type="checkbox" checked> 완료된 항목</li>
+  </ul>
+</div>

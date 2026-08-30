@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>새해 캠페인 제안</title>
+<style>
+  :root {
+    --text: #37352F;
+    --text-soft: rgba(55, 53, 47, 0.65);
+    --divider: rgba(55, 53, 47, 0.09);
+    --bg: #FFFFFF;
+    --callout-gray: #F1F1EF;
+    --callout-blue: #E7F3F8;
+    --callout-yellow: #FBF3DB;
+    --callout-red: #FDEBEC;
+    --code-bg: #F7F6F3;
+    --inline-code: #EB5757;
+    --inline-code-bg: rgba(135, 131, 120, 0.15);
+    --table-header: #F7F7F5;
+    --table-border: #E9E9E7;
+    --check: #2383E2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --text: #D4D4D4;
+      --text-soft: rgba(255, 255, 255, 0.46);
+      --divider: rgba(255, 255, 255, 0.13);
+      --bg: #191919;
+      --callout-gray: #252525;
+      --callout-blue: #1D3A4A;
+      --callout-yellow: #3A3120;
+      --callout-red: #4A2C28;
+      --code-bg: #202020;
+      --inline-code: #FF7369;
+      --inline-code-bg: rgba(135, 131, 120, 0.25);
+      --table-header: #252525;
+      --table-border: #313131;
+    }
+  }
+  :root[data-theme="dark"] {
+    --text: #D4D4D4;
+    --text-soft: rgba(255, 255, 255, 0.46);
+    --divider: rgba(255, 255, 255, 0.13);
+    --bg: #191919;
+    --callout-gray: #252525;
+    --callout-blue: #1D3A4A;
+    --callout-yellow: #3A3120;
+    --callout-red: #4A2C28;
+    --code-bg: #202020;
+    --inline-code: #FF7369;
+    --inline-code-bg: rgba(135, 131, 120, 0.25);
+    --table-header: #252525;
+    --table-border: #313131;
+  }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
+      "Noto Sans KR", Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 708px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+  .page-icon { font-size: 68px; line-height: 1.1; }
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 8px 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .meta {
+    color: var(--text-soft);
+    font-size: 14px;
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    background: var(--callout-blue);
+    color: var(--text);
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 4px 0 24px;
+  }
+  h2 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin: 2em 0 4px;
+    letter-spacing: -0.01em;
+  }
+  h3 { font-size: 1.25em; font-weight: 600; margin: 1.4em 0 2px; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 6px 0; padding-left: 26px; }
+  li { margin: 3px 0; }
+  li::marker { color: var(--text-soft); }
+  strong { font-weight: 600; }
+  a { color: inherit; text-decoration: underline; text-decoration-color: var(--text-soft); }
+
+  .callout {
+    display: flex;
+    gap: 10px;
+    background: var(--callout-gray);
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 15px;
+  }
+  .callout-blue { background: var(--callout-blue); }
+  .callout-yellow { background: var(--callout-yellow); }
+  .callout-red { background: var(--callout-red); }
+  .callout > .icon { flex: none; font-size: 18px; line-height: 1.4; }
+
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th, td {
+    border: 1px solid var(--table-border);
+    padding: 7px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--table-header); font-weight: 600; }
+
+  blockquote {
+    margin: 12px 0;
+    padding: 2px 0 2px 14px;
+    border-left: 3px solid var(--text);
+    font-size: 1.05em;
+  }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 85%;
+    background: var(--inline-code-bg);
+    color: var(--inline-code);
+    border-radius: 3px;
+    padding: 2px 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 12px 0;
+  }
+  pre code { background: none; color: var(--text); padding: 0; font-size: 13.5px; }
+
+  details { margin: 8px 0; padding: 4px 0; }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 4px 6px;
+    border-radius: 4px;
+  }
+  summary:hover, summary:focus-visible { background: var(--callout-gray); }
+  details > *:not(summary) { margin-left: 22px; }
+
+  .todo { list-style: none; padding-left: 4px; }
+  .todo li { display: flex; gap: 8px; align-items: baseline; }
+  .todo input[type="checkbox"] { accent-color: var(--check); margin-top: 4px; }
+  .todo li.done { color: var(--text-soft); text-decoration: line-through; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="page-icon">📅</div>
+  <h1>새해 캠페인 제안</h1>
+  <p class="meta">
+    <span class="tag">제안</span>
+    <span>2026-01-05</span>
+    <span>·</span>
+    <span>작성: 홍길동</span>
+  </p>
+  <hr>
+
+  <h2>배경</h2>
+  <p>
+    작년 4분기 신규 가입이 전 분기 대비 18% 줄었다. 연초 결심 수요(운동·저축·학습)가
+    몰리는 1월에 맞춰, 신규 가입 회복을 목표로 하는 캠페인을 제안한다.
+    범위는 1월 한 달, 국내 사용자, 앱 내 프로모션과 SNS 광고로 한정한다.
+  </p>
+  <div class="callout callout-blue">
+    <span class="icon">💡</span>
+    <div><strong>핵심 한 줄</strong> — "새해 목표 3주 챌린지"로 연초 결심 수요를
+    신규 가입으로 전환하고, 3주 리텐션 장치로 이탈을 막는다.</div>
+  </div>
+
+  <h2>분석</h2>
+  <p>최근 3년 데이터에서 확인한 사실.</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>지표</th><th>1월</th><th>연평균</th><th>시사점</th></tr>
+      <tr><td>신규 가입</td><td>+42%</td><td>기준</td><td>연초 수요는 매년 반복된다</td></tr>
+      <tr><td>2주차 이탈률</td><td>61%</td><td>44%</td><td>결심이 식는 2주차가 고비</td></tr>
+      <tr><td>친구 초대 전환</td><td>3.1%</td><td>1.8%</td><td>연초에는 같이 시작하려는 수요가 있다</td></tr>
+    </table>
+  </div>
+  <div class="callout callout-yellow">
+    <span class="icon">⚠️</span>
+    <div>1월 광고 단가는 연중 최고 수준이다 — 유료 광고보다 초대 리워드에
+    예산을 싣는 편이 CAC 가 낮다.</div>
+  </div>
+  <details>
+    <summary>상세 근거 (펼치기)</summary>
+    <p>2023–2025 년 1월 코호트의 주차별 잔존율. 2주차 급락이 매년 같은 모양으로 반복된다.</p>
+    <pre><code>week1  100%   ████████████████████
+week2   39%   ████████
+week3   31%   ██████
+week4   28%   ██████</code></pre>
+  </details>
+
+  <h2>권장 사항</h2>
+  <p>세 가지 안을 검토했고, 챌린지형을 추천한다.</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>안</th><th>내용</th><th>예상 CAC</th><th>판단</th></tr>
+      <tr><td>할인 프로모션</td><td>첫 달 50% 할인</td><td>중</td><td>이탈률 개선 없음</td></tr>
+      <tr><td><strong>3주 챌린지 (추천)</strong></td><td>목표 인증 3주 완주 시 리워드</td><td>낮음</td><td>2주차 고비를 직접 겨냥</td></tr>
+      <tr><td>인플루언서 광고</td><td>피트니스 채널 협업</td><td>높음</td><td>1월 단가 최고점과 겹침</td></tr>
+    </table>
+  </div>
+  <blockquote>가입을 늘리는 캠페인이 아니라, 2주차를 넘기게 하는 캠페인이어야 한다.</blockquote>
+
+  <h2>실행</h2>
+  <p>1월 5일 시작 기준 타임라인. 디자인 1명, 서버 1명, 마케터 1명이 필요하다.</p>
+  <ul class="todo">
+    <li class="done"><input type="checkbox" checked disabled> 챌린지 목표 카테고리 확정 — 마케팅 / 12-20</li>
+    <li class="done"><input type="checkbox" checked disabled> 인증 화면·리워드 정책 시안 — 디자인 / 12-27</li>
+    <li><input type="checkbox" disabled> 인증 API·리워드 지급 배치 개발 — 서버 / 01-03</li>
+    <li><input type="checkbox" disabled> 캠페인 오픈 — 전원 / 01-05</li>
+    <li><input type="checkbox" disabled> 2주차 잔존율 중간 점검 — 마케팅 / 01-19</li>
+  </ul>
+</div>
+</body>
+</html>
