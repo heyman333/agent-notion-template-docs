@@ -6,158 +6,175 @@
 
 [English](README.md)
 
-AI 에이전트에게 문서를 만들어 달라고 하면 결과물이 매번 비슷합니다. 보라
-그라데이션 히어로, 이모지 범벅 헤더, 그림자 달린 카드. **notion-doc** 은 그
-자리에 Notion의 디자인 언어를 입히는 에이전트 skill 입니다. 요청도 내용도
-그대로인데 결과만 달라집니다:
+AI 에이전트에게 문서를 만들어 달라고 하면 비슷한 결과물이 나오는 경우가 많습니다.  
+그라데이션이 들어간 히어로 영역, 이모지가 붙은 헤더, 카드 형태의 UI처럼 익숙한 패턴이 반복됩니다.
+
+**notion-doc**은 AI 에이전트가 문서를 만들 때 Notion의 디자인을 사용할 수 있도록 만든 skill입니다.
+
+문서의 내용이나 구조를 바꾸지는 않습니다. 에이전트가 정한 내용을 그대로 두고, **어떻게 보여줄지만 Notion 스타일로 맞춥니다.**
 
 | notion-doc 없이 | notion-doc 적용 |
-|---|---|
+| --- | --- |
 | ![before](docs/screenshot-before.png) | ![after](docs/screenshot-light.png) |
 
-문서의 내용·목차에는 관여하지 않습니다. 구성은 내용(과 에이전트)이 정하고
-skill 은 모양만 규정합니다.
+## 어떤 기능이 있나
 
-## 무엇을 하나
+Notion에서 자주 사용하는 블록과 스타일을 HTML로 구현해 두었습니다.
 
-**Notion 블록 세트**
+- 이모지 페이지 아이콘, 태그 pill, 메타 정보, breadcrumb
+- 5가지 색상의 콜아웃
+- 목차, 테이블, 2단 컬럼, 버튼
+- `<details>` 토글
+- 체크리스트와 완료 상태
+- 인용구와 북마크 카드
+- Prism 기반 코드 하이라이팅 및 인라인 코드
+- Notion 스타일의 텍스트 색상
+- 한글 줄바꿈 처리와 인쇄/PDF 레이아웃
 
-- 이모지 페이지 아이콘, 태그 pill, 메타 줄, breadcrumb
-- 콜아웃 5색: 파랑(핵심)·회색(참고)·초록(완료)·노랑(주의)·빨강(경고)
-- 목차(toc), simple table, 2단 컬럼 레이아웃, 버튼 블록
-- `<details>` 토글, 체크리스트(완료 취소선), 인용구, 북마크 카드
-- 코드 블록 신택스 하이라이트(Prism, 라이트/다크 토큰), 인라인 코드
-- Notion 텍스트 색 5종 (파랑·빨강·주황·초록·보라)
-- 한글 줄바꿈(`word-break: keep-all`), 인쇄·PDF 레이아웃(`@media print`)
+### 하나의 템플릿을 사용합니다
 
-**비주얼 정본 하나.** 에이전트가 CSS를 새로 짓지 않습니다.
-[`template.html`](skills/notion-doc/template.html) 을 복사해서 내용만 채웁니다.
-본문 폭 708px, 글자색 `#37352F`, Notion 라이트/다크 팔레트를 CSS 토큰으로 넣어
-뒀습니다. 다크 모드는 뷰어 테마를 자동으로 따라가고, 인쇄·PDF 로 내보내면 다시
-라이트 팔레트로 돌아옵니다. 한글은 어절 중간에서 끊기지 않습니다:
+에이전트가 매번 CSS를 새로 만들지 않도록 `template.html`을 기본 템플릿으로 사용합니다.
+
+[template.html](skills/notion-doc/template.html)을 복사한 뒤 문서 내용만 채우는 방식입니다.
+
+본문 너비는 720px이고, 텍스트 색상과 라이트/다크 모드용 색상은 CSS 변수로 정의되어 있습니다. 다크 모드는 사용하는 브라우저의 테마를 따라갑니다. 인쇄하거나 PDF로 내보낼 때는 라이트 모드로 출력됩니다.
 
 | Light | Dark |
-|---|---|
+| --- | --- |
 | ![light](docs/screenshot-light.png) | ![dark](docs/screenshot-dark.png) |
 
 ## 설치
 
-**Claude Code (플러그인, 권장)**
+### Claude Code
 
-```
+플러그인으로 설치하는 방법을 권장합니다.
+
+```text
 /plugin marketplace add heyman333/agent-notion-template-docs
 /plugin install notion-doc@agent-notion-template-docs
 ```
 
-**Claude Code (수동 복사)**
+직접 복사해서 사용할 수도 있습니다.
 
 ```bash
-# 프로젝트에만
+# 현재 프로젝트에서만 사용
 cp -r skills/notion-doc <your-project>/.claude/skills/
 
-# 모든 프로젝트에서
+# 모든 프로젝트에서 사용
 cp -r skills/notion-doc ~/.claude/skills/
 ```
 
-**Codex, Cursor, Gemini CLI 등**
+### Codex, Cursor, Gemini CLI 등
 
-skill 은 Claude 전용 요소가 없는 평범한 파일 2개라, 지시 파일을 읽는 에이전트면
-무엇이든 쓸 수 있습니다. 에이전트별 붙여넣기 스니펫(`AGENTS.md`,
-`.cursor/rules`, `GEMINI.md`)은
-[다른 에이전트에서 쓰기](docs/using-with-other-agents.md)를 보세요.
+`notion-doc`은 Claude Code에 종속된 기능 없이 파일 두 개로 구성되어 있습니다.  
+지시 파일을 읽을 수 있는 에이전트라면 다른 환경에서도 사용할 수 있습니다.
+
+에이전트별 설정 방법은 [다른 에이전트에서 쓰기](docs/using-with-other-agents.md)를 참고하세요.
 
 ## 사용
 
-설치 후에는 문서 생성 요청("~정리해서 문서로 만들어줘", "보고서 써줘",
-"포스트모템 작성해줘")에 자동으로 적용됩니다. Claude Code 에서 명시적으로 부르려면:
+설치한 뒤 문서를 만들어 달라고 요청하면 skill이 자동으로 적용됩니다.
 
-```
+예를 들면:
+
+- "이 내용 정리해서 문서로 만들어줘"
+- "보고서 작성해줘"
+- "포스트모템 만들어줘"
+
+Claude Code에서 직접 실행할 수도 있습니다.
+
+```text
 /notion-doc:notion-doc
 ```
 
-## 정본을 지켰는지 검사
+## 문서 검사
 
-skill 은 "CSS 를 새로 짓지 마라"고 말하지만, 말만으로는 확인이 안 됩니다. 검증기가
-확인합니다 — 문서의 `<style>` 이 `template.html` 과 한 글자라도 다르면 걸립니다.
+skill은 CSS를 새로 만들지 말라고 안내하지만, 실제로 지켰는지는 확인이 필요합니다. 검증기가 그 역할을 합니다.
+
+문서의 `<style>`이 `template.html`과 한 글자라도 다르면 걸러냅니다.
 
 ```bash
 python3 skills/notion-doc/lint.py 내문서.html
 ```
 
-```
+```text
 ✗ 내문서.html
   ERROR [css-drift] CSS 가 정본과 다르다 (1줄). CSS 를 새로 짓지 말 것 — +    box-shadow: 0 4px 12px ...
   ERROR [unknown-class] 템플릿에 없는 클래스: hero-card. 새 클래스를 만들지 말고 블록 사전에서 고를 것
 ```
 
-잡는 것: 정본과 다른 CSS(그림자·그라데이션·색 변경이 전부 여기서 걸립니다), 본문의
-인라인 `style` 속성과 직접 적은 색, 템플릿에 없는 클래스, `language-*` 빠진 코드
-블록. 표준 라이브러리만 쓰므로 어느 에이전트에서든 CI 에서든 그냥 돌아갑니다.
+확인하는 항목은 다음과 같습니다.
 
-**Claude Code 플러그인으로 설치했다면 자동입니다.** `PostToolUse` 훅이 HTML 을 쓸
-때마다 돌려서, 어긋나면 무엇이 어떻게 틀렸는지 에이전트에게 돌려줍니다. skill 을
-아예 안 거친 문서면 그 사실만 한 줄로 알려주고요. 앱·프레임워크 템플릿·빌드
-산출물에는 반응하지 않습니다([게이팅 테스트](hooks/test_gating.py)).
+- 템플릿과 달라진 CSS. 그림자, 그라데이션, 색상 변경이 여기에 해당합니다
+- 본문에 직접 작성한 인라인 `style` 속성과 색상 값
+- 템플릿에 정의되지 않은 클래스
+- `language-*`가 빠진 코드 블록
 
-## 결과물 예시
+표준 라이브러리만 사용하기 때문에 다른 에이전트나 CI에서도 그대로 실행할 수 있습니다.
 
-브라우저로 열어 보세요. 위 스크린샷은 `sample.html` 입니다.
+플러그인으로 설치했다면 이 과정은 자동으로 동작합니다. HTML을 저장할 때마다 `PostToolUse` 훅이 검사하고, 문제가 있으면 어떤 부분이 어긋났는지 에이전트에게 전달합니다. 애플리케이션 코드나 프레임워크 템플릿, 빌드 결과물에는 동작하지 않습니다.
 
-| 파일 | 내용 | 보여주는 블록 |
-|---|---|---|
-| [`sample.html`](examples/sample.html) | 캠페인 제안 | 거의 모든 블록 — breadcrumb·목차·콜아웃 5색·표·2단 컬럼·토글·체크리스트·북마크·버튼 |
-| [`sample-tech.html`](examples/sample-tech.html) | 장애 분석 | 코드 하이라이트, 빨간/노란 콜아웃 |
-| [`sample-en.html`](examples/sample-en.html) | Campaign Proposal | `sample.html` 과 같은 구성의 영어 문서 |
-| [`before.html`](examples/before.html) | 비교용 "없이" 쪽 | 에이전트 기본 출력물 |
+## 예시
+
+실제 결과물은 `examples/`에서 확인할 수 있습니다. 브라우저에서 HTML 파일을 직접 열어보면 됩니다.
+
+| 파일 | 내용 | 포함된 블록 |
+| --- | --- | --- |
+| [sample.html](examples/sample.html) | 캠페인 제안 | breadcrumb, 목차, 콜아웃, 표, 2단 컬럼, 토글, 체크리스트, 북마크, 버튼 |
+| [sample-tech.html](examples/sample-tech.html) | 장애 분석 | 코드 하이라이팅, 빨간/노란 콜아웃 |
+| [sample-en.html](examples/sample-en.html) | Campaign Proposal | `sample.html`과 같은 구성의 영어 문서 |
+| [before.html](examples/before.html) | 비교용 예시 | notion-doc을 적용하지 않은 기본 출력 |
 
 ## 구조
 
-```
+```text
 .claude-plugin/
   plugin.json          # 플러그인 매니페스트
   marketplace.json     # 마켓플레이스 카탈로그
+
 skills/notion-doc/
-  SKILL.md             # 블록 사전(어떤 내용에 어떤 블록) + 비주얼 규칙
-  template.html        # 스타일 정본: Notion 블록 CSS + 라이트/다크 팔레트 토큰
-  lint.py              # 정본을 지켰는지 보는 검증기 (표준 라이브러리만)
+  SKILL.md             # 블록과 사용 규칙
+  template.html        # Notion 스타일을 정의한 HTML 템플릿
+  lint.py              # 템플릿을 지켰는지 확인하는 검증기
+
 hooks/
-  hooks.json           # PostToolUse — HTML 을 쓰면 자동 검증
+  hooks.json           # HTML을 저장할 때 검사를 실행
   notion-doc-lint.py
-  test_gating.py       # 훅이 반응할 자리에서만 반응하는지
-examples/              # 렌더링된 예시 문서
-scripts/               # 스크린샷 촬영, Notion 드리프트 감시
+  test_gating.py
+
+examples/              # 예시 문서
+
+scripts/               # 스크린샷 촬영, Notion 변경 감지
+
 docs/
   using-with-other-agents.md
 ```
 
-## Notion과 싱크 유지
+## Notion과 동기화
 
-Notion은 계속 새 블록을 내고 디자인도 예고 없이 바꿉니다. 이 repo는 거기에 매번
-맞추겠다고 약속하는 대신 감시합니다. 주간
-CI([`notion-sync`](.github/workflows/notion-sync.yml))가 공개 참고 페이지를 두
-방식으로 다시 읽습니다. **블록 타입**은 Notion 페이지 API로(커서 페이지네이션,
-블록 ~24종 감시), **굵은 스타일 토큰**(색·폭)은 headless 렌더링으로 읽어서,
-커밋된 기준 [`sync/notion-snapshot.json`](sync/notion-snapshot.json)과 diff
-합니다.
+Notion의 블록과 디자인은 계속 바뀔 수 있습니다.  
+이 저장소에서는 공개된 Notion 참고 페이지를 주기적으로 확인해서 현재 구현과 차이가 있는지 검사합니다.
 
-참고 페이지:
-[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
-(Thomas Frank 의 공개 블록 동물원).
+주간 CI인 [notion-sync](.github/workflows/notion-sync.yml)가 참고 페이지를 확인하고 다음 두 가지를 비교합니다.
 
-- 배지가 초록 = skill 이 지금 Notion 이 그리는 것과 일치
-- 드리프트가 생기면 잡이 실패하고, 새 블록이 skill 커버 범위인지까지 적힌
-  diff 가 issue 로 열립니다
+- **블록 타입**: Notion 페이지 API를 사용해 확인
+- **스타일**: headless browser로 실제 렌더링된 색상과 너비 등을 확인
 
-참고 페이지에 블록을 더 채울수록 감시망은 공짜로 촘촘해집니다.
+확인한 결과는 [sync/notion-snapshot.json](sync/notion-snapshot.json)에 저장된 기준값과 비교합니다.
+
+참고 페이지는 Thomas Frank가 공개한 [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)입니다.
+
+변경 사항이 발견되면 CI에서 차이를 확인할 수 있고, skill에서 지원해야 하는 새로운 블록이 추가되었는지도 issue를 통해 확인할 수 있습니다.
 
 ## 디자인 출처
 
-비주얼 정본의 값은 눈대중이 아니라 실제 렌더링된 Notion 페이지에서 실측한
-것입니다:
-[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68).
-`template.html` 의 토큰(색·폭·radius·타이포)은 이 페이지의 computed style 을
-프로브해서 얻었고, 주간 [notion-sync](#notion과-싱크-유지) 잡이 같은 페이지를
-다시 실측하기 때문에 정본이 모르는 사이 낡을 일은 없습니다.
+`template.html`의 색상, 너비, radius, 타이포그래피 등의 값은 임의로 정한 값이 아닙니다.
+
+공개된 Notion 페이지를 실제로 렌더링한 뒤 computed style을 확인해서 가져왔습니다.
+
+[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
+
+같은 페이지를 주기적으로 다시 확인하기 때문에 Notion의 디자인이 변경되었을 때도 차이를 발견할 수 있습니다.
 
 ## License
 
