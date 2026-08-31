@@ -1,14 +1,17 @@
 # Using notion-doc with other agents
 
-The skill has no Claude-specific magic. It is two plain files:
+The skill has no Claude-specific magic. It is two plain files, plus an
+optional checker:
 
 - [`skills/notion-doc/SKILL.md`](../skills/notion-doc/SKILL.md) — the rules: header layout, a block dictionary (which content goes in which Notion block), visual constraints
 - [`skills/notion-doc/template.html`](../skills/notion-doc/template.html) — the style canon: every block's CSS, Notion light/dark palette tokens, Prism syntax highlighting
+- [`skills/notion-doc/lint.py`](../skills/notion-doc/lint.py) — optional: checks a generated document against the canon. Standard library only, no Claude Code required
 
 Any agent that reads instruction files can use them. The recipe is always the same:
 
 1. Copy `skills/notion-doc/` into your repo (e.g. `docs/notion-doc/`)
 2. In your agent's instruction file, tell it to follow `SKILL.md` when generating documents and to start HTML documents from `template.html`
+3. Optional but recommended: have the agent run `python3 docs/notion-doc/lint.py <file>` after writing, and fix whatever it reports
 
 Below are ready-to-paste snippets per agent.
 

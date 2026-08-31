@@ -1,0 +1,33 @@
+name: lint
+
+# 정본 자물쇠: 예제가 template.html 의 CSS 를 한 글자도 바꾸지 않았는지,
+# 훅이 반응해야 할 자리에서만 반응하는지 매 푸시마다 확인한다.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  canon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 예제가 스타일 정본을 지키는지
+        run: |
+          python skills/notion-doc/lint.py \
+            skills/notion-doc/template.html \
+            examples/sample.html \
+            examples/sample-en.html \
+            examples/sample-tech.html
+
+      - name: 훅 게이팅 회귀
+        run: python hooks/test_gating.py

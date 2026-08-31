@@ -1,0 +1,18 @@
+{
+  "description": "notion-doc: HTML 문서를 쓰고 나면 스타일 정본을 지켰는지 검사한다.",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/notion-doc-lint.py\" || python \"${CLAUDE_PLUGIN_ROOT}/hooks/notion-doc-lint.py\" || true",
+            "timeout": 10,
+            "statusMessage": "notion-doc 정본 검사 중..."
+          }
+        ]
+      }
+    ]
+  }
+}

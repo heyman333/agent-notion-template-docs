@@ -28,11 +28,13 @@ you (and your agent). The skill only governs how it looks.
 - Toggles (`<details>`), checklists with strikethrough, quotes, bookmark cards
 - Code blocks with syntax highlighting (Prism, themed for light & dark), inline code
 - Notion's 5 text colors (blue · red · orange · green · purple)
+- Korean-aware line breaking (`word-break: keep-all`) and a print/PDF layout (`@media print`)
 
 **One style canon** — the agent never generates CSS. It copies
 [`template.html`](skills/notion-doc/template.html) — 708px content width,
 `#37352F` text, the full Notion light/dark palette as CSS tokens — and only
-fills in content. Dark mode follows the viewer automatically:
+fills in content. Dark mode follows the viewer automatically, and printing to
+PDF flips back to the light palette:
 
 | Light | Dark |
 |---|---|
@@ -74,6 +76,32 @@ To invoke it explicitly in Claude Code:
 /notion-doc:notion-doc
 ```
 
+## Checking that the canon held
+
+The skill says "don't write CSS" — but saying it proves nothing. The linter proves
+it: if a document's `<style>` differs from `template.html` by a single character,
+it fails.
+
+```bash
+python3 skills/notion-doc/lint.py mydoc.html
+```
+
+```
+✗ mydoc.html
+  ERROR [css-drift] CSS 가 정본과 다르다 (1줄). CSS 를 새로 짓지 말 것 — +    box-shadow: 0 4px 12px ...
+  ERROR [unknown-class] 템플릿에 없는 클래스: hero-card. 새 클래스를 만들지 말고 블록 사전에서 고를 것
+```
+
+It catches CSS drift (shadows, gradients, changed colors all land here), inline
+`style` attributes and hand-written colors in the body, classes the template does
+not define, and code blocks missing `language-*`. Standard library only, so it
+runs under any agent and in any CI.
+
+**Installed as a Claude Code plugin, this is automatic.** A `PostToolUse` hook runs
+on every HTML write and hands the agent back exactly what broke — or, for a
+document that never went through the skill at all, a one-line nudge. It stays quiet
+on apps, framework templates and build output ([gating tests](hooks/test_gating.py)).
+
 ## Examples
 
 Open these in a browser — the screenshots above are `sample.html`.
@@ -94,7 +122,13 @@ Open these in a browser — the screenshots above are `sample.html`.
 skills/notion-doc/
   SKILL.md             # the rules: block dictionary + visual constraints
   template.html        # the style canon: block CSS + light/dark palette tokens
+  lint.py              # checks a document against the canon (stdlib only)
+hooks/
+  hooks.json           # PostToolUse — lints every HTML write
+  notion-doc-lint.py
+  test_gating.py       # asserts the hook only speaks where it should
 examples/              # rendered example documents
+scripts/               # screenshots, Notion drift watch
 docs/
   using-with-other-agents.md
 ```

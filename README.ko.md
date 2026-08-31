@@ -28,11 +28,13 @@ skill 은 모양만 규정합니다.
 - `<details>` 토글, 체크리스트(완료 취소선), 인용구, 북마크 카드
 - 코드 블록 신택스 하이라이트(Prism, 라이트/다크 토큰), 인라인 코드
 - Notion 텍스트 색 5종 (파랑·빨강·주황·초록·보라)
+- 한글 줄바꿈(`word-break: keep-all`), 인쇄·PDF 레이아웃(`@media print`)
 
 **비주얼 정본 하나.** 에이전트가 CSS를 새로 짓지 않습니다.
 [`template.html`](skills/notion-doc/template.html) 을 복사해서 내용만 채웁니다.
 본문 폭 708px, 글자색 `#37352F`, Notion 라이트/다크 팔레트를 CSS 토큰으로 넣어
-뒀습니다. 다크 모드는 뷰어 테마를 자동으로 따라갑니다:
+뒀습니다. 다크 모드는 뷰어 테마를 자동으로 따라가고, 인쇄·PDF 로 내보내면 다시
+라이트 팔레트로 돌아옵니다. 한글은 어절 중간에서 끊기지 않습니다:
 
 | Light | Dark |
 |---|---|
@@ -73,6 +75,30 @@ skill 은 Claude 전용 요소가 없는 평범한 파일 2개라, 지시 파일
 /notion-doc:notion-doc
 ```
 
+## 정본을 지켰는지 검사
+
+skill 은 "CSS 를 새로 짓지 마라"고 말하지만, 말만으로는 확인이 안 됩니다. 검증기가
+확인합니다 — 문서의 `<style>` 이 `template.html` 과 한 글자라도 다르면 걸립니다.
+
+```bash
+python3 skills/notion-doc/lint.py 내문서.html
+```
+
+```
+✗ 내문서.html
+  ERROR [css-drift] CSS 가 정본과 다르다 (1줄). CSS 를 새로 짓지 말 것 — +    box-shadow: 0 4px 12px ...
+  ERROR [unknown-class] 템플릿에 없는 클래스: hero-card. 새 클래스를 만들지 말고 블록 사전에서 고를 것
+```
+
+잡는 것: 정본과 다른 CSS(그림자·그라데이션·색 변경이 전부 여기서 걸립니다), 본문의
+인라인 `style` 속성과 직접 적은 색, 템플릿에 없는 클래스, `language-*` 빠진 코드
+블록. 표준 라이브러리만 쓰므로 어느 에이전트에서든 CI 에서든 그냥 돌아갑니다.
+
+**Claude Code 플러그인으로 설치했다면 자동입니다.** `PostToolUse` 훅이 HTML 을 쓸
+때마다 돌려서, 어긋나면 무엇이 어떻게 틀렸는지 에이전트에게 돌려줍니다. skill 을
+아예 안 거친 문서면 그 사실만 한 줄로 알려주고요. 앱·프레임워크 템플릿·빌드
+산출물에는 반응하지 않습니다([게이팅 테스트](hooks/test_gating.py)).
+
 ## 결과물 예시
 
 브라우저로 열어 보세요. 위 스크린샷은 `sample.html` 입니다.
@@ -93,7 +119,13 @@ skill 은 Claude 전용 요소가 없는 평범한 파일 2개라, 지시 파일
 skills/notion-doc/
   SKILL.md             # 블록 사전(어떤 내용에 어떤 블록) + 비주얼 규칙
   template.html        # 스타일 정본: Notion 블록 CSS + 라이트/다크 팔레트 토큰
+  lint.py              # 정본을 지켰는지 보는 검증기 (표준 라이브러리만)
+hooks/
+  hooks.json           # PostToolUse — HTML 을 쓰면 자동 검증
+  notion-doc-lint.py
+  test_gating.py       # 훅이 반응할 자리에서만 반응하는지
 examples/              # 렌더링된 예시 문서
+scripts/               # 스크린샷 촬영, Notion 드리프트 감시
 docs/
   using-with-other-agents.md
 ```

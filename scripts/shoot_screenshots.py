@@ -35,6 +35,10 @@ def main() -> int:
                 color_scheme=theme,
             )
             page.goto((ROOT / src).as_uri())
+            # 예제 CSS 는 template.html 과 완전히 같아야 한다(lint.py 가 그걸 검사한다).
+            # 정본의 하단 여백 30vh 는 문서를 읽을 때의 값이라 full-page 촬영에는
+            # 빈 공간으로 남으므로, 파일을 고치지 않고 촬영 시점에만 덮어쓴다.
+            page.add_style_tag(content=".page { padding-bottom: 96px; }")
             page.evaluate(
                 "t => document.documentElement.setAttribute('data-theme', t)", theme
             )
