@@ -1,0 +1,50 @@
+name: notion-sync
+
+# Weekly watch: has Notion (or our reference page) drifted from the committed
+# snapshot? Detection is automatic, fixing is human — on drift this job fails
+# (badge goes red) and opens/updates a GitHub issue with the diff.
+
+on:
+  schedule:
+    - cron: "0 1 * * 1" # every Monday 01:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Check for Notion drift
+        run: python scripts/notion_sync_check.py check --report report.md
+
+      - name: Open or update drift issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create notion-sync --color 337EA9 \
+            --description "Drift between Notion and the skill" --force || true
+          existing=$(gh issue list --label notion-sync --state open \
+            --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file report.md
+          else
+            gh issue create \
+              --title "Notion drift detected — $(date -u +%F)" \
+              --body-file report.md --label notion-sync
+          fi

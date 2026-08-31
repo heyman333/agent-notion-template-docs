@@ -2,6 +2,8 @@
 
 > Make your AI agent write documents like Notion — not like an AI.
 
+[![notion-sync](https://github.com/heyman333/agent-notion-template-docs/actions/workflows/notion-sync.yml/badge.svg)](https://github.com/heyman333/agent-notion-template-docs/actions/workflows/notion-sync.yml)
+
 [English](README.md)
 
 AI 에이전트에게 문서를 만들어 달라고 하면 매번 비슷한 게 나옵니다 — 보라 그라데이션
@@ -94,6 +96,20 @@ examples/              # 렌더링된 예시 문서
 docs/
   using-with-other-agents.md
 ```
+
+## Notion과 싱크 유지
+
+Notion은 계속 새 블록을 내고 디자인을 조용히 바꿉니다. 이 repo는 "계속 맞추겠다"고
+약속하는 대신 감시합니다: 주간 CI([`notion-sync`](.github/workflows/notion-sync.yml))가
+공개 참고 페이지를 두 방식으로 다시 읽어 — **블록 타입**은 Notion 페이지 API로,
+**굵은 스타일 토큰**(색·폭)은 headless 렌더링으로 — 커밋된 기준
+[`sync/notion-snapshot.json`](sync/notion-snapshot.json)과 diff 합니다.
+
+- 배지가 초록 = skill 이 지금 Notion 이 그리는 것과 일치
+- 드리프트가 생기면 잡이 실패하고, 새 블록이 skill 커버 범위인지까지 적힌
+  diff 가 issue 로 열립니다
+
+참고 페이지에 블록을 더 채울수록 감시망은 공짜로 촘촘해집니다.
 
 ## 디자인 출처
 

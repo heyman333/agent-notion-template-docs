@@ -2,6 +2,8 @@
 
 > Make your AI agent write documents like Notion — not like an AI.
 
+[![notion-sync](https://github.com/heyman333/agent-notion-template-docs/actions/workflows/notion-sync.yml/badge.svg)](https://github.com/heyman333/agent-notion-template-docs/actions/workflows/notion-sync.yml)
+
 [한국어](README.ko.md)
 
 Ask an AI agent for a document and you get the same look every time: a purple
@@ -96,6 +98,21 @@ examples/              # rendered example documents
 docs/
   using-with-other-agents.md
 ```
+
+## Staying in sync with Notion
+
+Notion keeps shipping new blocks and quietly adjusting its design. This repo
+watches for that instead of promising to: a weekly CI job
+([`notion-sync`](.github/workflows/notion-sync.yml)) re-fetches the public
+reference page two ways — **block types** via Notion's page API, and **coarse
+style tokens** (colors, widths) via a headless render — and diffs both against
+the committed baseline [`sync/notion-snapshot.json`](sync/notion-snapshot.json).
+
+- Badge green = the skill matches what Notion currently renders
+- On drift, the job fails and opens an issue with the exact diff, including
+  whether a new block type is already covered by the skill or needs work
+
+As the reference page grows more block types, the watch gets stricter for free.
 
 ## Design source
 
