@@ -311,42 +311,78 @@
 </head>
 <body>
 <div class="page">
+  <div class="breadcrumb">
+    <a href="#">마케팅팀</a> / <a href="#">2026 캠페인</a> / 새해 목표 3주 챌린지
+  </div>
   <div class="page-icon">📅</div>
   <h1>캠페인 제안</h1>
   <p class="meta">
     <span class="tag">제안</span>
+    <span class="tag">2026 Q1</span>
     <span>2026-01-05</span>
     <span>·</span>
     <span>작성: 홍길동</span>
   </p>
   <hr>
 
-  <h2>배경</h2>
-  <p>
-    작년 4분기 신규 가입이 전 분기 대비 18% 줄었다. 연초 결심 수요(운동·저축·학습)가
-    몰리는 1월에 맞춰, 신규 가입 회복을 목표로 하는 캠페인을 제안한다.
-    범위는 1월 한 달, 국내 사용자, 앱 내 프로모션과 SNS 광고로 한정한다.
-  </p>
   <div class="callout callout-blue">
     <span class="icon">💡</span>
     <div><strong>핵심 한 줄</strong> — "새해 목표 3주 챌린지"로 연초 결심 수요를
     신규 가입으로 전환하고, 3주 리텐션 장치로 이탈을 막는다.</div>
   </div>
 
-  <h2>분석</h2>
+  <nav class="toc">
+    <a href="#bg">배경</a>
+    <a href="#analysis">분석</a>
+    <a href="#rec">권장 사항</a>
+    <a class="toc-2" href="#why">왜 챌린지형인가</a>
+    <a href="#exec">실행</a>
+    <a href="#budget">예산과 성공 기준</a>
+  </nav>
+
+  <h2 id="bg">배경</h2>
+  <p>
+    작년 4분기 신규 가입이 전 분기 대비 <span class="t-red">18% 줄었다</span>. 연초
+    결심 수요(운동·저축·학습)가 몰리는 1월에 맞춰, 신규 가입 회복을 목표로 하는
+    캠페인을 제안한다. 범위는 1월 한 달, 국내 사용자, 앱 내 프로모션과 SNS 광고로
+    한정한다.
+  </p>
+  <a class="bookmark" href="https://example.com/marketing/2025-newyear-retro">
+    <div class="bm-title">2025 새해 캠페인 회고</div>
+    <div class="bm-desc">작년 할인 프로모션이 2주차 이탈을 막지 못한 이유 — 코호트별 분석</div>
+    <div class="bm-url">example.com/marketing/2025-newyear-retro</div>
+  </a>
+
+  <h2 id="analysis">분석</h2>
   <p>최근 3년 데이터에서 확인한 사실.</p>
   <div class="table-wrap">
     <table>
       <tr><th>지표</th><th>1월</th><th>연평균</th><th>시사점</th></tr>
-      <tr><td>신규 가입</td><td>+42%</td><td>기준</td><td>연초 수요는 매년 반복된다</td></tr>
-      <tr><td>2주차 이탈률</td><td>61%</td><td>44%</td><td>결심이 식는 2주차가 고비</td></tr>
-      <tr><td>친구 초대 전환</td><td>3.1%</td><td>1.8%</td><td>연초에는 같이 시작하려는 수요가 있다</td></tr>
+      <tr><td>신규 가입</td><td class="t-green">+42%</td><td>기준</td><td>연초 수요는 매년 반복된다</td></tr>
+      <tr><td>2주차 이탈률</td><td class="t-red">61%</td><td>44%</td><td>결심이 식는 2주차가 고비</td></tr>
+      <tr><td>친구 초대 전환</td><td class="t-green">3.1%</td><td>1.8%</td><td>연초에는 같이 시작하려는 수요가 있다</td></tr>
     </table>
+  </div>
+  <div class="columns">
+    <div>
+      <div class="callout callout-green">
+        <span class="icon">✅</span>
+        <div><strong>확실한 것</strong> — 1월 유입은 3년 연속 같은 모양으로
+        반복됐다. 초대 전환도 연평균의 1.7배.</div>
+      </div>
+    </div>
+    <div>
+      <div class="callout callout-red">
+        <span class="icon">🚨</span>
+        <div><strong>위험</strong> — 유입만 늘리면 2주차 이탈 61%에 그대로
+        걸린다. 2월에 다시 빠진다.</div>
+      </div>
+    </div>
   </div>
   <div class="callout callout-yellow">
     <span class="icon">⚠️</span>
-    <div>1월 광고 단가는 연중 최고 수준이다 — 유료 광고보다 초대 리워드에
-    예산을 싣는 편이 CAC 가 낮다.</div>
+    <div>1월 광고 단가는 연중 최고 수준이다. 유료 광고보다 초대 리워드에 예산을
+    싣는 편이 CAC 가 낮다.</div>
   </div>
   <details>
     <summary>상세 근거 (펼치기)</summary>
@@ -357,7 +393,7 @@ week3   31%   ██████
 week4   28%   ██████</code></pre>
   </details>
 
-  <h2>권장 사항</h2>
+  <h2 id="rec">권장 사항</h2>
   <p>세 가지 안을 검토했고, 챌린지형을 추천한다.</p>
   <div class="table-wrap">
     <table>
@@ -367,10 +403,17 @@ week4   28%   ██████</code></pre>
       <tr><td>인플루언서 광고</td><td>피트니스 채널 협업</td><td>높음</td><td>1월 단가 최고점과 겹침</td></tr>
     </table>
   </div>
+
+  <h3 id="why">왜 챌린지형인가</h3>
+  <ol>
+    <li>리워드 지급 시점이 3주 완주라, 2주차 고비를 정면으로 겨냥한다.</li>
+    <li>초대와 붙는다. 같이 시작한 사람이 있으면 완주율이 올라간다.</li>
+    <li>단가가 비싼 1월에 예산을 광고 밖으로 옮길 수 있다.</li>
+  </ol>
   <blockquote>가입을 늘리는 캠페인이 아니라, 2주차를 넘기게 하는 캠페인이어야 한다.</blockquote>
 
-  <h2>실행</h2>
-  <p>1월 5일 시작 기준 타임라인. 디자인 1명, 서버 1명, 마케터 1명이 필요하다.</p>
+  <h2 id="exec">실행</h2>
+  <p><span class="t-blue">1월 5일 시작</span> 기준 타임라인. 디자인 1명, 서버 1명, 마케터 1명이 필요하다.</p>
   <ul class="todo">
     <li class="done"><input type="checkbox" checked disabled> 챌린지 목표 카테고리 확정 — 마케팅 / 12-20</li>
     <li class="done"><input type="checkbox" checked disabled> 인증 화면·리워드 정책 시안 — 디자인 / 12-27</li>
@@ -378,6 +421,46 @@ week4   28%   ██████</code></pre>
     <li><input type="checkbox" disabled> 캠페인 오픈 — 전원 / 01-05</li>
     <li><input type="checkbox" disabled> 2주차 잔존율 중간 점검 — 마케팅 / 01-19</li>
   </ul>
+
+  <h3>인증 API 계약</h3>
+  <p>
+    클라이언트는 <code>POST /v1/challenges/{id}/check-ins</code> 로 하루 한 번
+    인증을 보낸다. 사흘 연속 누락이면 <code>streak</code> 이 끊긴다.
+  </p>
+  <pre><code class="language-json">{
+  "challenge_id": "newyear-2026",
+  "goal": "exercise",
+  "streak": 12,
+  "reward_eligible": false,
+  "checked_in_at": "2026-01-17T08:12:04+09:00"
+}</code></pre>
+
+  <h2 id="budget">예산과 성공 기준</h2>
+  <div class="columns">
+    <div>
+      <h4>예산 배분</h4>
+      <ul>
+        <li>초대 리워드 <strong>2,400만원</strong></li>
+        <li>SNS 광고 900만원</li>
+        <li>디자인 외주 300만원</li>
+      </ul>
+    </div>
+    <div>
+      <h4>성공 기준</h4>
+      <ul>
+        <li>신규 가입 <span class="t-green">+35%</span> (전월 대비)</li>
+        <li>2주차 잔존 <span class="t-green">55% 이상</span></li>
+        <li>CAC <span class="t-orange">1.2만원 이하</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="icon">📎</span>
+    <div>총 3,600만원은 <span class="t-purple">1월 마케팅 예산 안에서 재배분</span>하는
+    안이다. 추가 편성 요청은 없다.</div>
+  </div>
+
+  <a class="btn" href="#">챌린지 상세 기획서 열기 →</a>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>

@@ -22,9 +22,9 @@ you (and your agent). The skill only governs how it looks.
 
 **The Notion block set**
 
-- Emoji page icon, tag pills, meta line
-- Callouts in 4 colors — blue (key point), gray (note), yellow (caution), red (warning)
-- Simple tables, 2-column layout
+- Emoji page icon, tag pills, meta line, breadcrumb
+- Callouts in 5 colors: blue (key point), gray (note), green (done), yellow (caution), red (warning)
+- Table of contents, simple tables, 2-column layout, button block
 - Toggles (`<details>`), checklists with strikethrough, quotes, bookmark cards
 - Code blocks with syntax highlighting (Prism, themed for light & dark), inline code
 - Notion's 5 text colors (blue · red · orange · green · purple)
@@ -80,9 +80,9 @@ Open these in a browser — the screenshots above are `sample.html`.
 
 | File | Content | Blocks shown |
 |---|---|---|
-| [`sample.html`](examples/sample.html) | Campaign proposal (Korean) | Callouts, tables, toggle, checklist |
+| [`sample.html`](examples/sample.html) | Campaign proposal (Korean) | Nearly every block: breadcrumb, TOC, 5 callout colors, tables, 2-column layout, toggle, checklist, bookmark, button |
 | [`sample-tech.html`](examples/sample-tech.html) | Incident analysis (Korean) | Syntax-highlighted code, red/yellow callouts |
-| [`sample-en.html`](examples/sample-en.html) | Campaign proposal (English) | Same design, English document |
+| [`sample-en.html`](examples/sample-en.html) | Campaign proposal (English) | Same document as `sample.html`, in English |
 | [`before.html`](examples/before.html) | The "without" side of the comparison | What agents produce by default |
 
 ## Repo layout
