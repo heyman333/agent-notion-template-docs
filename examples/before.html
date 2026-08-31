@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>캠페인 제안 (before)</title>
+<!-- skill 없이 나오는 전형적인 AI 생성 문서 — before/after 비교용 -->
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+  }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  }
+  .hero h1 { font-size: 2.5em; margin: 0 0 10px; }
+  .hero p { font-size: 1.2em; opacity: 0.9; margin: 0; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #667eea;
+  }
+  .card h2 { color: #667eea; margin-top: 0; }
+  .highlight-box {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    font-weight: bold;
+    text-align: center;
+  }
+  .stats { display: flex; gap: 15px; flex-wrap: wrap; }
+  .stat {
+    flex: 1;
+    min-width: 150px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat .num { font-size: 2em; font-weight: bold; color: #5f27cd; }
+  .badge {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    margin-right: 5px;
+  }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+  th { background: #667eea; color: white; padding: 12px; }
+  td { padding: 12px; border-bottom: 2px solid #eee; text-align: center; }
+  tr:nth-child(even) { background: #f8f9ff; }
+  pre {
+    background: #2d3436;
+    color: #dfe6e9;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+  .footer { text-align: center; color: #999; padding: 30px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1>🚀 캠페인 제안 🎯</h1>
+    <p>✨ 연초 결심 수요를 신규 가입으로! ✨</p>
+  </div>
+
+  <div class="card">
+    <h2>📌 배경</h2>
+    <p>작년 4분기 신규 가입이 전 분기 대비 <b>18% 감소</b>했습니다! 연초 결심 수요(운동·저축·학습)가 몰리는 1월에 맞춰, 신규 가입 회복을 목표로 하는 <b>혁신적인 캠페인</b>을 제안합니다. 💪</p>
+    <div class="highlight-box">💡 "새해 목표 3주 챌린지"로 가입 전환 + 리텐션까지 한 번에! 🔥</div>
+  </div>
+
+  <div class="card">
+    <h2>📊 데이터 분석</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">+42%</div>1월 신규 가입 📈</div>
+      <div class="stat"><div class="num">61%</div>2주차 이탈률 ⚠️</div>
+      <div class="stat"><div class="num">3.1%</div>친구 초대 전환 🤝</div>
+    </div>
+    <table>
+      <tr><th>지표 📋</th><th>1월 📅</th><th>연평균 📊</th></tr>
+      <tr><td>신규 가입</td><td>+42%</td><td>기준</td></tr>
+      <tr><td>2주차 이탈률</td><td>61%</td><td>44%</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🎯 추천 전략</h2>
+    <p><span class="badge">추천 ⭐</span><span class="badge">CAC 낮음 💰</span></p>
+    <p>세 가지 옵션을 <b>철저하게</b> 검토한 결과, <b>3주 챌린지</b>가 가장 <b>강력한</b> 솔루션입니다! 목표 인증 3주 완주 시 리워드를 제공하여 2주차 고비를 직접 겨냥합니다. 🚀</p>
+    <pre>// 챌린지 완주 체크
+if (weeks >= 3) { reward.send(user); }</pre>
+  </div>
+
+  <div class="card">
+    <h2>✅ 실행 계획</h2>
+    <p>🗓️ 12/20 카테고리 확정 → 🎨 12/27 디자인 시안 → ⚙️ 1/3 API 개발 → 🚀 1/5 캠페인 오픈 → 📊 1/19 중간 점검</p>
+  </div>
+
+  <div class="footer">💜 Generated with AI 💜</div>
+</div>
+</body>
+</html>
