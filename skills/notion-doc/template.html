@@ -44,8 +44,9 @@
     --tok-function: #DD4A68;
     --tok-variable: #EE9900;
   }
-  /* Notion 다크 팔레트 (미실측 — 이전 값 유지) — 시스템 다크 + 명시적 다크 선택 대응 */
-  @media (prefers-color-scheme: dark) {
+  /* Notion 다크 팔레트 (미실측 — 이전 값 유지) — 시스템 다크 + 명시적 다크 선택 대응.
+     둘 다 @media screen 으로 묶여 있어 인쇄할 때는 위의 라이트 팔레트가 그대로 쓰인다. */
+  @media screen and (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --text: #D4D4D4;
       --text-soft: rgba(255, 255, 255, 0.46);
@@ -77,35 +78,37 @@
       --tok-variable: #7EC699;
     }
   }
-  :root[data-theme="dark"] {
-    --text: #D4D4D4;
-    --text-soft: rgba(255, 255, 255, 0.46);
-    --divider: rgba(255, 255, 255, 0.13);
-    --bg: #191919;
-    --callout-gray: #252525;
-    --callout-blue: #1D3A4A;
-    --callout-green: #243D30;
-    --callout-yellow: #3A3120;
-    --callout-red: #4A2C28;
-    --code-bg: #202020;
-    --inline-code: #FF7369;
-    --inline-code-bg: rgba(135, 131, 120, 0.25);
-    --table-header: #252525;
-    --table-border: #313131;
-    --c-gray: #979A9B;
-    --c-blue: #529CCA;
-    --c-red: #FF7369;
-    --c-orange: #FFA344;
-    --c-green: #4DAB9A;
-    --c-purple: #9D68D3;
-    --tok-comment: #999999;
-    --tok-punct: #CCCCCC;
-    --tok-number: #F8C555;
-    --tok-string: #7EC699;
-    --tok-operator: #67CDCC;
-    --tok-keyword: #CC99CD;
-    --tok-function: #F08D49;
-    --tok-variable: #7EC699;
+  @media screen {
+    :root[data-theme="dark"] {
+      --text: #D4D4D4;
+      --text-soft: rgba(255, 255, 255, 0.46);
+      --divider: rgba(255, 255, 255, 0.13);
+      --bg: #191919;
+      --callout-gray: #252525;
+      --callout-blue: #1D3A4A;
+      --callout-green: #243D30;
+      --callout-yellow: #3A3120;
+      --callout-red: #4A2C28;
+      --code-bg: #202020;
+      --inline-code: #FF7369;
+      --inline-code-bg: rgba(135, 131, 120, 0.25);
+      --table-header: #252525;
+      --table-border: #313131;
+      --c-gray: #979A9B;
+      --c-blue: #529CCA;
+      --c-red: #FF7369;
+      --c-orange: #FFA344;
+      --c-green: #4DAB9A;
+      --c-purple: #9D68D3;
+      --tok-comment: #999999;
+      --tok-punct: #CCCCCC;
+      --tok-number: #F8C555;
+      --tok-string: #7EC699;
+      --tok-operator: #67CDCC;
+      --tok-keyword: #CC99CD;
+      --tok-function: #F08D49;
+      --tok-variable: #7EC699;
+    }
   }
   body {
     margin: 0;
@@ -117,6 +120,8 @@
       "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 16px;                       /* 실측 16px / 24px */
     line-height: 1.5;
+    word-break: keep-all;                  /* 한글은 어절 단위로 끊는다 */
+    overflow-wrap: break-word;             /* 긴 URL·영문 토큰만 예외 */
     -webkit-font-smoothing: antialiased;
   }
   .page {
@@ -312,6 +317,25 @@
   .todo li { display: flex; gap: 8px; align-items: baseline; }
   .todo input[type="checkbox"] { accent-color: var(--check); margin-top: 4px; }
   .todo li.done { color: var(--text-soft); text-decoration: line-through; }
+
+  /* 인쇄 · PDF 내보내기 — 다크 팔레트는 위에서 @media screen 으로 묶었으므로
+     인쇄에는 항상 라이트 팔레트가 적용된다 */
+  @page { margin: 14mm; }
+  @media print {
+    body {
+      background: #fff;
+      font-size: 11pt;
+      /* 콜아웃·코드 배경이 인쇄에서 날아가지 않게 */
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page { max-width: none; padding: 0; }
+    h1, h2, h3, h4 { break-after: avoid; }
+    p, blockquote { orphans: 3; widows: 3; }
+    .callout, .bookmark, .btn, blockquote, tr, img { break-inside: avoid; }
+    /* 인쇄에는 가로 스크롤이 없다 — 긴 코드 줄은 접는다 */
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+  }
 </style>
 
 <!-- ⬇ 여기부터는 블록 사용법 예시 — 문서 구성·제목은 내용에 맞게 자유롭게 -->
