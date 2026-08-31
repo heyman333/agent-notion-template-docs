@@ -109,11 +109,9 @@ paginated, ~24 block types watched), and **coarse style tokens** (colors,
 widths) via a headless render — and diffs both against the committed baseline
 [`sync/notion-snapshot.json`](sync/notion-snapshot.json).
 
-Reference pages:
-- [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
-  (Thomas Frank's public block zoo — broad coverage)
-- [this project's own page](https://cautious-shovel-8bd.notion.site/3ccb975b320f80128e94c05534b4df9d)
-  (under our control, for blocks the zoo lacks)
+Reference page:
+[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
+(Thomas Frank's public block zoo).
 
 - Badge green = the skill matches what Notion currently renders
 - On drift, the job fails and opens an issue with the exact diff, including

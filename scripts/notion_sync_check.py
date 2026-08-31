@@ -12,12 +12,10 @@ against the committed baseline in sync/notion-snapshot.json:
    styles (content width, body colors, callout/code backgrounds). Deliberately
    coarse: colors and widths only, so DOM churn doesn't spam false positives.
 
-Reference pages:
+Reference page:
 - "block-reference": Thomas Frank's public "Notion Block Reference — All of
   Notion's Blocks" — a broad block zoo we don't control (if it moves, the
   fetch failure itself opens an issue and we pick a new reference).
-- "campaign-proposal": this project's own small reference page — fully under
-  our control, useful for adding blocks the zoo lacks.
 
 Detection is automatic, fixing is human: on drift this exits 1 and writes a
 markdown report; CI turns that into a GitHub issue.
@@ -40,11 +38,6 @@ REFERENCE_PAGES = [
         "key": "block-reference",
         "site": "https://thomasfrank.notion.site",
         "page_id": "8b401476-0028-4c60-b6f7-08e38f16ee68",
-    },
-    {
-        "key": "campaign-proposal",
-        "site": "https://cautious-shovel-8bd.notion.site",
-        "page_id": "3ccb975b-320f-8012-8e94-c05534b4df9d",
     },
 ]
 ROOT = pathlib.Path(__file__).resolve().parent.parent

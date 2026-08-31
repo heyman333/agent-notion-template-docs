@@ -44,26 +44,6 @@
           "rgb(230, 229, 227)"
         ]
       }
-    },
-    "campaign-proposal": {
-      "url": "https://cautious-shovel-8bd.notion.site/3ccb975b320f80128e94c05534b4df9d",
-      "block_types": {
-        "code": 1,
-        "header": 4,
-        "page": 1,
-        "text": 4
-      },
-      "styles": {
-        "content_width": 720,
-        "body_color": "rgb(0, 0, 0)",
-        "body_background": "rgb(255, 255, 255)",
-        "callout_backgrounds": [],
-        "code_background": [
-          "rgba(0, 0, 0, 0)"
-        ],
-        "quote_border_color": [],
-        "table_border_colors": []
-      }
     }
   }
 }
