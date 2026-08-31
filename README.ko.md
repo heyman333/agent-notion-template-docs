@@ -6,32 +6,33 @@
 
 [English](README.md)
 
-AI 에이전트에게 문서를 만들어 달라고 하면 매번 비슷한 게 나옵니다 — 보라 그라데이션
-히어로, 이모지 범벅 헤더, 그림자 달린 카드. **notion-doc** 은 그 자리에 Notion의
-디자인 언어를 입히는 에이전트 skill 입니다. 같은 요청, 같은 내용, 완전히 다른 결과:
+AI 에이전트에게 문서를 만들어 달라고 하면 결과물이 매번 비슷합니다. 보라
+그라데이션 히어로, 이모지 범벅 헤더, 그림자 달린 카드. **notion-doc** 은 그
+자리에 Notion의 디자인 언어를 입히는 에이전트 skill 입니다. 요청도 내용도
+그대로인데 결과만 달라집니다:
 
 | notion-doc 없이 | notion-doc 적용 |
 |---|---|
 | ![before](docs/screenshot-before.png) | ![after](docs/screenshot-light.png) |
 
-문서의 내용·목차에는 관여하지 않습니다 — 구성은 내용(과 에이전트)이 정하고,
+문서의 내용·목차에는 관여하지 않습니다. 구성은 내용(과 에이전트)이 정하고
 skill 은 모양만 규정합니다.
 
 ## 무엇을 하나
 
 **Notion 블록 세트**
 
-- 이모지 페이지 아이콘, 태그 pill, 메타 줄
-- 콜아웃 4색 — 파랑(핵심)·회색(참고)·노랑(주의)·빨강(경고)
-- simple table, 2단 컬럼 레이아웃
+- 이모지 페이지 아이콘, 태그 pill, 메타 줄, breadcrumb
+- 콜아웃 5색: 파랑(핵심)·회색(참고)·초록(완료)·노랑(주의)·빨강(경고)
+- 목차(toc), simple table, 2단 컬럼 레이아웃, 버튼 블록
 - `<details>` 토글, 체크리스트(완료 취소선), 인용구, 북마크 카드
 - 코드 블록 신택스 하이라이트(Prism, 라이트/다크 토큰), 인라인 코드
 - Notion 텍스트 색 5종 (파랑·빨강·주황·초록·보라)
 
-**비주얼 정본 하나** — 에이전트가 CSS를 생성하지 않습니다.
-[`template.html`](skills/notion-doc/template.html) 을 복사해서 내용만 채웁니다 —
-본문 폭 708px, 글자색 `#37352F`, Notion 라이트/다크 팔레트 CSS 토큰 내장.
-다크 모드는 뷰어 테마를 자동으로 따라갑니다:
+**비주얼 정본 하나.** 에이전트가 CSS를 새로 짓지 않습니다.
+[`template.html`](skills/notion-doc/template.html) 을 복사해서 내용만 채웁니다.
+본문 폭 708px, 글자색 `#37352F`, Notion 라이트/다크 팔레트를 CSS 토큰으로 넣어
+뒀습니다. 다크 모드는 뷰어 테마를 자동으로 따라갑니다:
 
 | Light | Dark |
 |---|---|
@@ -58,8 +59,8 @@ cp -r skills/notion-doc ~/.claude/skills/
 
 **Codex, Cursor, Gemini CLI 등**
 
-skill 은 Claude 전용 요소가 없는 평범한 파일 2개입니다 — 지시 파일을 읽는
-에이전트라면 무엇이든 쓸 수 있습니다. 에이전트별 붙여넣기 스니펫(`AGENTS.md`,
+skill 은 Claude 전용 요소가 없는 평범한 파일 2개라, 지시 파일을 읽는 에이전트면
+무엇이든 쓸 수 있습니다. 에이전트별 붙여넣기 스니펫(`AGENTS.md`,
 `.cursor/rules`, `GEMINI.md`)은
 [다른 에이전트에서 쓰기](docs/using-with-other-agents.md)를 보세요.
 
@@ -78,9 +79,9 @@ skill 은 Claude 전용 요소가 없는 평범한 파일 2개입니다 — 지�
 
 | 파일 | 내용 | 보여주는 블록 |
 |---|---|---|
-| [`sample.html`](examples/sample.html) | 캠페인 제안 | 콜아웃·표·토글·체크리스트 |
+| [`sample.html`](examples/sample.html) | 캠페인 제안 | 거의 모든 블록 — breadcrumb·목차·콜아웃 5색·표·2단 컬럼·토글·체크리스트·북마크·버튼 |
 | [`sample-tech.html`](examples/sample-tech.html) | 장애 분석 | 코드 하이라이트, 빨간/노란 콜아웃 |
-| [`sample-en.html`](examples/sample-en.html) | Campaign Proposal | 같은 디자인의 영어 문서 |
+| [`sample-en.html`](examples/sample-en.html) | Campaign Proposal | `sample.html` 과 같은 구성의 영어 문서 |
 | [`before.html`](examples/before.html) | 비교용 "없이" 쪽 | 에이전트 기본 출력물 |
 
 ## 구조
@@ -99,12 +100,13 @@ docs/
 
 ## Notion과 싱크 유지
 
-Notion은 계속 새 블록을 내고 디자인을 조용히 바꿉니다. 이 repo는 "계속 맞추겠다"고
-약속하는 대신 감시합니다: 주간 CI([`notion-sync`](.github/workflows/notion-sync.yml))가
-공개 참고 페이지들을 두 방식으로 다시 읽어 — **블록 타입**은 Notion 페이지 API로
-(커서 페이지네이션, 블록 ~24종 감시), **굵은 스타일 토큰**(색·폭)은 headless
-렌더링으로 — 커밋된 기준 [`sync/notion-snapshot.json`](sync/notion-snapshot.json)과
-diff 합니다.
+Notion은 계속 새 블록을 내고 디자인도 예고 없이 바꿉니다. 이 repo는 거기에 매번
+맞추겠다고 약속하는 대신 감시합니다. 주간
+CI([`notion-sync`](.github/workflows/notion-sync.yml))가 공개 참고 페이지를 두
+방식으로 다시 읽습니다. **블록 타입**은 Notion 페이지 API로(커서 페이지네이션,
+블록 ~24종 감시), **굵은 스타일 토큰**(색·폭)은 headless 렌더링으로 읽어서,
+커밋된 기준 [`sync/notion-snapshot.json`](sync/notion-snapshot.json)과 diff
+합니다.
 
 참고 페이지:
 [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
@@ -118,12 +120,12 @@ diff 합니다.
 
 ## 디자인 출처
 
-비주얼 정본은 눈대중이 아니라 실제 렌더링된 Notion 페이지에서 실측한 값입니다:
-[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
-(Thomas Frank 의 공개 블록 동물원). `template.html` 의 토큰(색·폭·radius·타이포)은
-이 페이지의 computed style 을 프로브해서 얻었고, 주간
-[notion-sync](#notion과-싱크-유지) 잡이 같은 페이지를 재실측하므로 정본이
-조용히 낡을 수 없습니다.
+비주얼 정본의 값은 눈대중이 아니라 실제 렌더링된 Notion 페이지에서 실측한
+것입니다:
+[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68).
+`template.html` 의 토큰(색·폭·radius·타이포)은 이 페이지의 computed style 을
+프로브해서 얻었고, 주간 [notion-sync](#notion과-싱크-유지) 잡이 같은 페이지를
+다시 실측하기 때문에 정본이 모르는 사이 낡을 일은 없습니다.
 
 ## License
 
