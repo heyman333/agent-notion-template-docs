@@ -6,20 +6,30 @@
 <title>Campaign Proposal</title>
 <style>
   :root {
-    --text: #37352F;
-    --text-soft: rgba(55, 53, 47, 0.65);
-    --divider: rgba(55, 53, 47, 0.09);
+    --text: #2C2C2B;                       /* 실측 rgb(44,44,43) */
+    --text-soft: rgba(44, 44, 43, 0.6);
+    --divider: rgba(44, 44, 43, 0.09);
     --bg: #FFFFFF;
-    --callout-gray: #F1F1EF;
-    --callout-blue: #E7F3F8;
-    --callout-yellow: #FBF3DB;
-    --callout-red: #FDEBEC;
-    --code-bg: #F7F6F3;
+    --radius: 10px;                        /* 실측: 콜아웃·북마크 공통 */
+    --callout-gray: #F9F8F7;               /* 실측 rgb(249,248,247) */
+    --callout-blue: #E5F2FC;               /* 실측 rgb(229,242,252) */
+    --callout-green: #E8F1EC;              /* 실측 rgb(232,241,236) */
+    --callout-yellow: #FBF3DB;             /* 미실측 — 이전 팔레트 유지 */
+    --callout-red: #FDEBEC;                /* 미실측 — 이전 팔레트 유지 */
+    --code-bg: #F9F8F7;
     --inline-code: #EB5757;
     --inline-code-bg: rgba(135, 131, 120, 0.15);
-    --table-header: #F7F7F5;
-    --table-border: #E9E9E7;
+    --table-header: #F9F8F7;
+    --table-border: #E6E5E3;               /* 실측 rgb(230,229,227) */
     --check: #2383E2;
+    /* Notion 텍스트 색 (라이트) */
+    --c-gray: #787774;
+    --c-blue: #337EA9;
+    --c-red: #D44C47;
+    --c-orange: #D9730D;
+    --c-green: #448361;
+    --c-purple: #9065B0;
+    /* 코드 신택스 토큰 (라이트) */
     --tok-comment: #708090;
     --tok-punct: #999999;
     --tok-number: #990055;
@@ -29,6 +39,7 @@
     --tok-function: #DD4A68;
     --tok-variable: #EE9900;
   }
+  /* Notion 다크 팔레트 (미실측 — 이전 값 유지) — 시스템 다크 + 명시적 다크 선택 대응 */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --text: #D4D4D4;
@@ -37,6 +48,7 @@
       --bg: #191919;
       --callout-gray: #252525;
       --callout-blue: #1D3A4A;
+      --callout-green: #243D30;
       --callout-yellow: #3A3120;
       --callout-red: #4A2C28;
       --code-bg: #202020;
@@ -44,6 +56,12 @@
       --inline-code-bg: rgba(135, 131, 120, 0.25);
       --table-header: #252525;
       --table-border: #313131;
+      --c-gray: #979A9B;
+      --c-blue: #529CCA;
+      --c-red: #FF7369;
+      --c-orange: #FFA344;
+      --c-green: #4DAB9A;
+      --c-purple: #9D68D3;
       --tok-comment: #999999;
       --tok-punct: #CCCCCC;
       --tok-number: #F8C555;
@@ -61,6 +79,7 @@
     --bg: #191919;
     --callout-gray: #252525;
     --callout-blue: #1D3A4A;
+    --callout-green: #243D30;
     --callout-yellow: #3A3120;
     --callout-red: #4A2C28;
     --code-bg: #202020;
@@ -68,6 +87,12 @@
     --inline-code-bg: rgba(135, 131, 120, 0.25);
     --table-header: #252525;
     --table-border: #313131;
+    --c-gray: #979A9B;
+    --c-blue: #529CCA;
+    --c-red: #FF7369;
+    --c-orange: #FFA344;
+    --c-green: #4DAB9A;
+    --c-purple: #9D68D3;
     --tok-comment: #999999;
     --tok-punct: #CCCCCC;
     --tok-number: #F8C555;
@@ -81,13 +106,16 @@
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: ui-sans-serif, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
-      "Noto Sans KR", Roboto, sans-serif;
-    line-height: 1.6;
+    /* 실측 스택 + 한글 폰트 삽입 */
+    font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI Variable Display",
+      "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;                       /* 실측 16px / 24px */
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
   .page {
-    max-width: 708px;
+    max-width: 720px;                      /* 실측 720px */
     margin: 0 auto;
     padding: 72px 24px 96px;
   }
@@ -121,13 +149,16 @@
     border-top: 1px solid var(--divider);
     margin: 4px 0 24px;
   }
+  /* Notion 표준 비율: heading1 30px / heading2 24px */
   h2 {
-    font-size: 1.7em;
+    font-size: 1.875em;
     font-weight: 600;
-    margin: 2em 0 4px;
+    margin: 1.6em 0 4px;
+    line-height: 1.3;
     letter-spacing: -0.01em;
   }
-  h3 { font-size: 1.25em; font-weight: 600; margin: 1.4em 0 2px; }
+  h3 { font-size: 1.5em; font-weight: 600; margin: 1.2em 0 2px; line-height: 1.3; }
+  h4 { font-size: 1.25em; font-weight: 600; margin: 1em 0 2px; }
   p { margin: 8px 0; }
   ul, ol { margin: 6px 0; padding-left: 26px; }
   li { margin: 3px 0; }
@@ -135,24 +166,38 @@
   strong { font-weight: 600; }
   a { color: inherit; text-decoration: underline; text-decoration-color: var(--text-soft); }
 
+  /* Notion 텍스트 색 */
+  .t-gray { color: var(--c-gray); }
+  .t-blue { color: var(--c-blue); }
+  .t-red { color: var(--c-red); }
+  .t-orange { color: var(--c-orange); }
+  .t-green { color: var(--c-green); }
+  .t-purple { color: var(--c-purple); }
+
   .callout {
     display: flex;
     gap: 10px;
     background: var(--callout-gray);
-    border-radius: 4px;
-    padding: 14px 16px;
+    border-radius: var(--radius);          /* 실측 10px */
+    padding: 12px 14px;                    /* 실측 12px */
     margin: 12px 0;
     font-size: 15px;
   }
   .callout-blue { background: var(--callout-blue); }
+  .callout-green { background: var(--callout-green); }
   .callout-yellow { background: var(--callout-yellow); }
   .callout-red { background: var(--callout-red); }
   .callout > .icon { flex: none; font-size: 18px; line-height: 1.4; }
 
+  /* 2단 컬럼 (Notion column layout) */
+  .columns { display: flex; gap: 32px; margin: 12px 0; }
+  .columns > div { flex: 1; min-width: 0; }
+  @media (max-width: 600px) { .columns { flex-direction: column; gap: 0; } }
+
   .table-wrap { overflow-x: auto; margin: 12px 0; }
   table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
   th, td {
-    border: 1px solid var(--table-border);
+    border: 1px solid var(--table-border); /* 실측 #E6E5E3 */
     padding: 7px 10px;
     text-align: left;
     vertical-align: top;
@@ -166,6 +211,53 @@
     font-size: 1.05em;
   }
 
+  /* 목차 (Notion table of contents) — 실측: 밑줄 없음 */
+  .toc { margin: 12px 0; }
+  .toc a {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-soft);
+  }
+  .toc a:hover { background: var(--callout-gray); color: var(--text); }
+  .toc .toc-2 { padding-left: 26px; }
+
+  /* 경로 표시 (Notion breadcrumb) */
+  .breadcrumb { color: var(--text-soft); font-size: 14px; margin: 8px 0; }
+  .breadcrumb a { color: inherit; text-decoration: none; }
+  .breadcrumb a:hover { color: var(--text); }
+
+  /* 버튼 블록 (Notion button) */
+  .btn {
+    display: inline-block;
+    border: 1px solid var(--table-border);
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 8px 0;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--c-blue);
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--bg);
+  }
+  .btn:hover { background: var(--callout-gray); }
+
+  /* 북마크 카드 (Notion web bookmark) — 실측: radius 10px, border #E6E5E3 */
+  .bookmark {
+    display: block;
+    border: 1px solid var(--table-border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    margin: 12px 0;
+    text-decoration: none;
+  }
+  .bookmark:hover { background: var(--callout-gray); }
+  .bookmark .bm-title { font-weight: 600; font-size: 14.5px; }
+  .bookmark .bm-desc { color: var(--text-soft); font-size: 13.5px; margin-top: 2px; }
+  .bookmark .bm-url { color: var(--text-soft); font-size: 12.5px; margin-top: 6px; }
+
   code {
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
     font-size: 85%;
@@ -176,13 +268,14 @@
   }
   pre {
     background: var(--code-bg);
-    border-radius: 4px;
+    border-radius: var(--radius);
     padding: 16px 18px;
     overflow-x: auto;
     margin: 12px 0;
   }
   pre code { background: none; color: var(--text); padding: 0; font-size: 13.5px; }
 
+  /* Prism 신택스 하이라이트 — <code class="language-*"> 에 적용 */
   .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); }
   .token.punctuation { color: var(--tok-punct); }
   .token.property, .token.tag, .token.boolean, .token.number,
@@ -195,15 +288,19 @@
   .token.regex, .token.important, .token.variable { color: var(--tok-variable); }
   .token.important, .token.bold { font-weight: 600; }
   .token.italic { font-style: italic; }
+  .token.template-string .token.interpolation .token.interpolation-punctuation { color: var(--tok-operator); }
 
-  details { margin: 8px 0; padding: 4px 0; }
+  details {
+    margin: 8px 0;
+    padding: 4px 0;
+  }
   summary {
     cursor: pointer;
     font-weight: 600;
     padding: 4px 6px;
     border-radius: 4px;
   }
-  summary:hover, summary:focus-visible { background: var(--callout-gray); }
+  summary:hover { background: var(--callout-gray); }
   details > *:not(summary) { margin-left: 22px; }
 
   .todo { list-style: none; padding-left: 4px; }

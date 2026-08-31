@@ -63,6 +63,7 @@ COVERED_TYPES = {
     "quote", "callout", "divider", "code",
     "table", "table_row", "column_list", "column",
     "bookmark", "image",
+    "table_of_contents", "button", "breadcrumb",
 }
 
 STYLE_PROBE_JS = """

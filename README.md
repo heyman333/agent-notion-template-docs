@@ -123,8 +123,12 @@ As the reference page grows more block types, the watch gets stricter for free.
 
 ## Design source
 
-The visual reference is Notion itself. Public page used as reference:
-https://cautious-shovel-8bd.notion.site/3ccb975b320f80128e94c05534b4df9d
+The visual canon is measured from a real rendered Notion page, not eyeballed:
+[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
+(Thomas Frank's public block zoo). `template.html`'s tokens — colors, widths,
+radii, type sizes — come from computed styles probed on that page, and the
+weekly [notion-sync](#staying-in-sync-with-notion) job re-measures it so the
+canon can't silently rot.
 
 ## License
 

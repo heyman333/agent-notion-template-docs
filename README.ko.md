@@ -120,8 +120,12 @@ diff 합니다.
 
 ## 디자인 출처
 
-비주얼의 기준은 Notion 페이지 그 자체입니다. 참고한 공개 페이지:
-https://cautious-shovel-8bd.notion.site/3ccb975b320f80128e94c05534b4df9d
+비주얼 정본은 눈대중이 아니라 실제 렌더링된 Notion 페이지에서 실측한 값입니다:
+[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
+(Thomas Frank 의 공개 블록 동물원). `template.html` 의 토큰(색·폭·radius·타이포)은
+이 페이지의 computed style 을 프로브해서 얻었고, 주간
+[notion-sync](#notion과-싱크-유지) 잡이 같은 페이지를 재실측하므로 정본이
+조용히 낡을 수 없습니다.
 
 ## License
 

@@ -1,24 +1,31 @@
 <!--
   notion-doc 스켈레톤 — HTML 문서는 이 파일을 복사해서 내용만 채운다.
   CSS 를 새로 만들지 말 것. 아래 body 는 블록 사용법 예시다 — 문서 구성은 내용이 정한다.
-  클래스: callout(-blue/-yellow/-red), tag, meta, todo, columns, bookmark, t-<색>
+  클래스: callout(-blue/-green/-yellow/-red), tag, meta, todo, columns, bookmark,
+          btn, toc, breadcrumb, t-<색>
+
+  라이트 팔레트·치수는 실제 Notion 렌더링에서 실측한 값이다 (computed style 프로브,
+  scripts/notion_sync_check.py 참고 페이지 기준, 2026-08). 실측 anchor 가 없는 값
+  (노랑/빨강 콜아웃, 다크 팔레트)은 이전 Notion 팔레트를 유지하며 주석으로 표시.
 -->
 <title>문서 제목</title>
 <style>
   :root {
-    --text: #37352F;
-    --text-soft: rgba(55, 53, 47, 0.65);
-    --divider: rgba(55, 53, 47, 0.09);
+    --text: #2C2C2B;                       /* 실측 rgb(44,44,43) */
+    --text-soft: rgba(44, 44, 43, 0.6);
+    --divider: rgba(44, 44, 43, 0.09);
     --bg: #FFFFFF;
-    --callout-gray: #F1F1EF;
-    --callout-blue: #E7F3F8;
-    --callout-yellow: #FBF3DB;
-    --callout-red: #FDEBEC;
-    --code-bg: #F7F6F3;
+    --radius: 10px;                        /* 실측: 콜아웃·북마크 공통 */
+    --callout-gray: #F9F8F7;               /* 실측 rgb(249,248,247) */
+    --callout-blue: #E5F2FC;               /* 실측 rgb(229,242,252) */
+    --callout-green: #E8F1EC;              /* 실측 rgb(232,241,236) */
+    --callout-yellow: #FBF3DB;             /* 미실측 — 이전 팔레트 유지 */
+    --callout-red: #FDEBEC;                /* 미실측 — 이전 팔레트 유지 */
+    --code-bg: #F9F8F7;
     --inline-code: #EB5757;
     --inline-code-bg: rgba(135, 131, 120, 0.15);
-    --table-header: #F7F7F5;
-    --table-border: #E9E9E7;
+    --table-header: #F9F8F7;
+    --table-border: #E6E5E3;               /* 실측 rgb(230,229,227) */
     --check: #2383E2;
     /* Notion 텍스트 색 (라이트) */
     --c-gray: #787774;
@@ -37,7 +44,7 @@
     --tok-function: #DD4A68;
     --tok-variable: #EE9900;
   }
-  /* Notion 다크 팔레트 — 시스템 다크 + 뷰어의 명시적 다크 선택 양쪽에 대응 */
+  /* Notion 다크 팔레트 (미실측 — 이전 값 유지) — 시스템 다크 + 명시적 다크 선택 대응 */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --text: #D4D4D4;
@@ -46,6 +53,7 @@
       --bg: #191919;
       --callout-gray: #252525;
       --callout-blue: #1D3A4A;
+      --callout-green: #243D30;
       --callout-yellow: #3A3120;
       --callout-red: #4A2C28;
       --code-bg: #202020;
@@ -76,6 +84,7 @@
     --bg: #191919;
     --callout-gray: #252525;
     --callout-blue: #1D3A4A;
+    --callout-green: #243D30;
     --callout-yellow: #3A3120;
     --callout-red: #4A2C28;
     --code-bg: #202020;
@@ -99,15 +108,19 @@
     --tok-variable: #7EC699;
   }
   body {
+    margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: ui-sans-serif, -apple-system, "Segoe UI", "Apple SD Gothic Neo",
-      "Noto Sans KR", Roboto, sans-serif;
-    line-height: 1.6;
+    /* 실측 스택 + 한글 폰트 삽입 */
+    font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI Variable Display",
+      "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;                       /* 실측 16px / 24px */
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
   }
   .page {
-    max-width: 708px;
+    max-width: 720px;                      /* 실측 720px */
     margin: 0 auto;
     padding: 72px 24px 30vh;
   }
@@ -141,13 +154,16 @@
     border-top: 1px solid var(--divider);
     margin: 4px 0 24px;
   }
+  /* Notion 표준 비율: heading1 30px / heading2 24px */
   h2 {
-    font-size: 1.7em;
+    font-size: 1.875em;
     font-weight: 600;
-    margin: 2em 0 4px;
+    margin: 1.6em 0 4px;
+    line-height: 1.3;
     letter-spacing: -0.01em;
   }
-  h3 { font-size: 1.25em; font-weight: 600; margin: 1.4em 0 2px; }
+  h3 { font-size: 1.5em; font-weight: 600; margin: 1.2em 0 2px; line-height: 1.3; }
+  h4 { font-size: 1.25em; font-weight: 600; margin: 1em 0 2px; }
   p { margin: 8px 0; }
   ul, ol { margin: 6px 0; padding-left: 26px; }
   li { margin: 3px 0; }
@@ -167,12 +183,13 @@
     display: flex;
     gap: 10px;
     background: var(--callout-gray);
-    border-radius: 4px;
-    padding: 14px 16px;
+    border-radius: var(--radius);          /* 실측 10px */
+    padding: 12px 14px;                    /* 실측 12px */
     margin: 12px 0;
     font-size: 15px;
   }
   .callout-blue { background: var(--callout-blue); }
+  .callout-green { background: var(--callout-green); }
   .callout-yellow { background: var(--callout-yellow); }
   .callout-red { background: var(--callout-red); }
   .callout > .icon { flex: none; font-size: 18px; line-height: 1.4; }
@@ -185,7 +202,7 @@
   .table-wrap { overflow-x: auto; margin: 12px 0; }
   table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
   th, td {
-    border: 1px solid var(--table-border);
+    border: 1px solid var(--table-border); /* 실측 #E6E5E3 */
     padding: 7px 10px;
     text-align: left;
     vertical-align: top;
@@ -199,11 +216,44 @@
     font-size: 1.05em;
   }
 
-  /* 북마크 카드 (Notion web bookmark) */
+  /* 목차 (Notion table of contents) — 실측: 밑줄 없음 */
+  .toc { margin: 12px 0; }
+  .toc a {
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-soft);
+  }
+  .toc a:hover { background: var(--callout-gray); color: var(--text); }
+  .toc .toc-2 { padding-left: 26px; }
+
+  /* 경로 표시 (Notion breadcrumb) */
+  .breadcrumb { color: var(--text-soft); font-size: 14px; margin: 8px 0; }
+  .breadcrumb a { color: inherit; text-decoration: none; }
+  .breadcrumb a:hover { color: var(--text); }
+
+  /* 버튼 블록 (Notion button) */
+  .btn {
+    display: inline-block;
+    border: 1px solid var(--table-border);
+    border-radius: 8px;
+    padding: 4px 12px;
+    margin: 8px 0;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--c-blue);
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--bg);
+  }
+  .btn:hover { background: var(--callout-gray); }
+
+  /* 북마크 카드 (Notion web bookmark) — 실측: radius 10px, border #E6E5E3 */
   .bookmark {
     display: block;
     border: 1px solid var(--table-border);
-    border-radius: 4px;
+    border-radius: var(--radius);
     padding: 12px 14px;
     margin: 12px 0;
     text-decoration: none;
@@ -223,7 +273,7 @@
   }
   pre {
     background: var(--code-bg);
-    border-radius: 4px;
+    border-radius: var(--radius);
     padding: 16px 18px;
     overflow-x: auto;
     margin: 12px 0;
@@ -266,6 +316,7 @@
 
 <!-- ⬇ 여기부터는 블록 사용법 예시 — 문서 구성·제목은 내용에 맞게 자유롭게 -->
 <div class="page">
+  <div class="breadcrumb"><a href="#">워크스페이스</a> / <a href="#">상위 문서</a> / 문서 제목</div>
   <div class="page-icon">📄</div>
   <h1>문서 제목</h1>
   <p class="meta">
@@ -276,7 +327,12 @@
   </p>
   <hr>
 
-  <h2>섹션 제목</h2>
+  <nav class="toc">
+    <a href="#s1">섹션 제목</a>
+    <a class="toc-2" href="#s1">긴 문서는 목차 블록으로 시작</a>
+  </nav>
+
+  <h2 id="s1">섹션 제목</h2>
   <p>
     본문. 단어 단위 강조는 <strong>굵게</strong>, <code>인라인 코드</code>,
     <span class="t-blue">파랑</span>·<span class="t-red">빨강</span>·<span class="t-orange">주황</span>·<span class="t-green">초록</span>·<span class="t-purple">보라</span>
@@ -285,7 +341,8 @@
 
   <div class="callout callout-blue">
     <span class="icon">💡</span>
-    <div><strong>핵심 한 줄</strong> — 파랑 콜아웃. 회색은 참고, 노랑(⚠️)은 주의, 빨강(🚨)은 경고.</div>
+    <div><strong>핵심 한 줄</strong> — 파랑 콜아웃. 회색은 참고, 초록(✅)은 완료·성공,
+    노랑(⚠️)은 주의, 빨강(🚨)은 경고.</div>
   </div>
 
   <div class="table-wrap">
@@ -297,11 +354,11 @@
 
   <div class="columns">
     <div>
-      <h3>왼쪽 컬럼</h3>
+      <h4>왼쪽 컬럼</h4>
       <p>나란히 놓을 두 덩어리는 2단 컬럼으로.</p>
     </div>
     <div>
-      <h3>오른쪽 컬럼</h3>
+      <h4>오른쪽 컬럼</h4>
       <ul>
         <li>목록도 컬럼 안에 들어간다</li>
       </ul>
@@ -325,6 +382,8 @@ console.log(`안녕하세요 제 이름은 ${name} 입니다. 제 직업은 ${jo
     <div class="bm-desc">외부 링크는 북마크 카드로 소개한다.</div>
     <div class="bm-url">example.com</div>
   </a>
+
+  <a class="btn" href="#">↗ 행동 유도는 버튼 블록으로</a>
 
   <ul class="todo">
     <li><input type="checkbox"> 할 일 — 담당 / 기한</li>
