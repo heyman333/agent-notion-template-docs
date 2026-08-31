@@ -9,8 +9,8 @@
     {
       "name": "notion-doc",
       "source": "./",
-      "description": "Claude가 생성하는 HTML·Markdown 문서를 Notion 제안서 템플릿(배경→분석→권장 사항→실행)과 Notion 비주얼로 고정하는 skill",
-      "version": "1.1.0"
+      "description": "Claude가 생성하는 HTML·Markdown 문서에 Notion의 블록(콜아웃·토글·표·체크리스트·코드·컬럼 등)과 디자인을 그대로 입히는 skill — 문서 구성은 자유, 비주얼만 Notion으로 고정",
+      "version": "2.0.0"
     }
   ]
 }

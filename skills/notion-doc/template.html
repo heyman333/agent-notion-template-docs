@@ -1,6 +1,7 @@
 <!--
   notion-doc 스켈레톤 — HTML 문서는 이 파일을 복사해서 내용만 채운다.
-  CSS 를 새로 만들지 말 것. 클래스: callout(-blue/-yellow/-red), tag, meta, todo
+  CSS 를 새로 만들지 말 것. 아래 body 는 블록 사용법 예시다 — 문서 구성은 내용이 정한다.
+  클래스: callout(-blue/-yellow/-red), tag, meta, todo, columns, bookmark, t-<색>
 -->
 <title>문서 제목</title>
 <style>
@@ -19,6 +20,13 @@
     --table-header: #F7F7F5;
     --table-border: #E9E9E7;
     --check: #2383E2;
+    /* Notion 텍스트 색 (라이트) */
+    --c-gray: #787774;
+    --c-blue: #337EA9;
+    --c-red: #D44C47;
+    --c-orange: #D9730D;
+    --c-green: #448361;
+    --c-purple: #9065B0;
     /* 코드 신택스 토큰 (라이트) */
     --tok-comment: #708090;
     --tok-punct: #999999;
@@ -45,6 +53,12 @@
       --inline-code-bg: rgba(135, 131, 120, 0.25);
       --table-header: #252525;
       --table-border: #313131;
+      --c-gray: #979A9B;
+      --c-blue: #529CCA;
+      --c-red: #FF7369;
+      --c-orange: #FFA344;
+      --c-green: #4DAB9A;
+      --c-purple: #9D68D3;
       --tok-comment: #999999;
       --tok-punct: #CCCCCC;
       --tok-number: #F8C555;
@@ -69,6 +83,12 @@
     --inline-code-bg: rgba(135, 131, 120, 0.25);
     --table-header: #252525;
     --table-border: #313131;
+    --c-gray: #979A9B;
+    --c-blue: #529CCA;
+    --c-red: #FF7369;
+    --c-orange: #FFA344;
+    --c-green: #4DAB9A;
+    --c-purple: #9D68D3;
     --tok-comment: #999999;
     --tok-punct: #CCCCCC;
     --tok-number: #F8C555;
@@ -135,6 +155,14 @@
   strong { font-weight: 600; }
   a { color: inherit; text-decoration: underline; text-decoration-color: var(--text-soft); }
 
+  /* Notion 텍스트 색 */
+  .t-gray { color: var(--c-gray); }
+  .t-blue { color: var(--c-blue); }
+  .t-red { color: var(--c-red); }
+  .t-orange { color: var(--c-orange); }
+  .t-green { color: var(--c-green); }
+  .t-purple { color: var(--c-purple); }
+
   .callout {
     display: flex;
     gap: 10px;
@@ -148,6 +176,11 @@
   .callout-yellow { background: var(--callout-yellow); }
   .callout-red { background: var(--callout-red); }
   .callout > .icon { flex: none; font-size: 18px; line-height: 1.4; }
+
+  /* 2단 컬럼 (Notion column layout) */
+  .columns { display: flex; gap: 32px; margin: 12px 0; }
+  .columns > div { flex: 1; min-width: 0; }
+  @media (max-width: 600px) { .columns { flex-direction: column; gap: 0; } }
 
   .table-wrap { overflow-x: auto; margin: 12px 0; }
   table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
@@ -165,6 +198,20 @@
     border-left: 3px solid var(--text);
     font-size: 1.05em;
   }
+
+  /* 북마크 카드 (Notion web bookmark) */
+  .bookmark {
+    display: block;
+    border: 1px solid var(--table-border);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin: 12px 0;
+    text-decoration: none;
+  }
+  .bookmark:hover { background: var(--callout-gray); }
+  .bookmark .bm-title { font-weight: 600; font-size: 14.5px; }
+  .bookmark .bm-desc { color: var(--text-soft); font-size: 13.5px; margin-top: 2px; }
+  .bookmark .bm-url { color: var(--text-soft); font-size: 12.5px; margin-top: 6px; }
 
   code {
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -217,52 +264,71 @@
   .todo li.done { color: var(--text-soft); text-decoration: line-through; }
 </style>
 
+<!-- ⬇ 여기부터는 블록 사용법 예시 — 문서 구성·제목은 내용에 맞게 자유롭게 -->
 <div class="page">
-  <div class="page-icon">📅</div>
-  <h1>새해 캠페인 제안</h1>
+  <div class="page-icon">📄</div>
+  <h1>문서 제목</h1>
   <p class="meta">
-    <span class="tag">제안</span>
+    <span class="tag">태그</span>
     <span>2026-08-31</span>
     <span>·</span>
     <span>작성: 홍길동</span>
   </p>
   <hr>
 
-  <h2>배경</h2>
-  <p>문서의 맥락, 목표, 범위. 왜 이 문서를 쓰는지 2~4문장으로.</p>
+  <h2>섹션 제목</h2>
+  <p>
+    본문. 단어 단위 강조는 <strong>굵게</strong>, <code>인라인 코드</code>,
+    <span class="t-blue">파랑</span>·<span class="t-red">빨강</span>·<span class="t-orange">주황</span>·<span class="t-green">초록</span>·<span class="t-purple">보라</span>
+    텍스트 색으로.
+  </p>
+
   <div class="callout callout-blue">
     <span class="icon">💡</span>
-    <div><strong>핵심 한 줄</strong> — 이 문서가 답하는 질문이나 결론 요약을 여기에.</div>
+    <div><strong>핵심 한 줄</strong> — 파랑 콜아웃. 회색은 참고, 노랑(⚠️)은 주의, 빨강(🚨)은 경고.</div>
   </div>
 
-  <h2>분석</h2>
-  <p>연구 결과, 데이터 인사이트, 주요 고려 사항. 근거는 표·목록으로.</p>
   <div class="table-wrap">
     <table>
-      <tr><th>항목</th><th>현황</th><th>비고</th></tr>
-      <tr><td>예시</td><td>측정값·사실</td><td>출처·경로</td></tr>
+      <tr><th>항목</th><th>값</th><th>비고</th></tr>
+      <tr><td>비교·나열 가능한 사실은</td><td>표로</td><td>출처·경로</td></tr>
     </table>
   </div>
-  <div class="callout callout-yellow">
-    <span class="icon">⚠️</span>
-    <div>주의할 점이나 제약 조건은 노란 콜아웃으로.</div>
+
+  <div class="columns">
+    <div>
+      <h3>왼쪽 컬럼</h3>
+      <p>나란히 놓을 두 덩어리는 2단 컬럼으로.</p>
+    </div>
+    <div>
+      <h3>오른쪽 컬럼</h3>
+      <ul>
+        <li>목록도 컬럼 안에 들어간다</li>
+      </ul>
+    </div>
   </div>
+
+  <pre><code class="language-javascript">const name = '홍길동'
+const job = '개발자'
+
+console.log(`안녕하세요 제 이름은 ${name} 입니다. 제 직업은 ${job} 입니다`)</code></pre>
+
+  <blockquote>인상적인 한 문장은 인용구로 띄운다.</blockquote>
+
   <details>
-    <summary>상세 근거 (펼치기)</summary>
-    <p>본문 흐름을 끊는 긴 로그·수치·부가 설명은 토글 안에.</p>
-    <pre><code class="language-javascript">const name = '홍길동'
-console.log(`안녕하세요 ${name} 입니다`)</code></pre>
+    <summary>긴 상세는 토글로 (펼치기)</summary>
+    <p>본문 흐름을 끊는 로그·수치·부가 설명은 토글 안에.</p>
   </details>
 
-  <h2>권장 사항</h2>
-  <p>제안된 솔루션, 전략 및 다음 단계. 선택지가 여럿이면 비교표 뒤에 추천을 명시.</p>
-  <blockquote>가장 중요한 제안 한 문장은 인용구로 띄운다.</blockquote>
+  <a class="bookmark" href="https://example.com">
+    <div class="bm-title">북마크 카드 제목</div>
+    <div class="bm-desc">외부 링크는 북마크 카드로 소개한다.</div>
+    <div class="bm-url">example.com</div>
+  </a>
 
-  <h2>실행</h2>
-  <p>액션 아이템, 타임라인, 리소스 요구 사항.</p>
   <ul class="todo">
-    <li><input type="checkbox"> 액션 아이템 — 담당 / 기한</li>
-    <li class="done"><input type="checkbox" checked> 완료된 항목</li>
+    <li><input type="checkbox"> 할 일 — 담당 / 기한</li>
+    <li class="done"><input type="checkbox" checked> 완료된 항목은 취소선</li>
   </ul>
 </div>
 
