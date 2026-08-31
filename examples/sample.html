@@ -20,6 +20,14 @@
     --table-header: #F7F7F5;
     --table-border: #E9E9E7;
     --check: #2383E2;
+    --tok-comment: #708090;
+    --tok-punct: #999999;
+    --tok-number: #990055;
+    --tok-string: #669900;
+    --tok-operator: #9A6E3A;
+    --tok-keyword: #0077AA;
+    --tok-function: #DD4A68;
+    --tok-variable: #EE9900;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -36,6 +44,14 @@
       --inline-code-bg: rgba(135, 131, 120, 0.25);
       --table-header: #252525;
       --table-border: #313131;
+      --tok-comment: #999999;
+      --tok-punct: #CCCCCC;
+      --tok-number: #F8C555;
+      --tok-string: #7EC699;
+      --tok-operator: #67CDCC;
+      --tok-keyword: #CC99CD;
+      --tok-function: #F08D49;
+      --tok-variable: #7EC699;
     }
   }
   :root[data-theme="dark"] {
@@ -52,6 +68,14 @@
     --inline-code-bg: rgba(135, 131, 120, 0.25);
     --table-header: #252525;
     --table-border: #313131;
+    --tok-comment: #999999;
+    --tok-punct: #CCCCCC;
+    --tok-number: #F8C555;
+    --tok-string: #7EC699;
+    --tok-operator: #67CDCC;
+    --tok-keyword: #CC99CD;
+    --tok-function: #F08D49;
+    --tok-variable: #7EC699;
   }
   body {
     margin: 0;
@@ -159,6 +183,19 @@
   }
   pre code { background: none; color: var(--text); padding: 0; font-size: 13.5px; }
 
+  .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); }
+  .token.punctuation { color: var(--tok-punct); }
+  .token.property, .token.tag, .token.boolean, .token.number,
+  .token.constant, .token.symbol, .token.deleted { color: var(--tok-number); }
+  .token.selector, .token.attr-name, .token.string, .token.char,
+  .token.builtin, .token.inserted { color: var(--tok-string); }
+  .token.operator, .token.entity, .token.url { color: var(--tok-operator); }
+  .token.atrule, .token.attr-value, .token.keyword { color: var(--tok-keyword); }
+  .token.function, .token.class-name { color: var(--tok-function); }
+  .token.regex, .token.important, .token.variable { color: var(--tok-variable); }
+  .token.important, .token.bold { font-weight: 600; }
+  .token.italic { font-style: italic; }
+
   details { margin: 8px 0; padding: 4px 0; }
   summary {
     cursor: pointer;
@@ -245,5 +282,7 @@ week4   28%   ██████</code></pre>
     <li><input type="checkbox" disabled> 2주차 잔존율 중간 점검 — 마케팅 / 01-19</li>
   </ul>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>

@@ -19,6 +19,15 @@
     --table-header: #F7F7F5;
     --table-border: #E9E9E7;
     --check: #2383E2;
+    /* 코드 신택스 토큰 (라이트) */
+    --tok-comment: #708090;
+    --tok-punct: #999999;
+    --tok-number: #990055;
+    --tok-string: #669900;
+    --tok-operator: #9A6E3A;
+    --tok-keyword: #0077AA;
+    --tok-function: #DD4A68;
+    --tok-variable: #EE9900;
   }
   /* Notion 다크 팔레트 — 시스템 다크 + 뷰어의 명시적 다크 선택 양쪽에 대응 */
   @media (prefers-color-scheme: dark) {
@@ -36,6 +45,14 @@
       --inline-code-bg: rgba(135, 131, 120, 0.25);
       --table-header: #252525;
       --table-border: #313131;
+      --tok-comment: #999999;
+      --tok-punct: #CCCCCC;
+      --tok-number: #F8C555;
+      --tok-string: #7EC699;
+      --tok-operator: #67CDCC;
+      --tok-keyword: #CC99CD;
+      --tok-function: #F08D49;
+      --tok-variable: #7EC699;
     }
   }
   :root[data-theme="dark"] {
@@ -52,6 +69,14 @@
     --inline-code-bg: rgba(135, 131, 120, 0.25);
     --table-header: #252525;
     --table-border: #313131;
+    --tok-comment: #999999;
+    --tok-punct: #CCCCCC;
+    --tok-number: #F8C555;
+    --tok-string: #7EC699;
+    --tok-operator: #67CDCC;
+    --tok-keyword: #CC99CD;
+    --tok-function: #F08D49;
+    --tok-variable: #7EC699;
   }
   body {
     background: var(--bg);
@@ -158,6 +183,21 @@
   }
   pre code { background: none; color: var(--text); padding: 0; font-size: 13.5px; }
 
+  /* Prism 신택스 하이라이트 — <code class="language-*"> 에 적용 */
+  .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); }
+  .token.punctuation { color: var(--tok-punct); }
+  .token.property, .token.tag, .token.boolean, .token.number,
+  .token.constant, .token.symbol, .token.deleted { color: var(--tok-number); }
+  .token.selector, .token.attr-name, .token.string, .token.char,
+  .token.builtin, .token.inserted { color: var(--tok-string); }
+  .token.operator, .token.entity, .token.url { color: var(--tok-operator); }
+  .token.atrule, .token.attr-value, .token.keyword { color: var(--tok-keyword); }
+  .token.function, .token.class-name { color: var(--tok-function); }
+  .token.regex, .token.important, .token.variable { color: var(--tok-variable); }
+  .token.important, .token.bold { font-weight: 600; }
+  .token.italic { font-style: italic; }
+  .token.template-string .token.interpolation .token.interpolation-punctuation { color: var(--tok-operator); }
+
   details {
     margin: 8px 0;
     padding: 4px 0;
@@ -210,7 +250,7 @@
   <details>
     <summary>상세 근거 (펼치기)</summary>
     <p>본문 흐름을 끊는 긴 로그·수치·부가 설명은 토글 안에.</p>
-    <pre><code>const name = '홍길동'
+    <pre><code class="language-javascript">const name = '홍길동'
 console.log(`안녕하세요 ${name} 입니다`)</code></pre>
   </details>
 
@@ -225,3 +265,8 @@ console.log(`안녕하세요 ${name} 입니다`)</code></pre>
     <li class="done"><input type="checkbox" checked> 완료된 항목</li>
   </ul>
 </div>
+
+<!-- 코드 하이라이트: 문서에 <code class="language-*"> 블록이 있으면 유지, 없으면 지워도 됨.
+     autoloader 가 언어 파일을 cdnjs 에서 자동으로 가져온다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
