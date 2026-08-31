@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-31",
+  "fetched_at": "2026-09-01",
   "pages": {
     "block-reference": {
       "url": "https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68",
@@ -34,12 +34,14 @@
         "body_color": "rgb(0, 0, 0)",
         "body_background": "rgb(255, 255, 255)",
         "callout_backgrounds": [
-          "rgba(0, 0, 0, 0)"
+          "rgb(229, 242, 252)",
+          "rgb(232, 241, 236)",
+          "rgb(249, 248, 247)"
         ],
-        "code_background": [],
-        "quote_border_color": [
-          "rgb(44, 44, 43)"
+        "divider_color": [
+          "rgba(28, 19, 1, 0.11)"
         ],
+        "quote_border": "3px rgb(44, 44, 43)",
         "table_border_colors": [
           "rgb(230, 229, 227)"
         ]

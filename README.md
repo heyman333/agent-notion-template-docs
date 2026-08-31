@@ -158,12 +158,13 @@ docs/
 
 Notion continues to add new block types and change its visual design. This repo periodically checks a public Notion reference page to see if the implementation has drifted.
 
-The weekly CI job, [notion-sync](.github/workflows/notion-sync.yml), checks the reference page in two ways:
+The weekly CI job, [notion-sync](.github/workflows/notion-sync.yml), checks the reference page in three ways:
 
+- **Design tokens**: every color in Notion's light and dark palettes, read directly from Notion's own stylesheets (no browser needed).
 - **Block types** are read through Notion's page API, with cursor pagination.
-- **Style tokens** such as colors and widths are collected from a headless browser render.
+- **Render sanity**: a headless browser render confirms the geometry and that blocks still paint.
 
-Both are compared against the committed baseline in [sync/notion-snapshot.json](sync/notion-snapshot.json).
+The results are compared against the committed baselines in [sync/notion-tokens.json](sync/notion-tokens.json) and [sync/notion-snapshot.json](sync/notion-snapshot.json).
 
 Reference page:
 
@@ -175,11 +176,14 @@ When the reference changes, the CI job reports the difference and opens an issue
 
 ## Design source
 
-The visual style in `template.html` is based on a real rendered Notion page rather than manually approximated values.
+The visual style in `template.html` is based on Notion's own design tokens rather than manually approximated values.
 
-The colors, widths, border radii, and typography values come from computed styles collected from the [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68).
+Notion declares its tokens right in its inline styles (`background: var(--c-graBacPri)`), so every value can be traced instead of sampled:
 
-The weekly [notion-sync](#staying-in-sync-with-notion) job measures the same reference page again and compares it with the current snapshot.
+- [scripts/notion_style_probe.py](scripts/notion_style_probe.py) renders the [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68) page headlessly and reads the block→token mapping straight off the DOM.
+- [scripts/notion_tokens.py](scripts/notion_tokens.py) extracts each token's exact light *and* dark value from Notion's stylesheets.
+
+The weekly [notion-sync](#staying-in-sync-with-notion) job re-checks all of it, so the template can't silently drift from Notion.
 
 ## License
 

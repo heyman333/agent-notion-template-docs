@@ -1,7 +1,7 @@
 {
   "name": "notion-doc",
   "description": "Claude가 생성하는 HTML·Markdown 문서에 Notion의 블록(콜아웃·토글·표·체크리스트·코드·컬럼 등)과 디자인을 그대로 입히는 skill — 문서 구성은 자유, 비주얼만 Notion으로 고정",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "author": {
     "name": "heyman333",
     "url": "https://github.com/heyman333"

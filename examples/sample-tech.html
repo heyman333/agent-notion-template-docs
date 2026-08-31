@@ -6,29 +6,29 @@
 <title>이미지 업로드 지연 장애 분석</title>
 <style>
   :root {
-    --text: #2C2C2B;                       /* 실측 rgb(44,44,43) */
-    --text-soft: rgba(44, 44, 43, 0.6);
-    --divider: rgba(44, 44, 43, 0.09);
-    --bg: #FFFFFF;
-    --radius: 10px;                        /* 실측: 콜아웃·북마크 공통 */
-    --callout-gray: #F9F8F7;               /* 실측 rgb(249,248,247) */
-    --callout-blue: #E5F2FC;               /* 실측 rgb(229,242,252) */
-    --callout-green: #E8F1EC;              /* 실측 rgb(232,241,236) */
-    --callout-yellow: #FBF3DB;             /* 미실측 — 이전 팔레트 유지 */
-    --callout-red: #FDEBEC;                /* 미실측 — 이전 팔레트 유지 */
-    --code-bg: #F9F8F7;
-    --inline-code: #EB5757;
-    --inline-code-bg: rgba(135, 131, 120, 0.15);
-    --table-header: #F9F8F7;
-    --table-border: #E6E5E3;               /* 실측 rgb(230,229,227) */
-    --check: #2383E2;
-    /* Notion 텍스트 색 (라이트) */
-    --c-gray: #787774;
-    --c-blue: #337EA9;
-    --c-red: #D44C47;
-    --c-orange: #D9730D;
-    --c-green: #448361;
-    --c-purple: #9065B0;
+    --text: #2C2C2B;                       /* --c-texPri */
+    --text-soft: #7D7A75;                  /* --c-texSec */
+    --divider: rgba(28, 19, 1, 0.11);      /* --ca-borPriTra (divider 실측) */
+    --bg: #FFFFFF;                         /* --c-bacPri */
+    --radius: 10px;                        /* 실측: 콜아웃·코드·북마크 공통 */
+    --callout-gray: #F9F8F7;               /* --c-graBacPri */
+    --callout-blue: #E5F2FC;               /* --c-bluBacSec */
+    --callout-green: #E8F1EC;              /* --c-greBacSec */
+    --callout-yellow: #F9F3DC;             /* --c-yelBacSec */
+    --callout-red: #FCE9E7;                /* --c-redBacSec */
+    --code-bg: rgba(66, 35, 3, 0.03);      /* --ca-graBacPriTra (코드 블록 실측) */
+    --inline-code: #CF5148;                /* --c-redTexSec (인라인 코드 실측) */
+    --inline-code-bg: rgba(33, 27, 23, 0.05); /* --ca-bacIntTra */
+    --table-header: #F7F6F3;               /* --cd-tabHeaRowColBac */
+    --table-border: #E6E5E3;               /* --c-borPri */
+    --check: #2783DE;                      /* --c-bluBacAccPri (체크박스 실측) */
+    /* Notion 텍스트 색 — *TexSec 토큰. 다크 오버라이드 없음(양 테마 동일) */
+    --c-gray: #7D7A75;                     /* --c-graTexSec */
+    --c-blue: #387DC9;                     /* --c-bluTexSec */
+    --c-red: #CF5148;                      /* --c-redTexSec */
+    --c-orange: #D27B2D;                   /* --c-oraTexSec */
+    --c-green: #50946E;                    /* --c-greTexSec */
+    --c-purple: #9A6BB4;                   /* --c-purTexSec */
     /* 코드 신택스 토큰 (라이트) */
     --tok-comment: #708090;
     --tok-punct: #999999;
@@ -39,30 +39,25 @@
     --tok-function: #DD4A68;
     --tok-variable: #EE9900;
   }
-  /* Notion 다크 팔레트 (미실측 — 이전 값 유지) — 시스템 다크 + 명시적 다크 선택 대응.
-     둘 다 @media screen 으로 묶여 있어 인쇄할 때는 위의 라이트 팔레트가 그대로 쓰인다. */
+  /* Notion 다크 팔레트 — sync/notion-tokens.json 의 .notion-dark-theme 토큰 실값.
+     텍스트 색(--c-gray 등)은 다크 오버라이드가 없어 라이트 값을 그대로 상속.
+     시스템 다크 + 명시적 다크 선택 대응 — 둘 다 @media screen 으로 묶여 있어
+     인쇄할 때는 위의 라이트 팔레트가 그대로 쓰인다. */
   @media screen and (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --text: #D4D4D4;
-      --text-soft: rgba(255, 255, 255, 0.46);
-      --divider: rgba(255, 255, 255, 0.13);
-      --bg: #191919;
-      --callout-gray: #252525;
-      --callout-blue: #1D3A4A;
-      --callout-green: #243D30;
-      --callout-yellow: #3A3120;
-      --callout-red: #4A2C28;
-      --code-bg: #202020;
-      --inline-code: #FF7369;
-      --inline-code-bg: rgba(135, 131, 120, 0.25);
-      --table-header: #252525;
-      --table-border: #313131;
-      --c-gray: #979A9B;
-      --c-blue: #529CCA;
-      --c-red: #FF7369;
-      --c-orange: #FFA344;
-      --c-green: #4DAB9A;
-      --c-purple: #9D68D3;
+      --text: #F0EFED;                     /* --c-texPri */
+      --text-soft: #ADA9A3;                /* --c-texSec */
+      --divider: rgba(255, 255, 235, 0.1); /* --ca-borPriTra */
+      --bg: #191919;                       /* --c-bacPri */
+      --callout-gray: #202020;             /* --c-graBacPri */
+      --callout-blue: #233850;             /* --c-bluBacSec */
+      --callout-green: #263D30;            /* --c-greBacSec */
+      --callout-yellow: #504425;           /* --c-yelBacSec */
+      --callout-red: #502C29;              /* --c-redBacSec */
+      --code-bg: rgba(252, 252, 252, 0.03);   /* --ca-graBacPriTra */
+      --inline-code-bg: rgba(255, 255, 255, 0.055); /* --ca-bacIntTra */
+      --table-header: rgba(255, 255, 255, 0.03);    /* --cd-tabHeaRowColBac */
+      --table-border: #383836;             /* --c-borPri */
       --tok-comment: #999999;
       --tok-punct: #CCCCCC;
       --tok-number: #F8C555;
@@ -75,26 +70,19 @@
   }
   @media screen {
     :root[data-theme="dark"] {
-      --text: #D4D4D4;
-      --text-soft: rgba(255, 255, 255, 0.46);
-      --divider: rgba(255, 255, 255, 0.13);
+      --text: #F0EFED;
+      --text-soft: #ADA9A3;
+      --divider: rgba(255, 255, 235, 0.1);
       --bg: #191919;
-      --callout-gray: #252525;
-      --callout-blue: #1D3A4A;
-      --callout-green: #243D30;
-      --callout-yellow: #3A3120;
-      --callout-red: #4A2C28;
-      --code-bg: #202020;
-      --inline-code: #FF7369;
-      --inline-code-bg: rgba(135, 131, 120, 0.25);
-      --table-header: #252525;
-      --table-border: #313131;
-      --c-gray: #979A9B;
-      --c-blue: #529CCA;
-      --c-red: #FF7369;
-      --c-orange: #FFA344;
-      --c-green: #4DAB9A;
-      --c-purple: #9D68D3;
+      --callout-gray: #202020;
+      --callout-blue: #233850;
+      --callout-green: #263D30;
+      --callout-yellow: #504425;
+      --callout-red: #502C29;
+      --code-bg: rgba(252, 252, 252, 0.03);
+      --inline-code-bg: rgba(255, 255, 255, 0.055);
+      --table-header: rgba(255, 255, 255, 0.03);
+      --table-border: #383836;
       --tok-comment: #999999;
       --tok-punct: #CCCCCC;
       --tok-number: #F8C555;
@@ -184,7 +172,7 @@
     gap: 10px;
     background: var(--callout-gray);
     border-radius: var(--radius);          /* 실측 10px */
-    padding: 12px 14px;                    /* 실측 12px */
+    padding: 12px;                         /* 실측: 상하·좌우 모두 12px */
     margin: 12px 0;
     font-size: 15px;
   }
@@ -200,7 +188,7 @@
   @media (max-width: 600px) { .columns { flex-direction: column; gap: 0; } }
 
   .table-wrap { overflow-x: auto; margin: 12px 0; }
-  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  table { border-collapse: collapse; width: 100%; }  /* 실측: 셀 폰트 16px = 본문 */
   th, td {
     border: 1px solid var(--table-border); /* 실측 #E6E5E3 */
     padding: 7px 10px;
@@ -211,13 +199,12 @@
 
   blockquote {
     margin: 12px 0;
-    padding: 2px 0 2px 14px;
-    border-left: 3px solid var(--text);
-    font-size: 1.05em;
+    padding: 0 14px;                       /* 실측: 좌우 14px */
+    border-left: 3px solid var(--text);    /* 실측: 3px solid, 본문색 */
   }
 
-  /* 목차 (Notion table of contents) — 실측: 밑줄 없음 */
-  .toc { margin: 12px 0; }
+  /* 목차 (Notion table of contents) — 실측: 밑줄 없음, 14px, --c-graTexSec */
+  .toc { margin: 12px 0; font-size: 14px; }
   .toc a {
     display: block;
     padding: 4px 8px;
@@ -233,16 +220,16 @@
   .breadcrumb a { color: inherit; text-decoration: none; }
   .breadcrumb a:hover { color: var(--text); }
 
-  /* 버튼 블록 (Notion button) */
+  /* 버튼 블록 (Notion button) — 실측: 14px/500, 본문색, 테두리 --ca-borPriTra */
   .btn {
     display: inline-block;
-    border: 1px solid var(--table-border);
+    border: 1px solid var(--divider);
     border-radius: 8px;
     padding: 4px 12px;
     margin: 8px 0;
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 500;
-    color: var(--c-blue);
+    color: var(--text);
     text-decoration: none;
     cursor: pointer;
     background: var(--bg);
@@ -278,7 +265,7 @@
     overflow-x: auto;
     margin: 12px 0;
   }
-  pre code { background: none; color: var(--text); padding: 0; font-size: 13.5px; }
+  pre code { background: none; color: var(--text); padding: 0; font-size: 85%; } /* 실측 13.6px */
 
   /* Prism 신택스 하이라이트 — <code class="language-*"> 에 적용 */
   .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); }

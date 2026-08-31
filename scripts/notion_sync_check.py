@@ -8,9 +8,12 @@ against the committed baseline in sync/notion-snapshot.json:
    page's block tree (cursor-paginated); block types Notion ships show up as
    new `type` values. Only the *set* of types is compared, so content edits
    on the reference pages don't fire false positives.
-2. Coarse style tokens — a headless render of each page, probing computed
-   styles (content width, body colors, callout/code backgrounds). Deliberately
-   coarse: colors and widths only, so DOM churn doesn't spam false positives.
+2. Render sanity — a headless render of each page, probing geometry (content
+   width) and that blocks still paint (callout/divider backgrounds, quote bar,
+   table borders). Exact color values are watched separately and far more
+   precisely by scripts/notion_tokens.py, which reads Notion's own design-token
+   table; this probe exists so a renderer change that stops using those tokens
+   doesn't slip by.
 
 Reference page:
 - "block-reference": Thomas Frank's public "Notion Block Reference — All of
@@ -59,22 +62,46 @@ COVERED_TYPES = {
     "table_of_contents", "button", "breadcrumb",
 }
 
+# Colors are watched precisely by notion_tokens.py (Notion's own token table);
+# this probe only guards what tokens can't see: geometry, and that blocks still
+# paint at all. Backgrounds are found by walking to the element that actually
+# paints (block roots are transparent wrappers — a direct child selector reads
+# rgba(0,0,0,0) and goes blind).
 STYLE_PROBE_JS = """
 () => {
   const cs = (el, prop) => el ? getComputedStyle(el).getPropertyValue(prop) : null;
   const one = (sel) => document.querySelector(sel);
-  const uniq = (sel, prop) => [...new Set(
-    [...document.querySelectorAll(sel)].map(el => getComputedStyle(el).getPropertyValue(prop))
-  )].sort();
+  const painted = c => c && c !== 'transparent' && !/^rgba\\(\\d+, \\d+, \\d+, 0\\)$/.test(c);
+  const paintedBg = root => {
+    const q = [root];
+    while (q.length) {
+      const el = q.shift();
+      const c = getComputedStyle(el).backgroundColor;
+      if (painted(c)) return c;
+      q.push(...el.children);
+    }
+    return null;
+  };
+  const uniqBg = sel => [...new Set(
+    [...document.querySelectorAll(sel)].map(paintedBg).filter(Boolean))].sort();
   const content = one('.notion-page-content');
+  const quoteBar = (() => {
+    const q = [...document.querySelectorAll('.notion-quote-block *')]
+      .find(el => parseFloat(getComputedStyle(el).borderLeftWidth) > 0);
+    if (!q) return null;
+    const s = getComputedStyle(q);
+    return `${s.borderLeftWidth} ${s.borderLeftColor}`;
+  })();
   return {
     content_width: content ? Math.round(content.getBoundingClientRect().width) : null,
     body_color: cs(document.body, 'color'),
     body_background: cs(document.body, 'background-color'),
-    callout_backgrounds: uniq('.notion-callout-block > div', 'background-color'),
-    code_background: uniq('.notion-code-block > div', 'background-color'),
-    quote_border_color: uniq('.notion-quote-block blockquote, .notion-quote-block > div', 'border-left-color'),
-    table_border_colors: uniq('.notion-table-block td', 'border-color'),
+    callout_backgrounds: uniqBg('.notion-callout-block'),
+    divider_color: uniqBg('.notion-divider-block'),
+    quote_border: quoteBar,
+    table_border_colors: [...new Set(
+      [...document.querySelectorAll('.notion-table-block td')]
+        .map(td => getComputedStyle(td).borderTopColor))].sort(),
   };
 }
 """

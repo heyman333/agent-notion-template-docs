@@ -29,7 +29,14 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Check for Notion drift
-        run: python scripts/notion_sync_check.py check --report report.md
+        run: |
+          status=0
+          # design-token table (exact colors, light+dark) — no browser needed
+          python scripts/notion_tokens.py check --report token-report.md || status=1
+          # block types + render sanity (geometry, blocks still paint)
+          python scripts/notion_sync_check.py check --report render-report.md || status=1
+          cat token-report.md render-report.md > report.md 2>/dev/null || true
+          exit $status
 
       - name: Open or update drift issue
         if: failure()

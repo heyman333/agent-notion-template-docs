@@ -155,12 +155,13 @@ docs/
 Notion의 블록과 디자인은 계속 바뀔 수 있습니다.  
 이 저장소에서는 공개된 Notion 참고 페이지를 주기적으로 확인해서 현재 구현과 차이가 있는지 검사합니다.
 
-주간 CI인 [notion-sync](.github/workflows/notion-sync.yml)가 참고 페이지를 확인하고 다음 두 가지를 비교합니다.
+주간 CI인 [notion-sync](.github/workflows/notion-sync.yml)가 참고 페이지를 확인하고 다음 세 가지를 비교합니다.
 
+- **디자인 토큰**: 라이트·다크 팔레트의 모든 색상을 Notion 자체 스타일시트에서 그대로 읽어 확인 (브라우저 불필요)
 - **블록 타입**: Notion 페이지 API를 사용해 확인
-- **스타일**: headless browser로 실제 렌더링된 색상과 너비 등을 확인
+- **렌더 상태**: headless browser로 실제 렌더링해서 치수와 블록이 제대로 칠해지는지 확인
 
-확인한 결과는 [sync/notion-snapshot.json](sync/notion-snapshot.json)에 저장된 기준값과 비교합니다.
+확인한 결과는 [sync/notion-tokens.json](sync/notion-tokens.json)과 [sync/notion-snapshot.json](sync/notion-snapshot.json)에 저장된 기준값과 비교합니다.
 
 참고 페이지는 Thomas Frank가 공개한 [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)입니다.
 
@@ -170,11 +171,12 @@ Notion의 블록과 디자인은 계속 바뀔 수 있습니다.
 
 `template.html`의 색상, 너비, radius, 타이포그래피 등의 값은 임의로 정한 값이 아닙니다.
 
-공개된 Notion 페이지를 실제로 렌더링한 뒤 computed style을 확인해서 가져왔습니다.
+Notion은 인라인 스타일에 디자인 토큰을 그대로 선언하기 때문에(`background: var(--c-graBacPri)`), 값을 눈대중이나 픽셀 샘플링으로 추정하지 않고 원본에서 직접 가져올 수 있습니다.
 
-[Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
+- [scripts/notion_style_probe.py](scripts/notion_style_probe.py)가 [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68) 페이지를 headless로 렌더링해서 블록→토큰 매핑을 DOM에서 직접 읽습니다.
+- [scripts/notion_tokens.py](scripts/notion_tokens.py)가 각 토큰의 라이트·다크 실값을 Notion 스타일시트에서 추출합니다.
 
-같은 페이지를 주기적으로 다시 확인하기 때문에 Notion의 디자인이 변경되었을 때도 차이를 발견할 수 있습니다.
+주간 [notion-sync](#notion과-동기화) 잡이 이 전부를 다시 확인하기 때문에 Notion의 디자인이 변경되었을 때도 차이를 발견할 수 있습니다.
 
 ## License
 

@@ -1,0 +1,3458 @@
+{
+  "probed_at": "2026-09-01",
+  "reference_url": "https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68",
+  "note": "measured on the light render; dark values derived by token lookup",
+  "page": {
+    "body_background": "rgb(255, 255, 255)",
+    "body_background@token": {
+      "light": "rgb(255, 255, 255)",
+      "tokens": [
+        "--c-assCorButBac",
+        "--c-bacEle",
+        "--c-bacPri",
+        "--c-bluBacEle",
+        "--c-broBacEle",
+        "--c-butGroBac",
+        "--c-calIteBac",
+        "--c-graBacEle",
+        "--c-greBacEle",
+        "--c-homScrButBacBas",
+        "--c-keyActBarBac",
+        "--c-oraBacEle",
+        "--c-palGra0",
+        "--c-pinBacEle",
+        "--c-popBac",
+        "--c-purBacEle",
+        "--c-redBacEle",
+        "--c-selMarDisBac",
+        "--c-teaBacEle",
+        "--c-whi",
+        "--c-whiButBac",
+        "--c-yelBacEle",
+        "--cd-aiChaButPre",
+        "--cd-aiChaButSel",
+        "--cd-aiChaButSelHov",
+        "--cd-boaIteDefBac",
+        "--cd-colGalPreCarBac",
+        "--cd-homCarBacBas",
+        "--cd-homCarBacHov",
+        "--cd-homCarTemCarBacBas",
+        "--cd-homCarTemCarBacHov"
+      ],
+      "dark": {
+        "--c-assCorButBac": "#d3d3d3",
+        "--c-bacEle": "#202020",
+        "--c-bacPri": "#191919",
+        "--c-bluBacEle": "#213041",
+        "--c-broBacEle": "#382d26",
+        "--c-butGroBac": "#2f2f2f",
+        "--c-calIteBac": "#2f2f2f",
+        "--c-graBacEle": "#2c2c2b",
+        "--c-greBacEle": "#24342b",
+        "--c-homScrButBacBas": "#252525",
+        "--c-keyActBarBac": "#272829",
+        "--c-oraBacEle": "#3d2a1d",
+        "--c-palGra0": "#000",
+        "--c-pinBacEle": "#3f2631",
+        "--c-popBac": "#252525",
+        "--c-purBacEle": "#36293f",
+        "--c-redBacEle": "#412725",
+        "--c-selMarDisBac": "#252525",
+        "--c-teaBacEle": "#193439",
+        "--c-whi": "#000",
+        "--c-whiButBac": "#252525",
+        "--c-yelBacEle": "#373325",
+        "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+        "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+        "--cd-aiChaButSelHov": "rgba(255,255,255,.06)",
+        "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+        "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+        "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+        "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+        "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+        "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)"
+      }
+    },
+    "body_color": "rgb(0, 0, 0)",
+    "body_color@token": {
+      "light": "rgb(0, 0, 0)",
+      "tokens": [
+        "--c-marTopTexDroVieAllWhi",
+        "--c-marTopTexPreWhi",
+        "--c-priBla",
+        "--c-regEmoCol"
+      ],
+      "dark": {
+        "--c-marTopTexDroVieAllWhi": "#7f7f7f",
+        "--c-marTopTexPreWhi": "#7f7f7f",
+        "--c-priBla": "#fff",
+        "--c-regEmoCol": "#fff"
+      }
+    },
+    "body_font_family": "sans-serif",
+    "content_rect_width": 720,
+    "content_padding": "0px / 0px",
+    "content_font": {
+      "color": "rgb(44, 44, 43)",
+      "color@token": {
+        "light": "rgb(44, 44, 43)",
+        "tokens": [
+          "--c-bacAccPri",
+          "--c-texPri"
+        ],
+        "dark": {
+          "--c-texPri": "#f0efed"
+        }
+      },
+      "font_size": "16px",
+      "line_height": "24px",
+      "font_weight": "400",
+      "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+    },
+    "title_font": {
+      "color": "rgb(44, 44, 43)",
+      "color@token": {
+        "light": "rgb(44, 44, 43)",
+        "tokens": [
+          "--c-bacAccPri",
+          "--c-texPri"
+        ],
+        "dark": {
+          "--c-texPri": "#f0efed"
+        }
+      },
+      "font_size": "40px",
+      "line_height": "48px",
+      "font_weight": "700",
+      "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+    },
+    "block_rect_width": 654
+  },
+  "blocks": {
+    "page": [
+      {
+        "text_preview": "Notion Fundamentals",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "16.8px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Notion Block Reference - All of Notion's Blocks",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "40px",
+          "line_height": "48px",
+          "font_weight": "700",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "🧛🏻Page Full of Secrets",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "20.8px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Notion Fundamentals",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "19.2px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "callout": [
+      {
+        "text_preview": "This page contains a list of nearly every block type in Noti",
+        "painted": {
+          "background": "rgb(249, 248, 247)",
+          "background@token": {
+            "light": "rgb(249, 248, 247)",
+            "tokens": [
+              "--c-graBacPri",
+              "--c-bacSec",
+              "--c-graIcoInvPri",
+              "--c-graTexInvPri"
+            ],
+            "dark": {
+              "--c-graBacPri": "#202020",
+              "--c-bacSec": "#202020"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-graBacPri",
+          "background_token_declared@resolved": {
+            "light": "#f9f8f7",
+            "dark": "#202020"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Callouts are fancy text blocks that demand attention! You ca",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "💡Note that this Linked Database shows data from ✈️Full Page",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "💡A Synced Block is a block that can be seen and edited at m",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "🧠Equations in Notion use KaTex formatting. Check out this K",
+        "painted": {
+          "background": "rgb(229, 242, 252)",
+          "background@token": {
+            "light": "rgb(229, 242, 252)",
+            "tokens": [
+              "--c-bluBacSec",
+              "--c-bluBorSec"
+            ],
+            "dark": {
+              "--c-bluBacSec": "#233850",
+              "--c-bluBorSec": "#213041"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-bluBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e5f2fc",
+            "dark": "#233850"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "💡A Synced Block is a block that can be seen and edited at m",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "transclusion_reference": [
+      {
+        "text_preview": "🦙 Created by Thomas Frank   |   🏠 Course Home Page   |   �",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "💡A Synced Block is a block that can be seen and edited at m",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "© Thomas Frank",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "font": {
+          "color": "rgb(125, 122, 117)",
+          "color@token": {
+            "light": "rgb(125, 122, 117)",
+            "tokens": [
+              "--c-graTexSec",
+              "--c-graIcoSec",
+              "--c-icoAccPri",
+              "--c-texSec"
+            ],
+            "dark": {
+              "--c-icoAccPri": "#bcbab6",
+              "--c-texSec": "#ada9a3"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "600",
+          "font_family": "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "transclusion": [
+      {
+        "text_preview": "🦙 Created by Thomas Frank   |   🏠 Course Home Page   |   �",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "💡A Synced Block is a block that can be seen and edited at m",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "💡A Synced Block is a block that can be seen and edited at m",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "© Thomas Frank",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "font": {
+          "color": "rgb(125, 122, 117)",
+          "color@token": {
+            "light": "rgb(125, 122, 117)",
+            "tokens": [
+              "--c-graTexSec",
+              "--c-graIcoSec",
+              "--c-icoAccPri",
+              "--c-texSec"
+            ],
+            "dark": {
+              "--c-icoAccPri": "#bcbab6",
+              "--c-texSec": "#ada9a3"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "600",
+          "font_family": "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "text": [
+      {
+        "text_preview": "🦙 Created by Thomas Frank   |   🏠 Course Home Page   |   �",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Text block:",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "This is a text block. You can enter as much text as you want",
+        "painted": {
+          "background": "rgba(33, 27, 23, 0.05)",
+          "background@token": {
+            "light": "rgba(33, 27, 23, 0.05)",
+            "tokens": [
+              "--ca-graBacIntTra",
+              "--ca-bacIntTra"
+            ],
+            "dark": {
+              "--ca-graBacIntTra": "rgba(255,255,255,.055)",
+              "--ca-bacIntTra": "rgba(255,255,255,.055)"
+            }
+          },
+          "border_radius": "4px",
+          "padding": "2.72px 5.44px 2.72px 5.44px",
+          "background_token_declared": "--ca-bacIntTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(33,27,23,.05)",
+            "dark": "rgba(255,255,255,.055)"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Page block:",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "To-Do block:",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "The headings are hidden in this toggle so they don't show up",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "table_of_contents": [
+      {
+        "text_preview": "Basic BlocksInline BlocksDatabase BlocksMedia BlocksEmbedsAd",
+        "font": {
+          "color": "rgb(125, 122, 117)",
+          "color@token": {
+            "light": "rgb(125, 122, 117)",
+            "tokens": [
+              "--c-graTexSec",
+              "--c-graIcoSec",
+              "--c-icoAccPri",
+              "--c-texSec"
+            ],
+            "dark": {
+              "--c-icoAccPri": "#bcbab6",
+              "--c-texSec": "#ada9a3"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "18.2px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Basic BlocksInline BlocksDatabase BlocksMedia BlocksEmbedsAd",
+        "font": {
+          "color": "rgb(125, 122, 117)",
+          "color@token": {
+            "light": "rgb(125, 122, 117)",
+            "tokens": [
+              "--c-graTexSec",
+              "--c-graIcoSec",
+              "--c-icoAccPri",
+              "--c-texSec"
+            ],
+            "dark": {
+              "--c-icoAccPri": "#bcbab6",
+              "--c-texSec": "#ada9a3"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "18.2px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "header": [
+      {
+        "text_preview": "Basic Blocks",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "30px",
+          "line_height": "39px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "30px",
+          "font_weight": "600",
+          "line_height": "39px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Heading 1",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "30px",
+          "line_height": "39px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "30px",
+          "font_weight": "600",
+          "line_height": "39px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Toggle Heading 1",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "30px",
+          "line_height": "39px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "30px",
+          "font_weight": "600",
+          "line_height": "39px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Inline Blocks",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "30px",
+          "line_height": "39px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "30px",
+          "font_weight": "600",
+          "line_height": "39px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Database Blocks",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "30px",
+          "line_height": "39px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "30px",
+          "font_weight": "600",
+          "line_height": "39px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Media Blocks",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "30px",
+          "line_height": "39px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "30px",
+          "font_weight": "600",
+          "line_height": "39px",
+          "margin_top": "0px"
+        }
+      }
+    ],
+    "divider": [
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "border": "bg rgba(28, 19, 1, 0.11) h=1"
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "border": "bg rgba(28, 19, 1, 0.11) h=1"
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "border": "bg rgba(28, 19, 1, 0.11) h=1"
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "border": "bg rgba(28, 19, 1, 0.11) h=1"
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "border": "bg rgba(28, 19, 1, 0.11) h=1"
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(28, 19, 1, 0.11)",
+          "background@token": {
+            "light": "rgba(28, 19, 1, 0.11)",
+            "tokens": [
+              "--ca-graBacTerTra",
+              "--ca-borPriTra",
+              "--ca-graBorPriTra"
+            ],
+            "dark": {
+              "--ca-graBacTerTra": "rgba(255,252,235,.306)",
+              "--ca-borPriTra": "rgba(255,255,235,.1)",
+              "--ca-graBorPriTra": "rgba(255,255,235,.1)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-borPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(28,19,1,.11)",
+            "dark": "rgba(255,255,235,.1)"
+          }
+        },
+        "border": "bg rgba(28, 19, 1, 0.11) h=1"
+      }
+    ],
+    "to_do": [
+      {
+        "text_preview": "Beat Shaq in a free-throw contest",
+        "painted": {
+          "background": "rgb(39, 131, 222)",
+          "background@token": {
+            "light": "rgb(39, 131, 222)",
+            "tokens": [
+              "--c-bluBacAccPri",
+              "--c-bluBorAccPri",
+              "--c-bluIcoAccPri",
+              "--c-bluTexAccPri"
+            ],
+            "dark": {}
+          },
+          "border_radius": "1.5px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bluBacAccPri",
+          "background_token_declared@resolved": {
+            "light": "#2783de",
+            "dark": "#2783de"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "checkbox": {
+          "background": "rgb(39, 131, 222)",
+          "background@token": {
+            "light": "rgb(39, 131, 222)",
+            "tokens": [
+              "--c-bluBacAccPri",
+              "--c-bluBorAccPri",
+              "--c-bluIcoAccPri",
+              "--c-bluTexAccPri"
+            ],
+            "dark": {}
+          },
+          "size": 16
+        }
+      }
+    ],
+    "toggle": [
+      {
+        "text_preview": "Headings:Heading 1Heading 2Heading 3The headings are hidden ",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Open meThe Toggle block is one of the most useful blocks in ",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Open meToggle Heading 1Toggle Heading 2Toggle Heading 3",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "New: Other blocks can now be dragged into Callouts!",
+        "painted": {
+          "background": "rgb(251, 235, 222)",
+          "background@token": {
+            "light": "rgb(251, 235, 222)",
+            "tokens": [
+              "--c-oraBacSec",
+              "--c-oraBorSec"
+            ],
+            "dark": {
+              "--c-oraBacSec": "#53361f",
+              "--c-oraBorSec": "#3d2a1d"
+            }
+          },
+          "border_radius": "6px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-oraBacSec",
+          "background_token_declared@resolved": {
+            "light": "#fbebde",
+            "dark": "#53361f"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Read Me: Databases are blocks, too! Technically, there are o",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "6px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Table - InlineTable - InlineCount3NameTagsNo results",
+        "painted": {
+          "background": "rgb(255, 255, 255)",
+          "background@token": {
+            "light": "rgb(255, 255, 255)",
+            "tokens": [
+              "--c-assCorButBac",
+              "--c-bluBacEle",
+              "--c-broBacEle",
+              "--c-butGroBac",
+              "--c-calIteBac",
+              "--c-graBacEle",
+              "--c-greBacEle",
+              "--c-homScrButBacBas",
+              "--c-keyActBarBac",
+              "--c-oraBacEle",
+              "--c-pinBacEle",
+              "--c-popBac",
+              "--c-purBacEle",
+              "--c-redBacEle",
+              "--c-selMarDisBac",
+              "--c-teaBacEle",
+              "--c-whiButBac",
+              "--c-yelBacEle",
+              "--cd-boaIteDefBac",
+              "--cd-colGalPreCarBac",
+              "--cd-homCarBacBas",
+              "--cd-homCarBacHov",
+              "--cd-homCarTemCarBacBas",
+              "--cd-homCarTemCarBacHov",
+              "--c-bacEle",
+              "--c-bacPri",
+              "--c-palGra0",
+              "--c-whi",
+              "--cd-aiChaButPre",
+              "--cd-aiChaButSel",
+              "--cd-aiChaButSelHov"
+            ],
+            "dark": {
+              "--c-assCorButBac": "#d3d3d3",
+              "--c-bluBacEle": "#213041",
+              "--c-broBacEle": "#382d26",
+              "--c-butGroBac": "#2f2f2f",
+              "--c-calIteBac": "#2f2f2f",
+              "--c-graBacEle": "#2c2c2b",
+              "--c-greBacEle": "#24342b",
+              "--c-homScrButBacBas": "#252525",
+              "--c-keyActBarBac": "#272829",
+              "--c-oraBacEle": "#3d2a1d",
+              "--c-pinBacEle": "#3f2631",
+              "--c-popBac": "#252525",
+              "--c-purBacEle": "#36293f",
+              "--c-redBacEle": "#412725",
+              "--c-selMarDisBac": "#252525",
+              "--c-teaBacEle": "#193439",
+              "--c-whiButBac": "#252525",
+              "--c-yelBacEle": "#373325",
+              "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+              "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+              "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)",
+              "--c-bacEle": "#202020",
+              "--c-bacPri": "#191919",
+              "--c-palGra0": "#000",
+              "--c-whi": "#000",
+              "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+              "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+              "--cd-aiChaButSelHov": "rgba(255,255,255,.06)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bacPri",
+          "background_token_declared@resolved": {
+            "light": "#fff",
+            "dark": "#191919"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "sub_header": [
+      {
+        "text_preview": "Heading 2",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "24px",
+          "line_height": "31.2px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "24px",
+          "font_weight": "600",
+          "line_height": "31.2px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Toggle Heading 2",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "24px",
+          "line_height": "31.2px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "24px",
+          "font_weight": "600",
+          "line_height": "31.2px",
+          "margin_top": "0px"
+        }
+      }
+    ],
+    "sub_sub_header": [
+      {
+        "text_preview": "Heading 3",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "20px",
+          "line_height": "26px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "20px",
+          "font_weight": "600",
+          "line_height": "26px",
+          "margin_top": "0px"
+        }
+      },
+      {
+        "text_preview": "Toggle Heading 3",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "20px",
+          "line_height": "26px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "heading": {
+          "font_size": "20px",
+          "font_weight": "600",
+          "line_height": "26px",
+          "margin_top": "0px"
+        }
+      }
+    ],
+    "numbered_list": [
+      {
+        "text_preview": "I list out numbered things.",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Database - creates a database on current page.",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Linked database - create a new view of an existing database ",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "bulleted_list": [
+      {
+        "text_preview": "I care far less about order.",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "After creating a Synced Block, you can click the Copy and Sy",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "The context menu will also let you see every page where a Sy",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "The three-dot menu on a Synced Block contains an option to U",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Careful! Note that Un-Syncing a Synced Block in its original",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "The permissions of the page where the Synced Block was origi",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "quote": [
+      {
+        "text_preview": "\"Give me six hours to chop down a tree, and I'll spend the f",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "border_left": "3px solid rgb(44, 44, 43)",
+        "quote_padding": "0px 14px 0px 14px"
+      }
+    ],
+    "alias": [
+      {
+        "text_preview": "✅Ultimate Tasks for Notion (1.0)",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "20.8px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "image": [
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(0, 0, 0, 0.3)",
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px"
+        }
+      },
+      {
+        "text_preview": "Images can have captions.ALT",
+        "painted": {
+          "background": "rgba(42, 28, 0, 0.07)",
+          "background@token": {
+            "light": "rgba(42, 28, 0, 0.07)",
+            "tokens": [
+              "--ca-graBacSecTra",
+              "--ca-bacTerTra",
+              "--ca-borSecTra",
+              "--ca-graBorSecTra"
+            ],
+            "dark": {
+              "--ca-graBacSecTra": "rgba(255,255,235,.1)",
+              "--ca-bacTerTra": "rgba(255,255,243,.082)",
+              "--ca-borSecTra": "rgba(255,255,243,.082)",
+              "--ca-graBorSecTra": "rgba(255,255,243,.082)"
+            }
+          },
+          "border_radius": "6px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-bacTerTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(42,28,0,.07)",
+            "dark": "rgba(255,255,243,.082)"
+          }
+        },
+        "font": {
+          "color": "rgb(125, 122, 117)",
+          "color@token": {
+            "light": "rgb(125, 122, 117)",
+            "tokens": [
+              "--c-graTexSec",
+              "--c-graIcoSec",
+              "--c-icoAccPri",
+              "--c-texSec"
+            ],
+            "dark": {
+              "--c-icoAccPri": "#bcbab6",
+              "--c-texSec": "#ada9a3"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "19.6px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "color_token_declared": "--c-texSec",
+          "color_token_declared@resolved": {
+            "light": "#7d7a75",
+            "dark": "#ada9a3"
+          }
+        }
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(0, 0, 0, 0.3)",
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px"
+        }
+      }
+    ],
+    "table": [
+      {
+        "text_preview": "GamePlatformTypeNotesDance Dance RevolutionArcadeRhythmI may",
+        "painted": {
+          "background": "rgb(250, 233, 241)",
+          "background@token": {
+            "light": "rgb(250, 233, 241)",
+            "tokens": [
+              "--c-pinBacSec",
+              "--c-pinBorSec"
+            ],
+            "dark": {
+              "--c-pinBacSec": "#4e2b3c",
+              "--c-pinBorSec": "#3f2631"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-pinBacSec",
+          "background_token_declared@resolved": {
+            "light": "#fae9f1",
+            "dark": "#4e2b3c"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "20px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "cell": {
+          "border": "1px rgb(230, 229, 227)",
+          "padding": "0px 0px 0px 0px",
+          "font_size": "16px"
+        },
+        "header_row_background": "rgb(250, 233, 241)",
+        "header_row_background@token": {
+          "light": "rgb(250, 233, 241)",
+          "tokens": [
+            "--c-pinBacSec",
+            "--c-pinBorSec"
+          ],
+          "dark": {
+            "--c-pinBacSec": "#4e2b3c",
+            "--c-pinBorSec": "#3f2631"
+          }
+        }
+      },
+      {
+        "text_preview": "GamePlatformTypeNotesDance Dance RevolutionArcadeRhythmI may",
+        "painted": {
+          "background": "rgb(250, 233, 241)",
+          "background@token": {
+            "light": "rgb(250, 233, 241)",
+            "tokens": [
+              "--c-pinBacSec",
+              "--c-pinBorSec"
+            ],
+            "dark": {
+              "--c-pinBacSec": "#4e2b3c",
+              "--c-pinBorSec": "#3f2631"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-pinBacSec",
+          "background_token_declared@resolved": {
+            "light": "#fae9f1",
+            "dark": "#4e2b3c"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "20px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "cell": {
+          "border": "1px rgb(230, 229, 227)",
+          "padding": "0px 0px 0px 0px",
+          "font_size": "16px"
+        },
+        "header_row_background": "rgb(250, 233, 241)",
+        "header_row_background@token": {
+          "light": "rgb(250, 233, 241)",
+          "tokens": [
+            "--c-pinBacSec",
+            "--c-pinBorSec"
+          ],
+          "dark": {
+            "--c-pinBacSec": "#4e2b3c",
+            "--c-pinBorSec": "#3f2631"
+          }
+        }
+      },
+      {
+        "text_preview": "GamePlatformTypeNotesDance Dance RevolutionArcadeRhythmI may",
+        "painted": {
+          "background": "rgb(250, 233, 241)",
+          "background@token": {
+            "light": "rgb(250, 233, 241)",
+            "tokens": [
+              "--c-pinBacSec",
+              "--c-pinBorSec"
+            ],
+            "dark": {
+              "--c-pinBacSec": "#4e2b3c",
+              "--c-pinBorSec": "#3f2631"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-pinBacSec",
+          "background_token_declared@resolved": {
+            "light": "#fae9f1",
+            "dark": "#4e2b3c"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "20px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        },
+        "cell": {
+          "border": "1px rgb(230, 229, 227)",
+          "padding": "0px 0px 0px 0px",
+          "font_size": "16px"
+        },
+        "header_row_background": "rgb(250, 233, 241)",
+        "header_row_background@token": {
+          "light": "rgb(250, 233, 241)",
+          "tokens": [
+            "--c-pinBacSec",
+            "--c-pinBorSec"
+          ],
+          "dark": {
+            "--c-pinBacSec": "#4e2b3c",
+            "--c-pinBorSec": "#3f2631"
+          }
+        }
+      }
+    ],
+    "collection_view_page": [
+      {
+        "text_preview": "✈️Full Page Table",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "20.8px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "collection_view": [
+      {
+        "text_preview": "Table - InlineCount3NameTagsNo results",
+        "painted": {
+          "background": "rgb(255, 255, 255)",
+          "background@token": {
+            "light": "rgb(255, 255, 255)",
+            "tokens": [
+              "--c-assCorButBac",
+              "--c-bluBacEle",
+              "--c-broBacEle",
+              "--c-butGroBac",
+              "--c-calIteBac",
+              "--c-graBacEle",
+              "--c-greBacEle",
+              "--c-homScrButBacBas",
+              "--c-keyActBarBac",
+              "--c-oraBacEle",
+              "--c-pinBacEle",
+              "--c-popBac",
+              "--c-purBacEle",
+              "--c-redBacEle",
+              "--c-selMarDisBac",
+              "--c-teaBacEle",
+              "--c-whiButBac",
+              "--c-yelBacEle",
+              "--cd-boaIteDefBac",
+              "--cd-colGalPreCarBac",
+              "--cd-homCarBacBas",
+              "--cd-homCarBacHov",
+              "--cd-homCarTemCarBacBas",
+              "--cd-homCarTemCarBacHov",
+              "--c-bacEle",
+              "--c-bacPri",
+              "--c-palGra0",
+              "--c-whi",
+              "--cd-aiChaButPre",
+              "--cd-aiChaButSel",
+              "--cd-aiChaButSelHov"
+            ],
+            "dark": {
+              "--c-assCorButBac": "#d3d3d3",
+              "--c-bluBacEle": "#213041",
+              "--c-broBacEle": "#382d26",
+              "--c-butGroBac": "#2f2f2f",
+              "--c-calIteBac": "#2f2f2f",
+              "--c-graBacEle": "#2c2c2b",
+              "--c-greBacEle": "#24342b",
+              "--c-homScrButBacBas": "#252525",
+              "--c-keyActBarBac": "#272829",
+              "--c-oraBacEle": "#3d2a1d",
+              "--c-pinBacEle": "#3f2631",
+              "--c-popBac": "#252525",
+              "--c-purBacEle": "#36293f",
+              "--c-redBacEle": "#412725",
+              "--c-selMarDisBac": "#252525",
+              "--c-teaBacEle": "#193439",
+              "--c-whiButBac": "#252525",
+              "--c-yelBacEle": "#373325",
+              "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+              "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+              "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)",
+              "--c-bacEle": "#202020",
+              "--c-bacPri": "#191919",
+              "--c-palGra0": "#000",
+              "--c-whi": "#000",
+              "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+              "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+              "--cd-aiChaButSelHov": "rgba(255,255,255,.06)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bacPri",
+          "background_token_declared@resolved": {
+            "light": "#fff",
+            "dark": "#191919"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "24px",
+          "line_height": "31.2px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Table - Inline",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "24px",
+          "line_height": "31.2px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "NameTagsNo results",
+        "painted": {
+          "background": "rgb(255, 255, 255)",
+          "background@token": {
+            "light": "rgb(255, 255, 255)",
+            "tokens": [
+              "--c-assCorButBac",
+              "--c-bluBacEle",
+              "--c-broBacEle",
+              "--c-butGroBac",
+              "--c-calIteBac",
+              "--c-graBacEle",
+              "--c-greBacEle",
+              "--c-homScrButBacBas",
+              "--c-keyActBarBac",
+              "--c-oraBacEle",
+              "--c-pinBacEle",
+              "--c-popBac",
+              "--c-purBacEle",
+              "--c-redBacEle",
+              "--c-selMarDisBac",
+              "--c-teaBacEle",
+              "--c-whiButBac",
+              "--c-yelBacEle",
+              "--cd-boaIteDefBac",
+              "--cd-colGalPreCarBac",
+              "--cd-homCarBacBas",
+              "--cd-homCarBacHov",
+              "--cd-homCarTemCarBacBas",
+              "--cd-homCarTemCarBacHov",
+              "--c-bacEle",
+              "--c-bacPri",
+              "--c-palGra0",
+              "--c-whi",
+              "--cd-aiChaButPre",
+              "--cd-aiChaButSel",
+              "--cd-aiChaButSelHov"
+            ],
+            "dark": {
+              "--c-assCorButBac": "#d3d3d3",
+              "--c-bluBacEle": "#213041",
+              "--c-broBacEle": "#382d26",
+              "--c-butGroBac": "#2f2f2f",
+              "--c-calIteBac": "#2f2f2f",
+              "--c-graBacEle": "#2c2c2b",
+              "--c-greBacEle": "#24342b",
+              "--c-homScrButBacBas": "#252525",
+              "--c-keyActBarBac": "#272829",
+              "--c-oraBacEle": "#3d2a1d",
+              "--c-pinBacEle": "#3f2631",
+              "--c-popBac": "#252525",
+              "--c-purBacEle": "#36293f",
+              "--c-redBacEle": "#412725",
+              "--c-selMarDisBac": "#252525",
+              "--c-teaBacEle": "#193439",
+              "--c-whiButBac": "#252525",
+              "--c-yelBacEle": "#373325",
+              "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+              "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+              "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)",
+              "--c-bacEle": "#202020",
+              "--c-bacPri": "#191919",
+              "--c-palGra0": "#000",
+              "--c-whi": "#000",
+              "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+              "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+              "--cd-aiChaButSelHov": "rgba(255,255,255,.06)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bacPri",
+          "background_token_declared@resolved": {
+            "light": "#fff",
+            "dark": "#191919"
+          }
+        },
+        "font": {
+          "color": "rgb(173, 169, 163)",
+          "color@token": {
+            "light": "rgb(173, 169, 163)",
+            "tokens": [
+              "--c-graTexTer",
+              "--c-graIcoTer",
+              "--c-icoInvSec",
+              "--c-icoTer",
+              "--c-texInvSec"
+            ],
+            "dark": {
+              "--c-graTexTer": "#5f5e59",
+              "--c-graIcoTer": "#5f5e59",
+              "--c-icoTer": "#7d7a75"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "20px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Board - InlinePlant1Fighting1Electric1",
+        "painted": {
+          "background": "rgba(199, 3, 3, 0.035)",
+          "background@token": {
+            "light": "rgba(199, 3, 3, 0.035)",
+            "tokens": [
+              "--ca-redBacPriTra"
+            ],
+            "dark": {
+              "--ca-redBacPriTra": "rgba(251,107,107,.047)"
+            }
+          },
+          "border_radius": "0px 0px 10px 10px",
+          "padding": "0px 8px 8px 8px",
+          "background_token_declared": "--ca-redBacPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(199,3,3,.035)",
+            "dark": "rgba(251,107,107,.047)"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "24px",
+          "line_height": "31.2px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Board - Inline",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "24px",
+          "line_height": "31.2px",
+          "font_weight": "600",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Plant1Fighting1Electric1",
+        "painted": {
+          "background": "rgba(199, 3, 3, 0.035)",
+          "background@token": {
+            "light": "rgba(199, 3, 3, 0.035)",
+            "tokens": [
+              "--ca-redBacPriTra"
+            ],
+            "dark": {
+              "--ca-redBacPriTra": "rgba(251,107,107,.047)"
+            }
+          },
+          "border_radius": "0px 0px 10px 10px",
+          "padding": "0px 8px 8px 8px",
+          "background_token_declared": "--ca-redBacPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(199,3,3,.035)",
+            "dark": "rgba(251,107,107,.047)"
+          }
+        },
+        "font": {
+          "color": "rgb(229, 100, 88)",
+          "color@token": {
+            "light": "rgb(229, 100, 88)",
+            "tokens": [
+              "--c-redTexAccPri",
+              "--c-redBacAccPri",
+              "--c-redBorAccPri",
+              "--c-redIcoAccPri"
+            ],
+            "dark": {}
+          },
+          "font_size": "14px",
+          "line_height": "16.8px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "color_token_declared": "--c-redTexAccPri",
+          "color_token_declared@resolved": {
+            "light": "#e56458",
+            "dark": "#e56458"
+          }
+        }
+      }
+    ],
+    "bookmark": [
+      {
+        "text_preview": "Notion Fundamentals - The Complete Notion Course for Beginne",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "17px",
+          "line_height": "22px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "color_token_declared": "--c-texPri",
+          "color_token_declared@resolved": {
+            "light": "#2c2c2b",
+            "dark": "#f0efed"
+          }
+        }
+      },
+      {
+        "text_preview": "Supported Functions · KaTeXThis is a list of TeX functions s",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "17px",
+          "line_height": "22px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "color_token_declared": "--c-texPri",
+          "color_token_declared@resolved": {
+            "light": "#2c2c2b",
+            "dark": "#f0efed"
+          }
+        }
+      }
+    ],
+    "video": [
+      {
+        "text_preview": "Loading...",
+        "painted": {
+          "background": "rgb(242, 241, 238)",
+          "background@token": {
+            "light": "rgb(242, 241, 238)",
+            "tokens": [
+              "--cd-embPlaBac"
+            ],
+            "dark": {
+              "--cd-embPlaBac": "rgba(255,255,255,.03)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--cd-embPlaBac",
+          "background_token_declared@resolved": {
+            "light": "#f2f1ee",
+            "dark": "rgba(255,255,255,.03)"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Loading...",
+        "painted": {
+          "background": "rgb(242, 241, 238)",
+          "background@token": {
+            "light": "rgb(242, 241, 238)",
+            "tokens": [
+              "--cd-embPlaBac"
+            ],
+            "dark": {
+              "--cd-embPlaBac": "rgba(255,255,255,.03)"
+            }
+          },
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--cd-embPlaBac",
+          "background_token_declared@resolved": {
+            "light": "#f2f1ee",
+            "dark": "rgba(255,255,255,.03)"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "embed": [
+      {
+        "text_preview": "Loading...",
+        "painted": {
+          "background": "rgb(255, 255, 255)",
+          "background@token": {
+            "light": "rgb(255, 255, 255)",
+            "tokens": [
+              "--c-assCorButBac",
+              "--c-bluBacEle",
+              "--c-broBacEle",
+              "--c-butGroBac",
+              "--c-calIteBac",
+              "--c-graBacEle",
+              "--c-greBacEle",
+              "--c-homScrButBacBas",
+              "--c-keyActBarBac",
+              "--c-oraBacEle",
+              "--c-pinBacEle",
+              "--c-popBac",
+              "--c-purBacEle",
+              "--c-redBacEle",
+              "--c-selMarDisBac",
+              "--c-teaBacEle",
+              "--c-whiButBac",
+              "--c-yelBacEle",
+              "--cd-boaIteDefBac",
+              "--cd-colGalPreCarBac",
+              "--cd-homCarBacBas",
+              "--cd-homCarBacHov",
+              "--cd-homCarTemCarBacBas",
+              "--cd-homCarTemCarBacHov",
+              "--c-bacEle",
+              "--c-bacPri",
+              "--c-palGra0",
+              "--c-whi",
+              "--cd-aiChaButPre",
+              "--cd-aiChaButSel",
+              "--cd-aiChaButSelHov"
+            ],
+            "dark": {
+              "--c-assCorButBac": "#d3d3d3",
+              "--c-bluBacEle": "#213041",
+              "--c-broBacEle": "#382d26",
+              "--c-butGroBac": "#2f2f2f",
+              "--c-calIteBac": "#2f2f2f",
+              "--c-graBacEle": "#2c2c2b",
+              "--c-greBacEle": "#24342b",
+              "--c-homScrButBacBas": "#252525",
+              "--c-keyActBarBac": "#272829",
+              "--c-oraBacEle": "#3d2a1d",
+              "--c-pinBacEle": "#3f2631",
+              "--c-popBac": "#252525",
+              "--c-purBacEle": "#36293f",
+              "--c-redBacEle": "#412725",
+              "--c-selMarDisBac": "#252525",
+              "--c-teaBacEle": "#193439",
+              "--c-whiButBac": "#252525",
+              "--c-yelBacEle": "#373325",
+              "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+              "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+              "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)",
+              "--c-bacEle": "#202020",
+              "--c-bacPri": "#191919",
+              "--c-palGra0": "#000",
+              "--c-whi": "#000",
+              "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+              "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+              "--cd-aiChaButSelHov": "rgba(255,255,255,.06)"
+            }
+          },
+          "border_radius": "1px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bacPri",
+          "background_token_declared@resolved": {
+            "light": "#fff",
+            "dark": "#191919"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "Loading...",
+        "painted": {
+          "background": "rgb(255, 255, 255)",
+          "background@token": {
+            "light": "rgb(255, 255, 255)",
+            "tokens": [
+              "--c-assCorButBac",
+              "--c-bluBacEle",
+              "--c-broBacEle",
+              "--c-butGroBac",
+              "--c-calIteBac",
+              "--c-graBacEle",
+              "--c-greBacEle",
+              "--c-homScrButBacBas",
+              "--c-keyActBarBac",
+              "--c-oraBacEle",
+              "--c-pinBacEle",
+              "--c-popBac",
+              "--c-purBacEle",
+              "--c-redBacEle",
+              "--c-selMarDisBac",
+              "--c-teaBacEle",
+              "--c-whiButBac",
+              "--c-yelBacEle",
+              "--cd-boaIteDefBac",
+              "--cd-colGalPreCarBac",
+              "--cd-homCarBacBas",
+              "--cd-homCarBacHov",
+              "--cd-homCarTemCarBacBas",
+              "--cd-homCarTemCarBacHov",
+              "--c-bacEle",
+              "--c-bacPri",
+              "--c-palGra0",
+              "--c-whi",
+              "--cd-aiChaButPre",
+              "--cd-aiChaButSel",
+              "--cd-aiChaButSelHov"
+            ],
+            "dark": {
+              "--c-assCorButBac": "#d3d3d3",
+              "--c-bluBacEle": "#213041",
+              "--c-broBacEle": "#382d26",
+              "--c-butGroBac": "#2f2f2f",
+              "--c-calIteBac": "#2f2f2f",
+              "--c-graBacEle": "#2c2c2b",
+              "--c-greBacEle": "#24342b",
+              "--c-homScrButBacBas": "#252525",
+              "--c-keyActBarBac": "#272829",
+              "--c-oraBacEle": "#3d2a1d",
+              "--c-pinBacEle": "#3f2631",
+              "--c-popBac": "#252525",
+              "--c-purBacEle": "#36293f",
+              "--c-redBacEle": "#412725",
+              "--c-selMarDisBac": "#252525",
+              "--c-teaBacEle": "#193439",
+              "--c-whiButBac": "#252525",
+              "--c-yelBacEle": "#373325",
+              "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+              "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+              "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)",
+              "--c-bacEle": "#202020",
+              "--c-bacPri": "#191919",
+              "--c-palGra0": "#000",
+              "--c-whi": "#000",
+              "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+              "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+              "--cd-aiChaButSelHov": "rgba(255,255,255,.06)"
+            }
+          },
+          "border_radius": "1px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bacPri",
+          "background_token_declared@resolved": {
+            "light": "#fff",
+            "dark": "#191919"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "code": [
+      {
+        "text_preview": "if(empty(prop(\"Due\")) and empty(prop(\"Parent Task\")), \"⚪️\", ",
+        "painted": {
+          "background": "rgba(66, 35, 3, 0.03)",
+          "background@token": {
+            "light": "rgba(66, 35, 3, 0.03)",
+            "tokens": [
+              "--ca-graBacPriTra",
+              "--ca-bacSecTra"
+            ],
+            "dark": {
+              "--ca-graBacPriTra": "rgba(252,252,252,.03)",
+              "--ca-bacSecTra": "rgba(252,252,252,.03)"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--ca-graBacPriTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(66,35,3,.03)",
+            "dark": "rgba(252,252,252,.03)"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "if(empty(prop(\"Due\")) and empty(prop(\"Parent Task\")), \"⚪️\", ",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "13.6px",
+          "line_height": "20.4px",
+          "font_weight": "400",
+          "font_family": "SFMono-Regular, Menlo, Consolas, \"PT Mono\", \"Liberation Mono\", Courier, monospace"
+        }
+      }
+    ],
+    "file": [
+      {
+        "text_preview": "thumbnail.jpg1802.9KB",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "drive": [
+      {
+        "text_preview": "Thomas Frank's Budget Modeler Template!Last modified by Thom",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "20px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "tweet": [
+      {
+        "text_preview": ""
+      }
+    ],
+    "whimsical": [
+      {
+        "text_preview": "Loading...",
+        "painted": {
+          "background": "rgb(255, 255, 255)",
+          "background@token": {
+            "light": "rgb(255, 255, 255)",
+            "tokens": [
+              "--c-assCorButBac",
+              "--c-bluBacEle",
+              "--c-broBacEle",
+              "--c-butGroBac",
+              "--c-calIteBac",
+              "--c-graBacEle",
+              "--c-greBacEle",
+              "--c-homScrButBacBas",
+              "--c-keyActBarBac",
+              "--c-oraBacEle",
+              "--c-pinBacEle",
+              "--c-popBac",
+              "--c-purBacEle",
+              "--c-redBacEle",
+              "--c-selMarDisBac",
+              "--c-teaBacEle",
+              "--c-whiButBac",
+              "--c-yelBacEle",
+              "--cd-boaIteDefBac",
+              "--cd-colGalPreCarBac",
+              "--cd-homCarBacBas",
+              "--cd-homCarBacHov",
+              "--cd-homCarTemCarBacBas",
+              "--cd-homCarTemCarBacHov",
+              "--c-bacEle",
+              "--c-bacPri",
+              "--c-palGra0",
+              "--c-whi",
+              "--cd-aiChaButPre",
+              "--cd-aiChaButSel",
+              "--cd-aiChaButSelHov"
+            ],
+            "dark": {
+              "--c-assCorButBac": "#d3d3d3",
+              "--c-bluBacEle": "#213041",
+              "--c-broBacEle": "#382d26",
+              "--c-butGroBac": "#2f2f2f",
+              "--c-calIteBac": "#2f2f2f",
+              "--c-graBacEle": "#2c2c2b",
+              "--c-greBacEle": "#24342b",
+              "--c-homScrButBacBas": "#252525",
+              "--c-keyActBarBac": "#272829",
+              "--c-oraBacEle": "#3d2a1d",
+              "--c-pinBacEle": "#3f2631",
+              "--c-popBac": "#252525",
+              "--c-purBacEle": "#36293f",
+              "--c-redBacEle": "#412725",
+              "--c-selMarDisBac": "#252525",
+              "--c-teaBacEle": "#193439",
+              "--c-whiButBac": "#252525",
+              "--c-yelBacEle": "#373325",
+              "--cd-boaIteDefBac": "rgba(255,255,255,.055)",
+              "--cd-colGalPreCarBac": "rgba(255,255,255,.055)",
+              "--cd-homCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarBacHov": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacBas": "rgba(255,255,255,.05)",
+              "--cd-homCarTemCarBacHov": "rgba(255,255,255,.05)",
+              "--c-bacEle": "#202020",
+              "--c-bacPri": "#191919",
+              "--c-palGra0": "#000",
+              "--c-whi": "#000",
+              "--cd-aiChaButPre": "rgba(255,255,255,.12)",
+              "--cd-aiChaButSel": "rgba(255,255,255,.04)",
+              "--cd-aiChaButSelHov": "rgba(255,255,255,.06)"
+            }
+          },
+          "border_radius": "1px",
+          "padding": "0px 0px 0px 0px",
+          "background_token_declared": "--c-bacPri",
+          "background_token_declared@resolved": {
+            "light": "#fff",
+            "dark": "#191919"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "transclusion_container": [
+      {
+        "text_preview": "💡A Synced Block is a block that can be seen and edited at m",
+        "painted": {
+          "background": "rgb(232, 241, 236)",
+          "background@token": {
+            "light": "rgb(232, 241, 236)",
+            "tokens": [
+              "--c-greBacSec",
+              "--c-greBorSec"
+            ],
+            "dark": {
+              "--c-greBacSec": "#263d30",
+              "--c-greBorSec": "#24342b"
+            }
+          },
+          "border_radius": "10px",
+          "padding": "12px 12px 12px 12px",
+          "background_token_declared": "--c-greBacSec",
+          "background_token_declared@resolved": {
+            "light": "#e8f1ec",
+            "dark": "#263d30"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "equation": [
+      {
+        "text_preview": "xn+yn=zn x^n + y^n = z^n xn+yn=zn",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "19.36px",
+          "line_height": "23.232px",
+          "font_weight": "400",
+          "font_family": "KaTeX_Main, \"Times New Roman\", serif"
+        }
+      }
+    ],
+    "button": [
+      {
+        "text_preview": "Bring me pictures of Spider-Man, Parker!",
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "14px",
+          "line_height": "16.8px",
+          "font_weight": "500",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "breadcrumb": [
+      {
+        "text_preview": "Notion Fundamentals/⏹️Notion Block Reference - All of Notion",
+        "font": {
+          "color": "rgb(230, 229, 227)",
+          "color@token": {
+            "light": "rgb(230, 229, 227)",
+            "tokens": [
+              "--c-borPri",
+              "--c-graBacTer",
+              "--c-graBorPri"
+            ],
+            "dark": {
+              "--c-borPri": "#383836",
+              "--c-graBacTer": "#5f5e59",
+              "--c-graBorPri": "#383836"
+            }
+          },
+          "font_size": "13px",
+          "line_height": "15.6px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "color_token_declared": "--c-borPri",
+          "color_token_declared@resolved": {
+            "light": "#e6e5e3",
+            "dark": "#383836"
+          }
+        }
+      }
+    ],
+    "column_list": [
+      {
+        "text_preview": "ColumnsCreate multi-column layouts with the following comman",
+        "painted": {
+          "background": "rgba(0, 0, 0, 0.3)",
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px"
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      }
+    ],
+    "column": [
+      {
+        "text_preview": "ColumnsCreate multi-column layouts with the following comman",
+        "painted": {
+          "background": "rgba(33, 27, 23, 0.05)",
+          "background@token": {
+            "light": "rgba(33, 27, 23, 0.05)",
+            "tokens": [
+              "--ca-graBacIntTra",
+              "--ca-bacIntTra"
+            ],
+            "dark": {
+              "--ca-graBacIntTra": "rgba(255,255,255,.055)",
+              "--ca-bacIntTra": "rgba(255,255,255,.055)"
+            }
+          },
+          "border_radius": "4px",
+          "padding": "2.72px 5.44px 2.72px 5.44px",
+          "background_token_declared": "--ca-bacIntTra",
+          "background_token_declared@resolved": {
+            "light": "rgba(33,27,23,.05)",
+            "dark": "rgba(255,255,255,.055)"
+          }
+        },
+        "font": {
+          "color": "rgb(44, 44, 43)",
+          "color@token": {
+            "light": "rgb(44, 44, 43)",
+            "tokens": [
+              "--c-bacAccPri",
+              "--c-texPri"
+            ],
+            "dark": {
+              "--c-texPri": "#f0efed"
+            }
+          },
+          "font_size": "16px",
+          "line_height": "24px",
+          "font_weight": "400",
+          "font_family": "ui-sans-serif, -apple-system, \"system-ui\", \"Segoe UI Variable Display\", \"Segoe UI\", Helvetica, \"Apple Color Emoji\", \"Noto Sans Arabic\", \"Noto Sans Hebrew\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+        }
+      },
+      {
+        "text_preview": "",
+        "painted": {
+          "background": "rgba(0, 0, 0, 0.3)",
+          "border_radius": "0px",
+          "padding": "0px 0px 0px 0px"
+        }
+      }
+    ]
+  },
+  "inline_code": {
+    "color": "rgb(207, 81, 72)",
+    "color@token": {
+      "light": "rgb(207, 81, 72)",
+      "tokens": [
+        "--c-redTexSec",
+        "--c-redIcoSec"
+      ],
+      "dark": {
+        "--c-redIcoSec": "#d0988d"
+      }
+    },
+    "background": "rgba(33, 27, 23, 0.05)",
+    "background@token": {
+      "light": "rgba(33, 27, 23, 0.05)",
+      "tokens": [
+        "--ca-graBacIntTra",
+        "--ca-bacIntTra"
+      ],
+      "dark": {
+        "--ca-graBacIntTra": "rgba(255,255,255,.055)",
+        "--ca-bacIntTra": "rgba(255,255,255,.055)"
+      }
+    },
+    "font_size": "13.6px",
+    "border_radius": "4px",
+    "padding": "2.72px 5.44px 2.72px 5.44px",
+    "font_family": "SFMono-Regular, Menlo, Consolas, \"PT Mono\", \"Liberation Mono\", Courier, monospace",
+    "text_preview": "Shift + Enter"
+  },
+  "link": {
+    "color": "rgb(44, 44, 43)",
+    "color@token": {
+      "light": "rgb(44, 44, 43)",
+      "tokens": [
+        "--c-bacAccPri",
+        "--c-texPri"
+      ],
+      "dark": {
+        "--c-texPri": "#f0efed"
+      }
+    },
+    "text_decoration": "none",
+    "decoration_color": "rgb(44, 44, 43)",
+    "decoration_color@token": {
+      "light": "rgb(44, 44, 43)",
+      "tokens": [
+        "--c-bacAccPri",
+        "--c-texPri"
+      ],
+      "dark": {
+        "--c-texPri": "#f0efed"
+      }
+    },
+    "opacity": "1"
+  },
+  "inline_token_inventory": {
+    "(page chrome) --x-color → var(--c-icoSec)": 1,
+    "(page chrome) --x-color → var(--c-texInvPri)": 1,
+    "(page chrome) --x-color → var(--c-texPri)": 5,
+    "(page chrome) --x-fill → var(--c-icoSec)": 1,
+    "(page chrome) --x-fill → var(--c-texInvPri)": 1,
+    "(page chrome) --x-umghl → var(--btn-adj-mult)": 6,
+    "(page chrome) background → var(--c-bacPri)": 3,
+    "(page chrome) background → var(--c-bluBacAccPri)": 1,
+    "(page chrome) background-color → var(--c-bacPri)": 1,
+    "(page chrome) background-color → var(--c-palGra800)": 1,
+    "(page chrome) background-color → var(--ca-graBacTerTra)": 5,
+    "(page chrome) bdx → var(--btn-adj-mult)": 6,
+    "(page chrome) caret-color → var(--c-texPri)": 1,
+    "(page chrome) color → var(--c-borPri)": 1,
+    "(page chrome) color → var(--c-regEmoCol)": 2,
+    "(page chrome) color → var(--c-texPri)": 1,
+    "(page chrome) color → var(--c-texTer)": 1,
+    "(page chrome) dkfo → var(--c-bacAccPri)": 1,
+    "(page chrome) fill → var(--c-icoSec)": 1,
+    "(page chrome) padding-inline-end → var(--safe-padding-right)": 1,
+    "(page chrome) padding-inline-start → var(--safe-padding-left)": 1,
+    "(page chrome) tdqfb → var(--btn-adj-mult)": 5,
+    "(page chrome) transform → var(--direction)": 4,
+    "alias --x-color → var(--c-icoPri)": 1,
+    "alias --x-fill → var(--c-icoPri)": 1,
+    "alias --x-umghl → var(--btn-adj-mult)": 1,
+    "alias bdx → var(--btn-adj-mult)": 1,
+    "alias border-bottom → var(--ca-borPriTra)": 1,
+    "alias color → var(--c-regEmoCol)": 1,
+    "bookmark --x-umghl → var(--btn-adj-mult)": 2,
+    "bookmark bdx → var(--btn-adj-mult)": 2,
+    "bookmark border → var(--c-borPri)": 2,
+    "bookmark color → var(--c-texPri)": 4,
+    "bookmark color → var(--c-texSec)": 2,
+    "breadcrumb --x-color → var(--c-texPri)": 1,
+    "breadcrumb color → var(--c-borPri)": 1,
+    "breadcrumb color → var(--c-regEmoCol)": 1,
+    "bulleted_list background → var(--ca-bacIntTra)": 16,
+    "bulleted_list caret-color → var(--c-texPri)": 21,
+    "bulleted_list color → var(--c-redTexSec)": 16,
+    "button border → var(--ca-borPriTra)": 1,
+    "callout background → var(--c-bluBacSec)": 1,
+    "callout background → var(--c-graBacPri)": 1,
+    "callout background → var(--c-greBacSec)": 4,
+    "callout caret-color → var(--c-texPri)": 6,
+    "callout color → var(--c-regEmoCol)": 4,
+    "callout text-decoration-color → var(--ca-opaLinDecCol)": 1,
+    "callout text-decoration-color → var(--cl-linDecCol)": 1,
+    "code background → var(--ca-bacTerTra)": 1,
+    "code background → var(--ca-graBacPriTra)": 1,
+    "code caret-color → var(--c-texPri)": 1,
+    "code color → var(--c-texPri)": 1,
+    "code color → var(--c-texSec)": 2,
+    "collection_view --x-border → var(--ca-graBorPriTra)": 1,
+    "collection_view --x-color → var(--c-graTexAccPri)": 4,
+    "collection_view --x-color → var(--c-icoPri)": 1,
+    "collection_view --x-color → var(--c-icoSec)": 29,
+    "collection_view --x-color → var(--c-texPri)": 28,
+    "collection_view --x-fill → var(--c-icoPri)": 1,
+    "collection_view --x-fill → var(--c-icoSec)": 29,
+    "collection_view --x-umghl → var(--btn-adj-mult)": 29,
+    "collection_view background → var(--c-bacPri)": 12,
+    "collection_view background → var(--c-bacSec)": 10,
+    "collection_view background → var(--c-redBacAccPri)": 3,
+    "collection_view background → var(--c-timBac)": 1,
+    "collection_view background → var(--ca-greBacTerTra)": 1,
+    "collection_view background → var(--ca-redBacTerTra)": 1,
+    "collection_view background → var(--ca-yelBacTerTra)": 1,
+    "collection_view background → var(--cd-timDarBac)": 34,
+    "collection_view background-color → var(--c-icoSec)": 4,
+    "collection_view background-color → var(--ca-greBacPriTra)": 2,
+    "collection_view background-color → var(--ca-redBacPriTra)": 2,
+    "collection_view background-color → var(--ca-yelBacPriTra)": 2,
+    "collection_view background-image → var(--ca-conBacTra)": 2,
+    "collection_view bdx → var(--btn-adj-mult)": 28,
+    "collection_view bdx → var(--ca-graBacIntTra)": 1,
+    "collection_view border-bottom → var(--c-borPri)": 36,
+    "collection_view border-inline-end → var(--c-borPri)": 35,
+    "collection_view border-inline-end → var(--c-redBorAccPri)": 1,
+    "collection_view box-shadow → var(--c-bacPri)": 1,
+    "collection_view box-shadow → var(--c-borPri)": 3,
+    "collection_view box-shadow → var(--ca-borSecTra)": 4,
+    "collection_view color → var(--c-graTexTer)": 3,
+    "collection_view color → var(--c-greTexAccPri)": 1,
+    "collection_view color → var(--c-greTexPri)": 1,
+    "collection_view color → var(--c-redTexAccPri)": 1,
+    "collection_view color → var(--c-redTexPri)": 1,
+    "collection_view color → var(--c-regEmoCol)": 1,
+    "collection_view color → var(--c-texPri)": 8,
+    "collection_view color → var(--c-texSec)": 24,
+    "collection_view color → var(--c-texTer)": 246,
+    "collection_view color → var(--c-whi)": 1,
+    "collection_view color → var(--c-yelTexAccPri)": 1,
+    "collection_view color → var(--c-yelTexPri)": 1,
+    "collection_view fill → var(--c-bluIcoAccPri)": 2,
+    "collection_view fill → var(--c-icoSec)": 44,
+    "collection_view inset-inline-end → var(--sticky-horizontal-offset)": 1,
+    "collection_view inset-inline-start → var(--sticky-horizontal-offset)": 4,
+    "collection_view tdqfb → var(--btn-adj-mult)": 29,
+    "collection_view_page --x-umghl → var(--btn-adj-mult)": 1,
+    "collection_view_page bdx → var(--btn-adj-mult)": 1,
+    "collection_view_page border-bottom → var(--ca-borPriTra)": 1,
+    "collection_view_page color → var(--c-regEmoCol)": 1,
+    "divider background-color → var(--ca-borPriTra)": 36,
+    "drive --x-umghl → var(--btn-adj-mult)": 1,
+    "drive bdx → var(--btn-adj-mult)": 1,
+    "drive border → var(--c-borPri)": 1,
+    "drive border-top → var(--ca-borPriTra)": 1,
+    "drive color → var(--c-texPri)": 1,
+    "drive color → var(--c-texSec)": 1,
+    "embed --x-stroke → var(--c-icoPri)": 2,
+    "embed background-color → var(--c-bacPri)": 2,
+    "embed x → var(--ca-graBacSecTra)": 2,
+    "file --x-umghl → var(--btn-adj-mult)": 1,
+    "file bdx → var(--btn-adj-mult)": 1,
+    "header --x-umghl → var(--btn-adj-mult)": 1,
+    "header bdx → var(--btn-adj-mult)": 1,
+    "header caret-color → var(--c-texPri)": 8,
+    "image background → var(--ca-bacTerTra)": 1,
+    "image caret-color → var(--c-texPri)": 1,
+    "image color → var(--c-texSec)": 2,
+    "numbered_list caret-color → var(--c-texPri)": 3,
+    "page --x-color → var(--c-texPri)": 2,
+    "page --x-umghl → var(--btn-adj-mult)": 3,
+    "page bdx → var(--btn-adj-mult)": 3,
+    "page border-bottom → var(--ca-borPriTra)": 1,
+    "page caret-color → var(--c-texPri)": 1,
+    "page color → var(--c-regEmoCol)": 1,
+    "page color → var(--c-texPri)": 1,
+    "page tdqfb → var(--btn-adj-mult)": 2,
+    "quote caret-color → var(--c-texPri)": 1,
+    "sub_header --x-umghl → var(--btn-adj-mult)": 1,
+    "sub_header bdx → var(--btn-adj-mult)": 1,
+    "sub_header caret-color → var(--c-texPri)": 2,
+    "sub_sub_header --x-umghl → var(--btn-adj-mult)": 1,
+    "sub_sub_header bdx → var(--btn-adj-mult)": 1,
+    "sub_sub_header caret-color → var(--c-texPri)": 2,
+    "table background → var(--c-pinBacSec)": 11,
+    "table background → var(--ca-bacIntTra)": 1,
+    "table background → var(--ca-greBacSecTra)": 1,
+    "table background → var(--cd-tabHeaRowColBac)": 3,
+    "table border → var(--c-borPri)": 44,
+    "table caret-color → var(--c-texPri)": 44,
+    "table color → var(--c-purTexSec)": 1,
+    "table color → var(--c-redTexSec)": 1,
+    "table fill → var(--c-purTexSec)": 1,
+    "table text-decoration-color → var(--ca-opaLinDecCol)": 1,
+    "table text-decoration-color → var(--cl-linDecCol)": 1,
+    "table_of_contents --x-umghl → var(--btn-adj-mult)": 12,
+    "table_of_contents background-image → var(--ca-borPriTra)": 12,
+    "table_of_contents bdx → var(--btn-adj-mult)": 12,
+    "table_of_contents color → var(--c-graTexSec)": 12,
+    "table_of_contents fill → var(--c-graTexSec)": 12,
+    "text -webkit-text-fill-color → var(--ca-texDisTra)": 1,
+    "text background → var(--ca-bacIntTra)": 2,
+    "text caret-color → var(--c-texPri)": 41,
+    "text color → var(--c-bluTexSec)": 1,
+    "text color → var(--c-graTexSec)": 2,
+    "text color → var(--c-greTexSec)": 1,
+    "text color → var(--c-oraTexSec)": 1,
+    "text color → var(--c-pinTexSec)": 1,
+    "text color → var(--c-redTexAccPri)": 1,
+    "text color → var(--c-redTexSec)": 4,
+    "text color → var(--c-texPri)": 1,
+    "text color → var(--c-texSec)": 2,
+    "text fill → var(--c-bluTexSec)": 1,
+    "text fill → var(--c-graTexSec)": 2,
+    "text fill → var(--c-greTexSec)": 1,
+    "text fill → var(--c-oraTexSec)": 1,
+    "text fill → var(--c-pinTexSec)": 1,
+    "text fill → var(--c-redIcoAccPri)": 1,
+    "text fill → var(--c-redTexSec)": 2,
+    "text text-decoration-color → var(--ca-opaLinDecCol)": 7,
+    "text text-decoration-color → var(--cl-linDecCol)": 2,
+    "to_do background → var(--c-bluBacAccPri)": 1,
+    "to_do caret-color → var(--c-texPri)": 1,
+    "to_do text-decoration-color → var(--c-texPri)": 1,
+    "toggle --x-umghl → var(--btn-adj-mult)": 24,
+    "toggle background → var(--c-greBacSec)": 1,
+    "toggle background → var(--c-oraBacSec)": 1,
+    "toggle bdx → var(--btn-adj-mult)": 24,
+    "toggle caret-color → var(--c-texPri)": 24,
+    "video --x-stroke → var(--c-icoPri)": 2,
+    "video background-color → var(--c-bacPri)": 2,
+    "video background-color → var(--cd-embPlaBac)": 2,
+    "video x → var(--ca-graBacSecTra)": 2,
+    "whimsical --x-stroke → var(--c-icoPri)": 1,
+    "whimsical background-color → var(--c-bacPri)": 1,
+    "whimsical x → var(--ca-graBacSecTra)": 1
+  }
+}
