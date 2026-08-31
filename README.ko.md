@@ -101,9 +101,16 @@ docs/
 
 Notion은 계속 새 블록을 내고 디자인을 조용히 바꿉니다. 이 repo는 "계속 맞추겠다"고
 약속하는 대신 감시합니다: 주간 CI([`notion-sync`](.github/workflows/notion-sync.yml))가
-공개 참고 페이지를 두 방식으로 다시 읽어 — **블록 타입**은 Notion 페이지 API로,
-**굵은 스타일 토큰**(색·폭)은 headless 렌더링으로 — 커밋된 기준
-[`sync/notion-snapshot.json`](sync/notion-snapshot.json)과 diff 합니다.
+공개 참고 페이지들을 두 방식으로 다시 읽어 — **블록 타입**은 Notion 페이지 API로
+(커서 페이지네이션, 블록 ~24종 감시), **굵은 스타일 토큰**(색·폭)은 headless
+렌더링으로 — 커밋된 기준 [`sync/notion-snapshot.json`](sync/notion-snapshot.json)과
+diff 합니다.
+
+참고 페이지:
+- [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)
+  (Thomas Frank 의 공개 블록 동물원 — 넓은 커버리지)
+- [이 프로젝트의 자체 페이지](https://cautious-shovel-8bd.notion.site/3ccb975b320f80128e94c05534b4df9d)
+  (직접 컨트롤 — 동물원에 없는 블록 보충용)
 
 - 배지가 초록 = skill 이 지금 Notion 이 그리는 것과 일치
 - 드리프트가 생기면 잡이 실패하고, 새 블록이 skill 커버 범위인지까지 적힌
