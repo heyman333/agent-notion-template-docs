@@ -54,6 +54,24 @@ Plugin installation is the recommended way to use notion-doc.
 /plugin install notion-doc@agent-notion-template-docs
 ```
 
+#### Choosing an install scope
+
+By default the plugin is installed at the **user** scope — it applies to all of *your* projects and never touches the repo, so teammates are unaffected.
+
+To narrow or widen that, pass `--scope` on the CLI:
+
+```bash
+# just me, just this project (.claude/settings.local.json — auto-gitignored)
+claude plugin marketplace add heyman333/agent-notion-template-docs --scope local
+claude plugin install notion-doc@agent-notion-template-docs --scope local
+
+# the whole team on this project (.claude/settings.json — commit it)
+claude plugin marketplace add heyman333/agent-notion-template-docs --scope project
+claude plugin install notion-doc@agent-notion-template-docs --scope project
+```
+
+With `project` scope, teammates get an install prompt on their next session after pulling. With `local` scope, nothing you install shows up in git.
+
 You can also copy the skill manually.
 
 ```bash

@@ -54,6 +54,24 @@ Notion에서 자주 사용하는 블록과 스타일을 HTML로 구현해 두었
 /plugin install notion-doc@agent-notion-template-docs
 ```
 
+#### 설치 범위 고르기
+
+기본값은 **user** 범위입니다 — 내 모든 프로젝트에 적용되고 저장소 파일은 건드리지 않으므로 팀원에게 영향이 없습니다.
+
+범위를 좁히거나 넓히려면 CLI에서 `--scope`를 사용합니다.
+
+```bash
+# 나만, 이 프로젝트에서만 (.claude/settings.local.json — 자동으로 gitignore 처리)
+claude plugin marketplace add heyman333/agent-notion-template-docs --scope local
+claude plugin install notion-doc@agent-notion-template-docs --scope local
+
+# 이 프로젝트의 팀 전체 (.claude/settings.json — 커밋해서 공유)
+claude plugin marketplace add heyman333/agent-notion-template-docs --scope project
+claude plugin install notion-doc@agent-notion-template-docs --scope project
+```
+
+`project` 범위로 설치하면 팀원들은 pull 후 다음 세션에서 설치 확인만 누르면 됩니다. `local` 범위는 git에 아무것도 남지 않습니다.
+
 직접 복사해서 사용할 수도 있습니다.
 
 ```bash
