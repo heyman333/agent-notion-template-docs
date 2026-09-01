@@ -1,6 +1,6 @@
 {
   "name": "agent-notion-template-docs",
-  "description": "Notion 템플릿 기반 문서 생성 skill 마켓플레이스",
+  "description": "Marketplace for Notion-template document generation skills",
   "owner": {
     "name": "heyman333",
     "url": "https://github.com/heyman333"
@@ -9,8 +9,8 @@
     {
       "name": "notion-doc",
       "source": "./",
-      "description": "Claude가 생성하는 HTML·Markdown 문서에 Notion의 블록(콜아웃·토글·표·체크리스트·코드·컬럼 등)과 디자인을 그대로 입히는 skill — 문서 구성은 자유, 비주얼만 Notion으로 고정",
-      "version": "3.2.0"
+      "description": "Agent skill that renders Claude-generated HTML/Markdown documents with Notion's blocks (callouts, toggles, tables, checklists, code, columns, etc.) and design — content and structure stay free, only the visuals are locked to Notion",
+      "version": "3.3.0"
     }
   ]
 }

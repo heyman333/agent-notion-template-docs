@@ -100,8 +100,8 @@ For example:
 
 ```text
 ✗ mydoc.html
-  ERROR [css-drift] CSS가 정본과 다르다 (1줄). CSS를 새로 짓지 말 것 — +    box-shadow: 0 4px 12px ...
-  ERROR [unknown-class] 템플릿에 없는 클래스: hero-card. 새 클래스를 만들지 말고 블록 사전에서 고를 것
+  ERROR [css-drift] CSS differs from the canon (1 lines). Do not write new CSS — +    box-shadow: 0 4px 12px ...
+  ERROR [unknown-class] Classes not in the template: hero-card. Do not invent classes — pick from the block dictionary
 ```
 
 The linter catches:

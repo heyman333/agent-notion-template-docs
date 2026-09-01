@@ -1,77 +1,82 @@
 ---
 name: notion-doc
-description: 문서 생성 시 반드시 사용하는 Notion 디자인 skill. 사용자가 문서·보고서·정리·회의록·검토 결과를 HTML/Markdown으로 만들어 달라고 하면 이 skill을 먼저 로드한다. 문서의 구성·목차는 내용이 정하고, 이 skill은 Notion의 블록(콜아웃·토글·표·체크리스트·코드·컬럼 등)과 비주얼 스타일만 규정한다.
+description: Notion design skill that MUST be used whenever creating documents. When the user asks for a document, report, summary, meeting notes, or review write-up in HTML/Markdown, load this skill first. The content decides the document's structure and outline; this skill only governs the Notion blocks (callouts, toggles, tables, checklists, code, columns, etc.) and visual style.
 ---
 
-# Notion 디자인으로 문서 생성
+# Creating documents with Notion's design
 
-**이 skill 은 문서의 '모양'만 규정한다.** 목차·섹션 구성·전개 방식은 내용과 요청이
-정한다 — 특정 문서 포맷(제안서 등)을 강제하지 않는다. 대신 모든 문서는 Notion 이
-제공하는 블록과 디자인 언어로 렌더링한다.
+**This skill governs only how the document *looks*.** The outline, sections,
+and flow are decided by the content and the request — no particular document
+format (proposal, etc.) is imposed. Instead, every document is rendered with
+the blocks and design language Notion provides.
 
-## 1. 머리 부분 (필수)
+## 1. Header area (required)
 
-1. **페이지 아이콘**: 문서 주제에 맞는 이모지 1개를 제목 위에 크게 (Notion 페이지 아이콘)
-2. **제목**: 명사구로 짧게
-3. **메타 줄**: 작성일 · 작성자 · 태그(pill) 1~2개
-4. 메타 줄 아래 얇은 구분선
+1. **Page icon**: one emoji matching the document's topic, large, above the title (Notion page icon)
+2. **Title**: a short noun phrase
+3. **Meta line**: date · author · 1–2 tag pills
+4. A thin divider below the meta line
 
-## 2. Notion 블록 사전 — 내용에 맞는 블록을 고른다
+## 2. Notion block dictionary — pick the block that fits the content
 
-| 내용 | 블록 |
+| Content | Block |
 |---|---|
-| 핵심 요약·강조하고 싶은 한 줄 | 콜아웃(파랑 💡) |
-| 참고·부가 정보 | 콜아웃(회색) |
-| 완료·성공·잘 된 것 | 콜아웃(초록 ✅) |
-| 주의·제약 조건 | 콜아웃(노랑 ⚠️) |
-| 경고·장애·위험 | 콜아웃(빨강 🚨) |
-| 긴 문서(h2 4개 이상)의 도입 | 목차(`toc`) |
-| 상위 문서·위치 맥락 | breadcrumb |
-| 비교·나열 가능한 사실 | simple table |
-| 나란히 놓을 두 덩어리 | 2단 컬럼 레이아웃 |
-| 본문 흐름을 끊는 긴 상세·로그 | `<details>` 토글 |
-| 할 일·진행 상태 | 체크박스 목록 (완료는 취소선) |
-| 코드 | 코드 블록 + `class="language-<언어>"` 신택스 하이라이트 (필수) |
-| 인상적인 한 문장 | 인용구(왼쪽 굵은 세로선) |
-| 외부 링크 소개 | 북마크 카드 |
-| 행동 유도 링크 하나 | 버튼 블록(`btn`) |
-| 단어 단위 강조 | **굵게**, 인라인 코드, Notion 색 글자(`t-blue` 등 5색) |
+| Key takeaway, the one line to emphasize | Callout (blue 💡) |
+| Reference, supplementary info | Callout (gray) |
+| Done, success, what went well | Callout (green ✅) |
+| Caution, constraints | Callout (yellow ⚠️) |
+| Warning, incident, risk | Callout (red 🚨) |
+| Opening of a long document (4+ h2s) | Table of contents (`toc`) |
+| Parent document, location context | breadcrumb |
+| Comparable, listable facts | simple table |
+| Two chunks that belong side by side | 2-column layout |
+| Long details or logs that break the flow | `<details>` toggle |
+| Tasks, progress | checkbox list (done items get strikethrough) |
+| Code | code block + `class="language-<lang>"` syntax highlighting (required) |
+| One striking sentence | quote (bold left bar) |
+| Introducing an external link | bookmark card |
+| A single call-to-action link | button block (`btn`) |
+| Word-level emphasis | **bold**, inline code, Notion text colors (`t-blue` etc., 5 colors) |
 
-블록을 장식으로 쓰지 않는다 — 위 표의 용도에 맞을 때만 쓴다.
+Never use blocks as decoration — only when they match a purpose in this table.
 
-## 3. 비주얼 스타일
+## 3. Visual style
 
-**HTML 문서는 반드시 이 skill 디렉토리의 `template.html` 스켈레톤에서 시작한다.**
-CSS 를 새로 짓지 말고 템플릿의 클래스를 그대로 쓴다. 템플릿의 라이트 팔레트·치수는
-실제 Notion 렌더링에서 실측한 값이다(값 옆 주석 참고). 핵심 규칙:
+**HTML documents MUST start from the `template.html` skeleton in this skill's
+directory.** Do not write new CSS; use the template's classes as they are. The
+template's palette and dimensions are Notion's actual design-token values
+(see the comment next to each value). Core rules:
 
-- 본문 폭 720px 중앙 정렬, 여백 넉넉히 — 실측값 그대로
-- 글자색 `#2C2C2B`, 16px/1.5, 배경 흰색, 장식 최소화. 그림자·그라데이션·진한 배경색 금지
-- 둥근 모서리는 `--radius`(10px) 토큰만 — 콜아웃·북마크·코드 블록 공통
-- 색은 템플릿의 토큰(콜아웃 5색, 텍스트 5색, `--tok-*` 코드 토큰)만 — 새 색 금지
-- 라이트/다크 팔레트가 CSS 토큰으로 내장되어 뷰어 테마를 자동으로 따라간다
-- 코드 하이라이트는 템플릿 하단의 Prism 스크립트가 처리한다 — `language-*` 클래스만 달면 된다
-- 한글 줄바꿈(`word-break: keep-all`)과 인쇄·PDF 규칙(`@media print`)은 템플릿에
-  들어 있다 — 따로 추가하지 않는다. 다크 팔레트는 `@media screen` 으로 묶여 있어
-  인쇄하면 자동으로 라이트로 돌아간다
+- 720px content width, centered, generous whitespace — measured values as-is
+- Text color `#2C2C2B`, 16px/1.5, white background, minimal decoration. No shadows, gradients, or heavy background colors
+- Rounded corners use only the `--radius` (10px) token — shared by callouts, bookmarks, and code blocks
+- Colors come only from the template's tokens (5 callout colors, 5 text colors, `--tok-*` code tokens) — no new colors
+- Light/dark palettes are built in as CSS tokens and follow the viewer's theme automatically
+- Code highlighting is handled by the Prism scripts at the bottom of the template — just add the `language-*` class
+- Korean line breaking (`word-break: keep-all`) and print/PDF rules
+  (`@media print`) are already in the template — do not add your own. The dark
+  palette is wrapped in `@media screen`, so printing automatically falls back
+  to light
 
-Markdown 문서일 때는 같은 감각으로: 이모지+제목(h1), 메타 줄, 콜아웃은
-`> 이모지 **제목** — 내용` 인용구로, 할 일은 `- [ ]` 체크리스트로, 코드는 언어 명시 펜스로.
+For Markdown documents, apply the same sensibility: emoji + title (h1), a meta
+line, callouts as `> emoji **Title** — body` quotes, tasks as `- [ ]`
+checklists, code in language-tagged fences.
 
-## 4. 쓰고 나면 확인한다
+## 4. Verify after writing
 
-HTML 문서를 쓴 뒤 이 skill 디렉토리의 `lint.py` 로 확인한다.
+After writing an HTML document, check it with `lint.py` from this skill's directory.
 
 ```bash
-python3 <skill 디렉토리>/lint.py 문서.html
+python3 <skill directory>/lint.py doc.html
 ```
 
-- `css-drift` — 템플릿의 `<style>` 을 건드렸다는 뜻이다. 원래대로 되돌리고 본문만 고친다
-- `unknown-class` — 클래스를 지어냈다. 2번 블록 사전에서 고른다
-- `inline-style` · `raw-color` — 본문에 스타일·색을 직접 적었다. 템플릿 클래스로 바꾼다
+- `css-drift` — you modified the template's `<style>`. Restore it and change only the body
+- `unknown-class` — you invented a class. Pick one from the block dictionary in section 2
+- `inline-style` · `raw-color` — you styled or colored the body directly. Use template classes instead
 
-## 5. 다른 skill과의 관계
+## 5. Interaction with other skills
 
-- Artifact로 게시할 때는 규정대로 `artifact-design` 도 로드하되, **스타일 토큰은
-  이 skill 이 우선**한다 (artifact-design 은 반응형·다크모드 등 기술 요건만 가져온다)
-- 차트가 들어가면 `dataviz` skill 의 색·마크 규칙을 따르되 레이아웃은 이 템플릿 안에 넣는다
+- When publishing as an Artifact, also load `artifact-design` as required, but
+  **this skill's style tokens take precedence** (take only the technical
+  requirements — responsiveness, dark mode — from artifact-design)
+- If charts are included, follow the `dataviz` skill's color and mark rules, but keep the layout inside this template

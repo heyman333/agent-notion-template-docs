@@ -8,28 +8,28 @@
   :root {
     --text: #2C2C2B;                       /* --c-texPri */
     --text-soft: #7D7A75;                  /* --c-texSec */
-    --divider: rgba(28, 19, 1, 0.11);      /* --ca-borPriTra (divider 실측) */
+    --divider: rgba(28, 19, 1, 0.11);      /* --ca-borPriTra (measured on dividers) */
     --bg: #FFFFFF;                         /* --c-bacPri */
-    --radius: 10px;                        /* 실측: 콜아웃·코드·북마크 공통 */
+    --radius: 10px;                        /* measured: callouts, code, bookmarks */
     --callout-gray: #F9F8F7;               /* --c-graBacPri */
     --callout-blue: #E5F2FC;               /* --c-bluBacSec */
     --callout-green: #E8F1EC;              /* --c-greBacSec */
     --callout-yellow: #F9F3DC;             /* --c-yelBacSec */
     --callout-red: #FCE9E7;                /* --c-redBacSec */
-    --code-bg: rgba(66, 35, 3, 0.03);      /* --ca-graBacPriTra (코드 블록 실측) */
-    --inline-code: #CF5148;                /* --c-redTexSec (인라인 코드 실측) */
+    --code-bg: rgba(66, 35, 3, 0.03);      /* --ca-graBacPriTra (measured on code blocks) */
+    --inline-code: #CF5148;                /* --c-redTexSec (measured on inline code) */
     --inline-code-bg: rgba(33, 27, 23, 0.05); /* --ca-bacIntTra */
     --table-header: #F7F6F3;               /* --cd-tabHeaRowColBac */
     --table-border: #E6E5E3;               /* --c-borPri */
-    --check: #2783DE;                      /* --c-bluBacAccPri (체크박스 실측) */
-    /* Notion 텍스트 색 — *TexSec 토큰. 다크 오버라이드 없음(양 테마 동일) */
+    --check: #2783DE;                      /* --c-bluBacAccPri (measured on checkboxes) */
+    /* Notion text colors — *TexSec tokens. No dark overrides (same in both themes) */
     --c-gray: #7D7A75;                     /* --c-graTexSec */
     --c-blue: #387DC9;                     /* --c-bluTexSec */
     --c-red: #CF5148;                      /* --c-redTexSec */
     --c-orange: #D27B2D;                   /* --c-oraTexSec */
     --c-green: #50946E;                    /* --c-greTexSec */
     --c-purple: #9A6BB4;                   /* --c-purTexSec */
-    /* 코드 신택스 토큰 (라이트) */
+    /* code syntax tokens (light) */
     --tok-comment: #708090;
     --tok-punct: #999999;
     --tok-number: #990055;
@@ -39,10 +39,11 @@
     --tok-function: #DD4A68;
     --tok-variable: #EE9900;
   }
-  /* Notion 다크 팔레트 — sync/notion-tokens.json 의 .notion-dark-theme 토큰 실값.
-     텍스트 색(--c-gray 등)은 다크 오버라이드가 없어 라이트 값을 그대로 상속.
-     시스템 다크 + 명시적 다크 선택 대응 — 둘 다 @media screen 으로 묶여 있어
-     인쇄할 때는 위의 라이트 팔레트가 그대로 쓰인다. */
+  /* Notion dark palette — actual .notion-dark-theme token values from
+     sync/notion-tokens.json. Text colors (--c-gray etc.) have no dark
+     overrides and inherit the light values. Covers system dark + explicit
+     dark selection — both wrapped in @media screen, so printing always
+     uses the light palette above. */
   @media screen and (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --text: #F0EFED;                     /* --c-texPri */
@@ -97,18 +98,18 @@
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    /* 실측 스택 + 한글 폰트 삽입 */
+    /* measured stack + Korean fonts inserted */
     font-family: ui-sans-serif, -apple-system, system-ui, "Segoe UI Variable Display",
       "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Helvetica, Arial, sans-serif,
       "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 16px;                       /* 실측 16px / 24px */
+    font-size: 16px;                       /* measured: 16px / 24px */
     line-height: 1.5;
-    word-break: keep-all;                  /* 한글은 어절 단위로 끊는다 */
-    overflow-wrap: break-word;             /* 긴 URL·영문 토큰만 예외 */
+    word-break: keep-all;                  /* Korean breaks at word boundaries */
+    overflow-wrap: break-word;             /* except long URLs and latin tokens */
     -webkit-font-smoothing: antialiased;
   }
   .page {
-    max-width: 720px;                      /* 실측 720px */
+    max-width: 720px;                      /* measured: 720px */
     margin: 0 auto;
     padding: 72px 24px 30vh;
   }
@@ -142,7 +143,7 @@
     border-top: 1px solid var(--divider);
     margin: 4px 0 24px;
   }
-  /* Notion 표준 비율: heading1 30px / heading2 24px */
+  /* Notion's standard scale: heading1 30px / heading2 24px */
   h2 {
     font-size: 1.875em;
     font-weight: 600;
@@ -159,7 +160,7 @@
   strong { font-weight: 600; }
   a { color: inherit; text-decoration: underline; text-decoration-color: var(--text-soft); }
 
-  /* Notion 텍스트 색 */
+  /* Notion text colors */
   .t-gray { color: var(--c-gray); }
   .t-blue { color: var(--c-blue); }
   .t-red { color: var(--c-red); }
@@ -171,8 +172,8 @@
     display: flex;
     gap: 10px;
     background: var(--callout-gray);
-    border-radius: var(--radius);          /* 실측 10px */
-    padding: 12px;                         /* 실측: 상하·좌우 모두 12px */
+    border-radius: var(--radius);          /* measured: 10px */
+    padding: 12px;                         /* measured: 12px on all sides */
     margin: 12px 0;
     font-size: 15px;
   }
@@ -182,15 +183,15 @@
   .callout-red { background: var(--callout-red); }
   .callout > .icon { flex: none; font-size: 18px; line-height: 1.4; }
 
-  /* 2단 컬럼 (Notion column layout) */
+  /* 2-column layout (Notion columns) */
   .columns { display: flex; gap: 32px; margin: 12px 0; }
   .columns > div { flex: 1; min-width: 0; }
   @media (max-width: 600px) { .columns { flex-direction: column; gap: 0; } }
 
   .table-wrap { overflow-x: auto; margin: 12px 0; }
-  table { border-collapse: collapse; width: 100%; }  /* 실측: 셀 폰트 16px = 본문 */
+  table { border-collapse: collapse; width: 100%; }  /* measured: cell font 16px = body */
   th, td {
-    border: 1px solid var(--table-border); /* 실측 #E6E5E3 */
+    border: 1px solid var(--table-border); /* measured: #E6E5E3 */
     padding: 7px 10px;
     text-align: left;
     vertical-align: top;
@@ -199,11 +200,11 @@
 
   blockquote {
     margin: 12px 0;
-    padding: 0 14px;                       /* 실측: 좌우 14px */
-    border-left: 3px solid var(--text);    /* 실측: 3px solid, 본문색 */
+    padding: 0 14px;                       /* measured: 14px inline */
+    border-left: 3px solid var(--text);    /* measured: 3px solid, body color */
   }
 
-  /* 목차 (Notion table of contents) — 실측: 밑줄 없음, 14px, --c-graTexSec */
+  /* Table of contents (Notion) — measured: no underline, 14px, --c-graTexSec */
   .toc { margin: 12px 0; font-size: 14px; }
   .toc a {
     display: block;
@@ -215,12 +216,12 @@
   .toc a:hover { background: var(--callout-gray); color: var(--text); }
   .toc .toc-2 { padding-left: 26px; }
 
-  /* 경로 표시 (Notion breadcrumb) */
+  /* Breadcrumb (Notion) */
   .breadcrumb { color: var(--text-soft); font-size: 14px; margin: 8px 0; }
   .breadcrumb a { color: inherit; text-decoration: none; }
   .breadcrumb a:hover { color: var(--text); }
 
-  /* 버튼 블록 (Notion button) — 실측: 14px/500, 본문색, 테두리 --ca-borPriTra */
+  /* Button block (Notion) — measured: 14px/500, body color, border --ca-borPriTra */
   .btn {
     display: inline-block;
     border: 1px solid var(--divider);
@@ -236,7 +237,7 @@
   }
   .btn:hover { background: var(--callout-gray); }
 
-  /* 북마크 카드 (Notion web bookmark) — 실측: radius 10px, border #E6E5E3 */
+  /* Bookmark card (Notion web bookmark) — measured: radius 10px, border #E6E5E3 */
   .bookmark {
     display: block;
     border: 1px solid var(--table-border);
@@ -265,9 +266,9 @@
     overflow-x: auto;
     margin: 12px 0;
   }
-  pre code { background: none; color: var(--text); padding: 0; font-size: 85%; } /* 실측 13.6px */
+  pre code { background: none; color: var(--text); padding: 0; font-size: 85%; } /* measured: 13.6px */
 
-  /* Prism 신택스 하이라이트 — <code class="language-*"> 에 적용 */
+  /* Prism syntax highlighting — applies to <code class="language-*"> */
   .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); }
   .token.punctuation { color: var(--tok-punct); }
   .token.property, .token.tag, .token.boolean, .token.number,
@@ -300,14 +301,14 @@
   .todo input[type="checkbox"] { accent-color: var(--check); margin-top: 4px; }
   .todo li.done { color: var(--text-soft); text-decoration: line-through; }
 
-  /* 인쇄 · PDF 내보내기 — 다크 팔레트는 위에서 @media screen 으로 묶었으므로
-     인쇄에는 항상 라이트 팔레트가 적용된다 */
+  /* Print / PDF export — the dark palette is wrapped in @media screen above,
+     so print always gets the light palette */
   @page { margin: 14mm; }
   @media print {
     body {
       background: #fff;
       font-size: 11pt;
-      /* 콜아웃·코드 배경이 인쇄에서 날아가지 않게 */
+      /* keep callout and code backgrounds from disappearing in print */
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -315,7 +316,7 @@
     h1, h2, h3, h4 { break-after: avoid; }
     p, blockquote { orphans: 3; widows: 3; }
     .callout, .bookmark, .btn, blockquote, tr, img { break-inside: avoid; }
-    /* 인쇄에는 가로 스크롤이 없다 — 긴 코드 줄은 접는다 */
+    /* print has no horizontal scroll — wrap long code lines */
     pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   }
 </style>
