@@ -297,8 +297,8 @@
   details > *:not(summary) { margin-left: 22px; }
 
   .todo { list-style: none; padding-left: 4px; }
-  .todo li { display: flex; gap: 8px; align-items: baseline; }
-  .todo input[type="checkbox"] { accent-color: var(--check); margin-top: 4px; }
+  .todo li { position: relative; padding-left: 26px; }
+  .todo input[type="checkbox"] { position: absolute; left: 4px; top: 5px; accent-color: var(--check); }
   .todo li.done { color: var(--text-soft); text-decoration: line-through; }
 
   /* Print / PDF export — the dark palette is wrapped in @media screen above,
