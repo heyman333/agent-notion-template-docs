@@ -10,7 +10,7 @@
       "name": "notion-doc",
       "source": "./",
       "description": "Agent skill that renders Claude-generated HTML/Markdown documents with Notion's blocks (callouts, toggles, tables, checklists, code, columns, etc.) and design — content and structure stay free, only the visuals are locked to Notion",
-      "version": "3.3.0"
+      "version": "3.3.1"
     }
   ]
 }

@@ -72,6 +72,24 @@ claude plugin install notion-doc@agent-notion-template-docs --scope project
 
 `project` 범위로 설치하면 팀원들은 pull 후 다음 세션에서 설치 확인만 누르면 됩니다. `local` 범위는 git에 아무것도 남지 않습니다.
 
+#### 업데이트
+
+새 버전은 이 마켓플레이스 저장소로 배포됩니다. 마켓플레이스를 먼저 갱신한 뒤 플러그인을 업데이트하세요.
+
+```text
+/plugin marketplace update agent-notion-template-docs
+/plugin update notion-doc@agent-notion-template-docs
+```
+
+CLI에서는 설치할 때 쓴 범위를 그대로 넘기면 됩니다.
+
+```bash
+claude plugin marketplace update agent-notion-template-docs
+claude plugin update notion-doc@agent-notion-template-docs --scope user   # 또는 local / project
+```
+
+적용하려면 Claude Code를 재시작합니다. 여러 범위에 설치했다면 각각 업데이트해야 합니다. 한 프로젝트 안에서는 더 좁은 범위가 우선합니다. 현재 설치 상태는 `claude plugin list`로 확인할 수 있습니다.
+
 직접 복사해서 사용할 수도 있습니다.
 
 ```bash

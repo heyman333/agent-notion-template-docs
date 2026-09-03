@@ -72,6 +72,24 @@ claude plugin install notion-doc@agent-notion-template-docs --scope project
 
 With `project` scope, teammates get an install prompt on their next session after pulling. With `local` scope, nothing you install shows up in git.
 
+#### Updating
+
+New versions ship through this marketplace repo, so refresh the marketplace first, then update the plugin:
+
+```text
+/plugin marketplace update agent-notion-template-docs
+/plugin update notion-doc@agent-notion-template-docs
+```
+
+Or from the CLI, passing the scope you installed at:
+
+```bash
+claude plugin marketplace update agent-notion-template-docs
+claude plugin update notion-doc@agent-notion-template-docs --scope user   # or local / project
+```
+
+Restart Claude Code to apply. If you installed at more than one scope, update each one — in a project the narrower scope wins. `claude plugin list` shows what you currently have.
+
 You can also copy the skill manually.
 
 ```bash
