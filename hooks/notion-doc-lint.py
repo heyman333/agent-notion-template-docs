@@ -105,6 +105,10 @@ def run(data):
 
 
 def main():
+    # Hook stdout is a pipe, so Python picks the locale encoding (cp949, cp1252 ...)
+    # and the non-ASCII in our messages would raise. Claude Code reads it as UTF-8.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     output = "{}"
     try:
         message = run(json.load(sys.stdin))

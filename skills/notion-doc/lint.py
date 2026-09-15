@@ -121,6 +121,11 @@ def check(path, canon):
 
 
 def main(argv=None):
+    # Redirected/piped output falls back to the locale encoding on Windows;
+    # the check marks and em-dashes are unencodable in every legacy codepage.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description="notion-doc style canon linter")
     ap.add_argument("files", nargs="+", type=pathlib.Path)
     ap.add_argument("--json", action="store_true", help="machine-readable JSON output")

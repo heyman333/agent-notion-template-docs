@@ -8,6 +8,7 @@
     python3 hooks/test_gating.py
 """
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -75,6 +76,25 @@ def main():
     ok = r.returncode == 0 and r.stdout.strip() == "{}"
     failed += not ok
     print(f"{'ok  ' if ok else 'FAIL'}  깨진 입력: fail-open")
+
+    # 레거시 코드페이지 회귀: 윈도우에서 stdout 이 cp949 로 떨어져도 말해야 한다.
+    # (예전엔 em dash 가 UnicodeEncodeError 를 내고 fail-open 에 먹혀 완전 침묵했다)
+    env = {**os.environ, "PYTHONIOENCODING": "cp949"}
+    payload = json.dumps({"tool_name": "Write", "tool_input": {
+        "file_path": str(ROOT / "examples/before.html")}})
+    r = subprocess.run([sys.executable, str(HOOK)], input=payload.encode(),
+                       capture_output=True, env=env, timeout=30)
+    ok = r.returncode == 0 and bool(json.loads(r.stdout.decode("utf-8") or "{}"))
+    failed += not ok
+    print(f"{'ok  ' if ok else 'FAIL'}  cp949 stdout 훅: {'말함' if ok else '침묵'} (기대 말함)")
+
+    r = subprocess.run([sys.executable, str(ROOT / "skills/notion-doc/lint.py"),
+                        str(ROOT / "examples/before.html")],
+                       capture_output=True, env=env, timeout=30)
+    ok = r.returncode == 1 and b"\xe2\x9c\x97" in r.stdout  # UTF-8 로 나온 U+2717
+    failed += not ok
+    print(f"{'ok  ' if ok else 'FAIL'}  cp949 stdout lint.py: "
+          f"{'UTF-8 출력' if ok else r.stderr.decode('utf-8', 'replace').strip()[-80:]}")
 
     print(f"\n{'실패 ' + str(failed) + '건' if failed else '전부 통과'}")
     return 1 if failed else 0
