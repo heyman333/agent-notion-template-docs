@@ -147,6 +147,11 @@ def write_report(path, lines, error=None):
 
 
 def main():
+    # Redirected/piped output falls back to the locale encoding on Windows;
+    # the arrows and em-dashes here are unencodable in legacy codepages.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="cmd", required=True)
     snap = sub.add_parser("snapshot")

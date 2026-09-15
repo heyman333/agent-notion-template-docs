@@ -25,6 +25,11 @@ SHOTS = [
 
 
 def main() -> int:
+    # Redirected/piped output falls back to the locale encoding on Windows;
+    # the arrows and em-dashes here are unencodable in legacy codepages.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     out_dir = ROOT / "docs"
     with sync_playwright() as p:
         browser = p.chromium.launch()

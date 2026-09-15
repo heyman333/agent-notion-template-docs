@@ -28,6 +28,7 @@ import datetime
 import json
 import pathlib
 import re
+import sys
 
 REFERENCE_URL = "https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -299,6 +300,11 @@ def annotate(probe, tokens):
 
 
 def main():
+    # Redirected/piped output falls back to the locale encoding on Windows;
+    # the arrows and em-dashes here are unencodable in legacy codepages.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default=str(OUT))
     parser.add_argument("--tokens", default=str(TOKENS))
