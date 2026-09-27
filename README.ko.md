@@ -8,12 +8,12 @@
 
 [English](README.md)
 
-AI 에이전트에게 문서를 만들어 달라고 하면 비슷한 결과물이 나오는 경우가 많습니다.  
-그라데이션이 들어간 히어로 영역, 이모지가 붙은 헤더, 카드 형태의 UI처럼 익숙한 패턴이 반복됩니다.
+AI 에이전트에게 문서를 만들어 달라고 하면 대개 비슷한 게 나옵니다.  
+그라데이션을 깐 히어로 영역, 이모지를 붙인 헤더, 카드 모양 UI 같은 익숙한 패턴이 되풀이됩니다.
 
-**notion-doc**은 AI 에이전트가 문서를 만들 때 Notion의 디자인을 사용할 수 있도록 만든 skill입니다.
+notion-doc은 AI 에이전트가 문서를 만들 때 Notion 디자인을 쓰게 해 주는 skill입니다.
 
-문서의 내용이나 구조를 바꾸지는 않습니다. 에이전트가 정한 내용을 그대로 두고, **어떻게 보여줄지만 Notion 스타일로 맞춥니다.**
+에이전트가 정한 내용과 구조는 그대로 두고, 보여 주는 방식만 Notion 스타일로 맞춥니다.
 
 | notion-doc 없이 | notion-doc 적용 |
 | --- | --- |
@@ -21,7 +21,7 @@ AI 에이전트에게 문서를 만들어 달라고 하면 비슷한 결과물�
 
 ## 어떤 기능이 있나
 
-Notion에서 자주 사용하는 블록과 스타일을 HTML로 구현해 두었습니다.
+Notion에서 자주 쓰는 블록과 스타일을 HTML로 구현해 두었습니다.
 
 - 이모지 페이지 아이콘, 태그 pill, 메타 정보, breadcrumb
 - 5가지 색상의 콜아웃
@@ -33,13 +33,11 @@ Notion에서 자주 사용하는 블록과 스타일을 HTML로 구현해 두었
 - Notion 스타일의 텍스트 색상
 - 한글 줄바꿈 처리와 인쇄/PDF 레이아웃
 
-### 하나의 템플릿을 사용합니다
+### 템플릿은 하나입니다
 
-에이전트가 매번 CSS를 새로 만들지 않도록 `template.html`을 기본 템플릿으로 사용합니다.
+에이전트가 매번 CSS를 새로 만들지 않도록 [template.html](skills/notion-doc/template.html) 하나를 기본으로 씁니다. 이 파일을 복사한 뒤 문서 내용만 채웁니다.
 
-[template.html](skills/notion-doc/template.html)을 복사한 뒤 문서 내용만 채우는 방식입니다.
-
-본문 너비는 720px이고, 텍스트 색상과 라이트/다크 모드용 색상은 CSS 변수로 정의되어 있습니다. 다크 모드는 사용하는 브라우저의 테마를 따라갑니다. 인쇄하거나 PDF로 내보낼 때는 라이트 모드로 출력됩니다.
+본문 너비는 720px이고, 텍스트 색과 라이트/다크 모드 색은 CSS 변수로 정해 두었습니다. 다크 모드는 브라우저 테마를 따릅니다. 인쇄하거나 PDF로 내보내면 라이트 모드로 나옵니다.
 
 | Light | Dark |
 | --- | --- |
@@ -48,7 +46,7 @@ Notion에서 자주 사용하는 블록과 스타일을 HTML로 구현해 두었
 ## 설치
 
 notion-doc은 [Agent Plugin](https://agent-plugins.org) 표준을 따르는 플러그인입니다.
-`plugin.json` 하나, `skills/` 하나, 훅 하나로 구성되어 있고 Codex와 Claude Code가
+`plugin.json`, `skills/`, 훅이 하나씩 있고, Codex와 Claude Code가
 같은 파일을 설치합니다.
 
 ### Codex
@@ -78,7 +76,7 @@ mkdir -p ~/.agents/skills && cp -r skills/notion-doc ~/.agents/skills/
 다음 세션부터 인식됩니다. 문서를 요청하면 자동으로 적용되고, 직접 부르려면
 `$notion-doc`을 입력합니다.
 
-플러그인이 아니라 직접 복사해서 설치하면 검사 훅은 따라오지 않습니다.
+직접 복사해서 설치하면 검사 훅은 따라오지 않습니다.
 `~/.codex/hooks.json`(또는 `<repo>/.codex/hooks.json`)에 한 번 등록해 두세요.
 
 ```json
@@ -111,7 +109,7 @@ Codex의 `apply_patch` 형태와 Claude Code의 `file_path` 형태를 모두 이
 
 #### 설치 범위 고르기
 
-기본값은 **user** 범위입니다 — 내 모든 프로젝트에 적용되고 저장소 파일은 건드리지 않으므로 팀원에게 영향이 없습니다.
+기본값은 `user` 범위입니다. 내 모든 프로젝트에 적용되고 저장소 파일은 건드리지 않아서 팀원에게는 영향이 없습니다.
 
 범위를 좁히거나 넓히려면 CLI에서 `--scope`를 사용합니다.
 
@@ -157,16 +155,14 @@ cp -r skills/notion-doc ~/.claude/skills/
 
 ### Cursor, Gemini CLI 등
 
-`notion-doc`은 특정 에이전트에 종속된 기능 없이 파일 두 개로 구성되어 있습니다.  
-지시 파일을 읽을 수 있는 에이전트라면 다른 환경에서도 사용할 수 있습니다.
+`notion-doc`은 특정 에이전트에 기대는 기능 없이 파일 두 개로 되어 있습니다.  
+지시 파일을 읽을 줄 아는 에이전트라면 다른 환경에서도 쓸 수 있습니다.
 
 에이전트별 설정 방법은 [다른 에이전트에서 쓰기](docs/using-with-other-agents.md)를 참고하세요.
 
 ## 사용
 
-설치한 뒤 문서를 만들어 달라고 요청하면 skill이 자동으로 적용됩니다.
-
-예를 들면:
+설치한 뒤 문서를 만들어 달라고 하면 skill이 알아서 적용됩니다. 이런 요청들입니다.
 
 - "이 내용 정리해서 문서로 만들어줘"
 - "보고서 작성해줘"
@@ -181,7 +177,7 @@ cp -r skills/notion-doc ~/.claude/skills/
 
 ## 문서 검사
 
-skill은 CSS를 새로 만들지 말라고 안내하지만, 실제로 지켰는지는 확인이 필요합니다. 검증기가 그 역할을 합니다.
+skill이 CSS를 새로 만들지 말라고 해도, 에이전트가 정말 지켰는지는 따로 봐야 합니다. 그 일을 검증기가 합니다.
 
 문서의 `<style>`이 `template.html`과 한 글자라도 다르면 걸러냅니다.
 
@@ -195,20 +191,20 @@ python3 skills/notion-doc/lint.py 내문서.html
   ERROR [unknown-class] Classes not in the template: hero-card. Do not invent classes — pick from the block dictionary
 ```
 
-확인하는 항목은 다음과 같습니다.
+검증기가 보는 항목입니다.
 
 - 템플릿과 달라진 CSS. 그림자, 그라데이션, 색상 변경이 여기에 해당합니다
 - 본문에 직접 작성한 인라인 `style` 속성과 색상 값
 - 템플릿에 정의되지 않은 클래스
 - `language-*`가 빠진 코드 블록
 
-표준 라이브러리만 사용하기 때문에 다른 에이전트나 CI에서도 그대로 실행할 수 있습니다.
+표준 라이브러리만 써서 다른 에이전트나 CI에서도 그대로 돌아갑니다.
 
-플러그인으로 설치했다면 이 과정은 자동으로 동작합니다. HTML을 저장할 때마다 `PostToolUse` 훅이 검사하고, 문제가 있으면 어떤 부분이 어긋났는지 에이전트에게 전달합니다. 훅 스크립트는 하나로 두 런타임을 모두 처리합니다 — Codex의 `apply_patch` 페이로드와 Claude Code의 `file_path` 페이로드를 함께 읽습니다. 애플리케이션 코드나 프레임워크 템플릿, 빌드 결과물에는 동작하지 않습니다.
+플러그인으로 설치했다면 검사가 자동으로 돕니다. HTML을 저장할 때마다 `PostToolUse` 훅이 검사하고, 문제가 있으면 어디가 어긋났는지 에이전트에게 알려 줍니다. 훅 스크립트 하나가 Codex의 `apply_patch` 페이로드와 Claude Code의 `file_path` 페이로드를 모두 읽습니다. 애플리케이션 코드나 프레임워크 템플릿, 빌드 결과물에는 동작하지 않습니다.
 
 ## 예시
 
-실제 결과물은 `examples/`에서 확인할 수 있습니다. 브라우저에서 HTML 파일을 직접 열어보면 됩니다.
+실제 결과물은 `examples/`에 있습니다. HTML 파일을 브라우저로 바로 열어 보세요.
 
 | 파일 | 내용 | 포함된 블록 |
 | --- | --- | --- |
@@ -256,8 +252,7 @@ Codex와 Claude Code의 스킬이 갈라질 수 없습니다.
 
 ## Notion과 동기화
 
-Notion의 블록과 디자인은 계속 바뀔 수 있습니다.  
-이 저장소에서는 공개된 Notion 참고 페이지를 주기적으로 확인해서 현재 구현과 차이가 있는지 검사합니다.
+Notion의 블록과 디자인은 계속 바뀔 수 있어서, 공개된 Notion 참고 페이지를 주기적으로 확인해 지금 구현과 달라진 곳이 있는지 봅니다.
 
 주간 CI인 [notion-sync](.github/workflows/notion-sync.yml)가 참고 페이지를 확인하고 다음 세 가지를 비교합니다.
 
@@ -269,18 +264,18 @@ Notion의 블록과 디자인은 계속 바뀔 수 있습니다.
 
 참고 페이지는 Thomas Frank가 공개한 [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68)입니다.
 
-변경 사항이 발견되면 CI에서 차이를 확인할 수 있고, skill에서 지원해야 하는 새로운 블록이 추가되었는지도 issue를 통해 확인할 수 있습니다.
+달라진 게 있으면 CI에서 차이가 보이고, skill이 새로 지원해야 할 블록이 생겼는지도 issue에서 확인할 수 있습니다.
 
 ## 디자인 출처
 
-`template.html`의 색상, 너비, radius, 타이포그래피 등의 값은 임의로 정한 값이 아닙니다.
+`template.html`의 색상, 너비, radius, 타이포그래피 값은 Notion 원본에서 가져왔습니다.
 
-Notion은 인라인 스타일에 디자인 토큰을 그대로 선언하기 때문에(`background: var(--c-graBacPri)`), 값을 눈대중이나 픽셀 샘플링으로 추정하지 않고 원본에서 직접 가져올 수 있습니다.
+Notion은 인라인 스타일에 디자인 토큰을 그대로 적어 두기 때문에(`background: var(--c-graBacPri)`), 눈대중이나 픽셀 샘플링 없이 원본에서 값을 바로 읽을 수 있습니다.
 
 - [scripts/notion_style_probe.py](scripts/notion_style_probe.py)가 [Notion Block Reference — All of Notion's Blocks](https://thomasfrank.notion.site/8b40147600284c60b6f708e38f16ee68) 페이지를 headless로 렌더링해서 블록→토큰 매핑을 DOM에서 직접 읽습니다.
 - [scripts/notion_tokens.py](scripts/notion_tokens.py)가 각 토큰의 라이트·다크 실값을 Notion 스타일시트에서 추출합니다.
 
-주간 [notion-sync](#notion과-동기화) 잡이 이 전부를 다시 확인하기 때문에 Notion의 디자인이 변경되었을 때도 차이를 발견할 수 있습니다.
+주간 [notion-sync](#notion과-동기화) 잡이 이걸 전부 다시 확인하니, Notion 디자인이 바뀌어도 차이를 잡아낼 수 있습니다.
 
 ## License
 
