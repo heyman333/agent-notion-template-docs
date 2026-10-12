@@ -16,6 +16,7 @@ Exit code: 1 if there is at least one error, 0 if clean or warnings only.
 """
 import argparse
 import difflib
+import html
 import json
 import pathlib
 import re
@@ -116,6 +117,15 @@ def check(path, canon):
     if missing:
         out.append(("warn", "header-shape",
                     f"Header area is missing: {', '.join(missing)} (SKILL.md section 1)"))
+
+    title = re.search(r"<title>(.*?)</title>", text, re.S)
+    h1 = re.search(r"<h1[^>]*>(.*?)</h1>", body_clean, re.S)
+    if title and h1:
+        plain = lambda s: " ".join(html.unescape(re.sub(r"<[^>]+>", "", s)).split())
+        if plain(title.group(1)) != plain(h1.group(1)):
+            out.append(("warn", "title-mismatch",
+                        f"<title> \"{plain(title.group(1))}\" differs from <h1> "
+                        f"\"{plain(h1.group(1))}\" — use the same text for both"))
 
     return out
 

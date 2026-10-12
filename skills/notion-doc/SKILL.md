@@ -13,7 +13,7 @@ the blocks and design language Notion provides.
 ## 1. Header area (required)
 
 1. **Page icon**: one emoji matching the document's topic, large, above the title (Notion page icon)
-2. **Title**: a short noun phrase
+2. **Title**: a short noun phrase. In HTML, set `<title>` to the exact same text as the `<h1>`
 3. **Meta line**: date · author · 1–2 tag pills
 4. A thin divider below the meta line
 
