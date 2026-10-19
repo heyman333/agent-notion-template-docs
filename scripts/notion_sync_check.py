@@ -68,7 +68,7 @@ COVERED_TYPES = {
 # paints (block roots are transparent wrappers — a direct child selector reads
 # rgba(0,0,0,0) and goes blind).
 STYLE_PROBE_JS = """
-() => {
+async () => {
   const cs = (el, prop) => el ? getComputedStyle(el).getPropertyValue(prop) : null;
   const one = (sel) => document.querySelector(sel);
   const painted = c => c && c !== 'transparent' && !/^rgba\\(\\d+, \\d+, \\d+, 0\\)$/.test(c);
@@ -82,26 +82,37 @@ STYLE_PROBE_JS = """
     }
     return null;
   };
-  const uniqBg = sel => [...new Set(
-    [...document.querySelectorAll(sel)].map(paintedBg).filter(Boolean))].sort();
   const content = one('.notion-page-content');
-  const quoteBar = (() => {
-    const q = [...document.querySelectorAll('.notion-quote-block *')]
+  const width = content ? Math.round(content.getBoundingClientRect().width) : null;
+  // Notion virtualizes long pages: only blocks near the viewport are in the
+  // DOM, and scrolling unmounts the ones above. Walk the page top to bottom
+  // and accumulate, or blocks below the fold silently drop out of the probe.
+  const callouts = new Set(), dividers = new Set(), tableBorders = new Set();
+  let quoteBar = null;
+  const collect = () => {
+    document.querySelectorAll('.notion-callout-block').forEach(b => callouts.add(paintedBg(b)));
+    document.querySelectorAll('.notion-divider-block').forEach(b => dividers.add(paintedBg(b)));
+    document.querySelectorAll('.notion-table-block td')
+      .forEach(td => tableBorders.add(getComputedStyle(td).borderTopColor));
+    const q = !quoteBar && [...document.querySelectorAll('.notion-quote-block *')]
       .find(el => parseFloat(getComputedStyle(el).borderLeftWidth) > 0);
-    if (!q) return null;
-    const s = getComputedStyle(q);
-    return `${s.borderLeftWidth} ${s.borderLeftColor}`;
-  })();
+    if (q) quoteBar = `${getComputedStyle(q).borderLeftWidth} ${getComputedStyle(q).borderLeftColor}`;
+  };
+  const scroller = one('.notion-frame .notion-scroller') || document.scrollingElement;
+  for (let y = 0; y < scroller.scrollHeight; y += 800) {
+    scroller.scrollTo(0, y);
+    await new Promise(r => setTimeout(r, 400));
+    collect();
+  }
+  const sorted = set => [...set].filter(Boolean).sort();
   return {
-    content_width: content ? Math.round(content.getBoundingClientRect().width) : null,
+    content_width: width,
     body_color: cs(document.body, 'color'),
     body_background: cs(document.body, 'background-color'),
-    callout_backgrounds: uniqBg('.notion-callout-block'),
-    divider_color: uniqBg('.notion-divider-block'),
+    callout_backgrounds: sorted(callouts),
+    divider_color: sorted(dividers),
     quote_border: quoteBar,
-    table_border_colors: [...new Set(
-      [...document.querySelectorAll('.notion-table-block td')]
-        .map(td => getComputedStyle(td).borderTopColor))].sort(),
+    table_border_colors: sorted(tableBorders),
   };
 }
 """
