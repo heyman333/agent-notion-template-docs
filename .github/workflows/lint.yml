@@ -33,5 +33,8 @@ jobs:
       - name: 훅 게이팅 회귀
         run: python hooks/test_gating.py
 
+      - name: 토큰 diff 가 색 표기 차이를 무시하는지
+        run: python scripts/test_notion_tokens.py
+
       - name: 매니페스트 정합성 (Codex · Claude Code)
         run: python scripts/check_manifests.py

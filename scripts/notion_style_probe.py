@@ -237,13 +237,13 @@ def normalize(color):
             h = "".join(c * 2 for c in h)
         r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
         a = int(h[6:8], 16) / 255 if len(h) == 8 else 1.0
-        return (r, g, b, round(a, 3))
+        return (r, g, b, int(a * 255 + 0.5))  # 8-bit alpha: hex8 and rgba() agree
     m = re.match(r"rgba?\(([^)]+)\)", color)
     if m:
         parts = [p.strip() for p in m.group(1).split(",")]
         r, g, b = (int(float(p)) for p in parts[:3])
         a = float(parts[3]) if len(parts) > 3 else 1.0
-        return (r, g, b, round(a, 3))
+        return (r, g, b, int(a * 255 + 0.5))
     return None
 
 
