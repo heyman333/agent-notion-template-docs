@@ -113,8 +113,40 @@ def take_snapshot():
     }
 
 
+COLOR = re.compile(r"#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)|\btransparent\b", re.I)
+
+
+def _canon_color(m):
+    c = m.group(0).lower()
+    if c == "transparent":
+        return "#00000000"
+    if c.startswith("#"):
+        h = c[1:]
+        if len(h) in (3, 4):
+            h = "".join(ch * 2 for ch in h)
+        if len(h) == 6:
+            h += "ff"
+        return "#" + h if len(h) == 8 else c
+    try:
+        parts = re.split(r"[\s,/]+", c[c.index("(") + 1:-1].strip())
+        r, g, b = (int(float(p)) for p in parts[:3])
+        a = parts[3] if len(parts) > 3 else "1"
+        a = float(a[:-1]) / 100 if a.endswith("%") else float(a)
+    except ValueError:
+        return c
+    return "#%02x%02x%02x%02x" % (r, g, b, int(a * 255 + 0.5))
+
+
+def canon(value):
+    """Same color, same string: Notion's minifier flips between rgba(15,15,15,.1),
+    #0f0f0f1a and transparent/#0000 between builds (issue #7). Alpha is compared
+    at 8-bit precision, which is all a #rrggbbaa literal can carry."""
+    return COLOR.sub(_canon_color, value.strip())
+
+
 def diff(baseline, fresh):
-    """Human-readable drift lines; fetched_at and stylesheet hashes are ignored."""
+    """Human-readable drift lines; fetched_at and stylesheet hashes are ignored,
+    and so is color notation (see canon)."""
     lines = []
     for theme in ("light", "dark"):
         old = baseline["tokens"][theme]
@@ -124,7 +156,7 @@ def diff(baseline, fresh):
         for k in sorted(set(old) - set(new)):
             lines.append(f"- [{theme}] Token removed: `{k}` (was `{old[k]}`)")
         for k in sorted(set(old) & set(new)):
-            if old[k] != new[k]:
+            if canon(old[k]) != canon(new[k]):
                 lines.append(f"- [{theme}] `{k}` changed: `{old[k]}` → `{new[k]}`")
     return lines
 
